@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="An interactive timeline documenting ICE training deficiencies and their consequences from 2003-2026">
+    <title>ICE Training Deficiencies Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">ICE Training Deficiencies</h1>
+            <p class="site-subtitle">A documented timeline of warnings, failures, and consequences</p>
+        </div>
+    </header>
+
+    <nav class="timeline-nav">
+        <div class="nav-content">
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="search-input" placeholder="Search events..." aria-label="Search events">
+                <button class="clear-search" id="clear-search" aria-label="Clear search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="watchdog">Watchdog Reports</button>
+                <button class="filter-btn" data-filter="court">Court Cases</button>
+                <button class="filter-btn" data-filter="investigation">Investigations</button>
+                <button class="filter-btn" data-filter="incident">Incidents</button>
+                <button class="filter-btn" data-filter="policy">Policy Changes</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="timeline-container">
+        <div class="timeline-progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <section class="executive-summary" id="summary">
+            <div class="summary-content">
+                <h2>Summary</h2>
+                <p class="summary-text">
+                    Since ICE's creation in 2003, government watchdogs have repeatedly warned about training deficiencies. These documented warnings about inadequate training, civil rights instruction gaps, and oversight failures have materialized in incidents of excessive force, constitutional violations, and fatal shootings.
+                </p>
+            </div>
+        </section>
+
+        <div class="timeline" id="timeline">
+            <!-- Timeline events will be injected by JavaScript -->
+        </div>
+
+        <section class="sources-section" id="sources">
+            <h2>Sources & Documentation</h2>
+            <div class="sources-grid" id="sources-grid">
+                <!-- Sources will be injected by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Data compiled from government reports, court documents, and investigative journalism.</p>
+        <p class="disclaimer">This timeline is for informational purposes. All sources are linked for verification.</p>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="modal-content" id="modal-content">
+                <!-- Modal content injected by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"></path>
+        </svg>
+    </button>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
