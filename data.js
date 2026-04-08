@@ -532,6 +532,19 @@ const timelineData = {
             sourceUrl: "https://www.cnn.com/2026/02/27/us/ice-deportation-officers-training-agents-invs",
             mediaType: "document",
             mediaPlaceholder: `Comparative chart of training days required across 30 federal law enforcement officer roles, showing ICE near the bottom`
+        },
+        {
+            id: 26,
+            date: `March 10, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `CNN: ICE and CBP Agents Routinely Violated Less-Lethal Weapons Policies Against Protesters`,
+            excerpt: `A CNN analysis of more than two dozen videos found federal agents systematically violated both their own agency rules and local policing standards when using pepper balls, rubber bullets, and tear gas against protesters — with experts attributing the pattern to inadequate training and a culture that encourages aggression.`,
+            content: `<p>On March 10, 2026, CNN published an investigation based on a review of more than 20 videos of federal agents using chemical sprays or projectile munitions against protesters in cities including Minneapolis, Chicago, and Portland. All videos appeared to violate either CBP/ICE policies or local policing standards.</p><p class="warning-highlight">Documented violations included: deploying chemical weapons near children; firing less-lethal munitions at protesters' heads and faces from close range; using pepper spray on restrained individuals already under agents' control; and deploying crowd-control munitions without warning or a dispersal order — all violations of CBP and ICE's own policies. Former CBP Commissioner Gil Kerlikowske stated: "They have violated every protocol on less-lethal (weapons) and crowd control. Not making an announcement to disperse, body-slamming people to the ground...they're supposed to de-escalate, and they don't."</p><ul><li>Experts attributed the widespread misuse to a lack of specific policies and training for urban policing, combined with encouragement from administration officials to aggressively confront protesters</li><li>Injuries documented included lost eyesight, broken bones, and serious breathing complications</li><li>A criminologist stated the pattern shows agents are "poorly trained, poorly supervised" and that agency leadership has condoned the conduct</li><li>The Hennepin County Attorney's criminal investigation, announced March 2, included many of the incidents documented by CNN</li></ul>`,
+            source: "CNN",
+            sourceUrl: "https://www.cnn.com/2026/03/10/us/ice-federal-agents-less-lethal-weapons",
+            mediaType: "video",
+            mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         }
     ],
 
@@ -655,6 +668,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `CNN: CNN Analysis: ICE Deportation Officers Among Least Trained F`,
             url: "https://www.cnn.com/2026/02/27/us/ice-deportation-officers-training-agents-invs"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `CNN: CNN: ICE and CBP Agents Routinely Violated Less-Lethal Weapo`,
+            url: "https://www.cnn.com/2026/03/10/us/ice-federal-agents-less-lethal-weapons"
         }
     ],
 
