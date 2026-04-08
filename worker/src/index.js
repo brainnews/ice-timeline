@@ -40,6 +40,7 @@ async function triggerWorkflow(workflowFile, inputs, githubToken) {
       'Authorization': `Bearer ${githubToken}`,
       'Accept': 'application/vnd.github+json',
       'Content-Type': 'application/json',
+      'User-Agent': 'ice-timeline-worker',
       'X-GitHub-Api-Version': '2022-11-28'
     },
     body: JSON.stringify({ ref: 'main', inputs })
