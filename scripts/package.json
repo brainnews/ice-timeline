@@ -1,0 +1,15 @@
+{
+  "name": "ice-timeline-scripts",
+  "version": "1.0.0",
+  "description": "Automation scripts for ICE timeline news scanning and review",
+  "private": true,
+  "scripts": {
+    "scan": "node scan-news.js",
+    "add": "node add-event.js",
+    "email": "node send-email.js",
+    "email:dry": "node send-email.js --dry-run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0"
+  }
+}

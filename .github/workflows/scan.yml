@@ -1,0 +1,59 @@
+name: Scan for ICE Timeline News
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 9am UTC
+  workflow_dispatch:       # Allow manual trigger from the Actions tab
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Run news scan
+        id: scan
+        working-directory: scripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        # Exit 0 = proposals found, exit 1 = nothing found (scan-news.js convention)
+        run: node scan-news.js && echo "found=true" >> "$GITHUB_OUTPUT" || echo "found=false" >> "$GITHUB_OUTPUT"
+
+      - name: Commit new proposals
+        if: steps.scan.outputs.found == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add proposals/
+          COUNT=$(git diff --cached --name-only -- 'proposals/*.json' | wc -l | tr -d ' ')
+          if [ "$COUNT" -gt "0" ]; then
+            git commit -m "chore: add ${COUNT} news scan proposal(s) [$(date +%Y-%m-%d)]"
+            git push
+            echo "Committed $COUNT proposal(s)"
+          else
+            echo "No new proposal files to commit"
+          fi
+
+      - name: Send review email
+        if: steps.scan.outputs.found == 'true'
+        working-directory: scripts
+        env:
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          REVIEW_EMAIL: ${{ secrets.REVIEW_EMAIL }}
+        run: node send-email.js

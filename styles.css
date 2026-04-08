@@ -52,6 +52,54 @@
 }
 
 /* ==========================================================================
+   Dark Mode
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #111111;
+        --color-surface: #1c1c1c;
+        --color-text: #e5e5e5;
+        --color-text-secondary: #a3a3a3;
+        --color-text-muted: #5a5a5a;
+        --color-border: #2e2e2e;
+        --color-border-light: #232323;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+[data-theme="dark"] {
+    --color-bg: #111111;
+    --color-surface: #1c1c1c;
+    --color-text: #e5e5e5;
+    --color-text-secondary: #a3a3a3;
+    --color-text-muted: #5a5a5a;
+    --color-border: #2e2e2e;
+    --color-border-light: #232323;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] {
+    --color-bg: #fafafa;
+    --color-surface: #ffffff;
+    --color-text: #1a1a1a;
+    --color-text-secondary: #666666;
+    --color-text-muted: #999999;
+    --color-border: #e5e5e5;
+    --color-border-light: #f0f0f0;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
    Reset & Base
    ========================================================================== */
 
@@ -139,6 +187,51 @@ a {
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
 }
+
+/* ==========================================================================
+   Theme Toggle
+   ========================================================================== */
+
+.theme-toggle {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.85);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    z-index: 2;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* In light mode show moon (to switch to dark), in dark mode show sun (to switch to light) */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+@media (prefers-color-scheme: dark) {
+    .theme-toggle .icon-sun { display: block; }
+    .theme-toggle .icon-moon { display: none; }
+}
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 /* ==========================================================================
    Navigation & Filters
@@ -885,6 +978,58 @@ a {
     height: 16px;
 }
 
+.modal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid var(--color-border-light);
+    background: var(--color-surface);
+    flex-shrink: 0;
+}
+
+.modal-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.modal-nav-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.modal-nav-btn:hover:not(:disabled) {
+    background: var(--color-border-light);
+    color: var(--color-text);
+}
+
+.modal-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.modal-nav-counter {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+    flex: 1;
+    text-align: center;
+}
+
 /* ==========================================================================
    Sources Section
    ========================================================================== */
@@ -1054,6 +1199,38 @@ mark {
     padding: 0 2px;
     border-radius: 2px;
 }
+
+@media (prefers-color-scheme: dark) {
+    mark { background: rgba(255, 220, 0, 0.2); }
+
+    /* --color-text is light in dark mode, so elements using it as a background need inverting */
+    .filter-btn.active {
+        background: #ffffff;
+        border-color: #ffffff;
+        color: #111111;
+    }
+    .scroll-top {
+        background: #ffffff;
+        color: #111111;
+    }
+    .progress-bar {
+        background: #ffffff;
+    }
+}
+[data-theme="dark"] mark { background: rgba(255, 220, 0, 0.2); }
+[data-theme="dark"] .filter-btn.active {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #111111;
+}
+[data-theme="dark"] .scroll-top {
+    background: #ffffff;
+    color: #111111;
+}
+[data-theme="dark"] .progress-bar {
+    background: #ffffff;
+}
+[data-theme="light"] mark { background: rgba(255, 220, 0, 0.4); }
 
 /* ==========================================================================
    Warning/Incident Highlight

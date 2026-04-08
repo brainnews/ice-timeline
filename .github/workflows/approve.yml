@@ -1,0 +1,39 @@
+name: Approve Timeline Event
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Proposal filename (e.g. 2026-03-15-ice-incident.json)'
+        required: true
+        type: string
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Merge proposal into data.js
+        run: node scripts/add-event.js "proposals/${{ inputs.file }}"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.js proposals/
+          git commit -m "feat: add approved timeline event (${{ inputs.file }})"
+          git push

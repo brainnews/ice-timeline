@@ -18,21 +18,38 @@
         modalClose: document.getElementById('modal-close'),
         scrollTop: document.getElementById('scroll-top'),
         progressBar: document.getElementById('progress-bar'),
-        sourcesGrid: document.getElementById('sources-grid')
+        sourcesGrid: document.getElementById('sources-grid'),
+        themeToggle: document.getElementById('theme-toggle')
     };
 
     // State
     let currentFilter = 'all';
     let searchQuery = '';
     let visibleEvents = new Set();
+    let currentModalEventId = null;
 
     // Initialize
     function init() {
+        initTheme();
         renderTimeline();
         renderSources();
         setupEventListeners();
         setupIntersectionObserver();
         updateScrollProgress();
+    }
+
+    // Theme management
+    function initTheme() {
+        elements.themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const effectiveDark = current === 'dark' || (current !== 'light' && systemDark);
+        const newTheme = effectiveDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
     }
 
     // Render timeline events
@@ -137,6 +154,27 @@
         elements.modalOverlay.addEventListener('click', (e) => {
             if (e.target === elements.modalOverlay) closeModal();
         });
+
+        // Modal nav bar
+        const modalNav = document.createElement('div');
+        modalNav.className = 'modal-nav';
+        modalNav.innerHTML = `
+            <button class="modal-nav-btn" id="modal-prev" aria-label="Previous event">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                Prev
+            </button>
+            <span class="modal-nav-counter" id="modal-nav-counter"></span>
+            <button class="modal-nav-btn" id="modal-next" aria-label="Next event">
+                Next
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        `;
+        elements.modal.appendChild(modalNav);
+        elements.modalPrev = document.getElementById('modal-prev');
+        elements.modalNext = document.getElementById('modal-next');
+        elements.modalNavCounter = document.getElementById('modal-nav-counter');
+        elements.modalPrev.addEventListener('click', () => navigateModal(-1));
+        elements.modalNext.addEventListener('click', () => navigateModal(1));
 
         // Keyboard navigation
         document.addEventListener('keydown', handleKeyboard);
@@ -280,6 +318,15 @@
             </div>
         `;
 
+        currentModalEventId = eventId;
+
+        const navigable = getNavigableEvents();
+        const currentIndex = navigable.findIndex(e => e.id === eventId);
+        elements.modalPrev.disabled = currentIndex <= 0;
+        elements.modalNext.disabled = currentIndex >= navigable.length - 1;
+        elements.modalNavCounter.textContent = `${currentIndex + 1} / ${navigable.length}`;
+
+        elements.modalContent.scrollTop = 0;
         elements.modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
 
@@ -287,15 +334,29 @@
         elements.modalClose.focus();
     }
 
+    // Get events that are currently visible (not filtered out)
+    function getNavigableEvents() {
+        return timelineData.events.filter(e => {
+            const el = document.querySelector(`.timeline-event[data-event-id="${e.id}"]`);
+            return el && !el.classList.contains('filtered-out');
+        });
+    }
+
+    // Navigate to adjacent modal
+    function navigateModal(direction) {
+        const navigable = getNavigableEvents();
+        const currentIndex = navigable.findIndex(e => e.id === currentModalEventId);
+        if (currentIndex === -1) return;
+        const nextIndex = currentIndex + direction;
+        if (nextIndex < 0 || nextIndex >= navigable.length) return;
+        openModal(navigable[nextIndex].id);
+    }
+
     // Get media HTML - handles actual media or falls back to placeholder
     function getMediaHTML(event) {
-        // If event has actual media, render it
-        if (event.media) {
-            return renderMedia(event.media);
-        }
-
-        // Fall back to placeholder
-        return getMediaPlaceholder(event.mediaType, event.mediaPlaceholder);
+        if (event.media) return renderMedia(event.media);
+        if (event.mediaType && event.mediaPlaceholder) return getMediaPlaceholder(event.mediaType, event.mediaPlaceholder);
+        return '';
     }
 
     // Render actual media based on type
@@ -396,12 +457,17 @@
     function closeModal() {
         elements.modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
+        currentModalEventId = null;
     }
 
     // Handle keyboard
     function handleKeyboard(e) {
-        if (e.key === 'Escape' && elements.modalOverlay.classList.contains('active')) {
-            closeModal();
+        const modalActive = elements.modalOverlay.classList.contains('active');
+
+        if (modalActive) {
+            if (e.key === 'Escape') { closeModal(); return; }
+            if (e.key === 'ArrowRight') { e.preventDefault(); navigateModal(1); return; }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); navigateModal(-1); return; }
         }
 
         // Cmd/Ctrl + K to focus search
@@ -460,43 +526,52 @@
 
     // Setup modal gestures for mobile
     function setupModalGestures() {
+        let startX = 0;
         let startY = 0;
+        let currentX = 0;
         let currentY = 0;
         let isDragging = false;
 
         const modal = elements.modal;
 
         modal.addEventListener('touchstart', (e) => {
-            if (modal.scrollTop === 0) {
-                startY = e.touches[0].clientY;
-                isDragging = true;
-            }
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            currentX = startX;
+            currentY = startY;
+            isDragging = true;
         }, { passive: true });
 
         modal.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
-
+            currentX = e.touches[0].clientX;
             currentY = e.touches[0].clientY;
-            const diff = currentY - startY;
 
-            if (diff > 0) {
-                modal.style.transform = `translateY(${diff}px)`;
+            const diffX = currentX - startX;
+            const diffY = currentY - startY;
+
+            // Only apply visual drag for downward vertical swipe at top of scroll
+            if (Math.abs(diffY) > Math.abs(diffX) && diffY > 0 && elements.modalContent.scrollTop === 0) {
+                modal.style.transform = `translateY(${diffY}px)`;
             }
         }, { passive: true });
 
         modal.addEventListener('touchend', () => {
             if (!isDragging) return;
 
-            const diff = currentY - startY;
+            const diffX = currentX - startX;
+            const diffY = currentY - startY;
 
-            if (diff > 100) {
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                // Horizontal swipe → navigate (swipe left = next, swipe right = prev)
+                navigateModal(diffX < 0 ? 1 : -1);
+            } else if (diffY > 100 && elements.modalContent.scrollTop === 0) {
+                // Swipe down from top → close
                 closeModal();
             }
 
             modal.style.transform = '';
             isDragging = false;
-            startY = 0;
-            currentY = 0;
         });
     }
 
