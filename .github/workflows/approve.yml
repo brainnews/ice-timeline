@@ -37,3 +37,9 @@ jobs:
           git add data.js proposals/
           git commit -m "feat: add approved timeline event (${{ inputs.file }})"
           git push
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 6ecb8ffdf3296d1c7ac5faa74c80f684
+        run: npx wrangler pages deploy . --project-name=ice-timeline --branch=main
