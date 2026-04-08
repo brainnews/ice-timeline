@@ -355,7 +355,7 @@
     // Get media HTML - handles actual media or falls back to placeholder
     function getMediaHTML(event) {
         if (event.media) return renderMedia(event.media);
-        if (event.mediaType && event.mediaPlaceholder) return getMediaPlaceholder(event.mediaType, event.mediaPlaceholder);
+        if (event.mediaType && event.mediaPlaceholder) return '';
         return '';
     }
 
