@@ -10,8 +10,8 @@ const timelineData = {
             date: "2002-2003",
             year: 2002,
             category: "policy",
-            title: "First 287(g) Agreements Signed with Florida and Alabama",
-            excerpt: "INS signs first agreements deputizing state law enforcement to enforce federal immigration law, establishing four-week training requirement.",
+            title: `First 287(g) Agreements Signed with Florida and Alabama`,
+            excerpt: `INS signs first agreements deputizing state law enforcement to enforce federal immigration law, establishing four-week training requirement.`,
             content: `<p>In the aftermath of the September 11 attacks, the Immigration and Naturalization Service (INS) signed the first 287(g) agreements with the Florida Department of Law Enforcement (2002) and Alabama State Police (2003), establishing a new model for local immigration enforcement.</p>
                 <p><strong>Key developments:</strong></p>
                 <ul>
@@ -20,22 +20,22 @@ const timelineData = {
                     <li>Officers were required to complete a four-week Immigration Authority Delegation Program (IADP) at FLETC in Charleston, South Carolina</li>
                 </ul>
                 <p>The 287(g) program would expand rapidly: six agreements signed in 2005-2006, 24 in 2007, and 30 in 2008. The training requirements and oversight mechanisms established in these early agreements would later be scrutinized by government watchdogs.</p>`,
-            source: "American Immigration Council / Congressional Testimony",
+            source: `American Immigration Council / Congressional Testimony`,
             sourceUrl: "https://www.govinfo.gov/content/pkg/CHRG-109hhrg28332/html/CHRG-109hhrg28332.htm",
             media: {
                 type: "image",
                 src: "images/287g-appropriations-bill-2002.png",
-                alt: "Excerpt from the Homeland Security and the Fiscal Year 2002 Supplemental Appropriations Bill. April 30th, 2002.",
-                caption: "Excerpt from the Homeland Security and the Fiscal Year 2002 Supplemental Appropriations Bill. April 30th, 2002."
+                alt: `Excerpt from the Homeland Security and the Fiscal Year 2002 Supplemental Appropriations Bill. April 30th, 2002.`,
+                caption: `Excerpt from the Homeland Security and the Fiscal Year 2002 Supplemental Appropriations Bill. April 30th, 2002.`
             }
         },
         {
             id: 2,
-            date: "March 1, 2003",
+            date: `March 1, 2003`,
             year: 2003,
             category: "policy",
-            title: "ICE Created Under Department of Homeland Security",
-            excerpt: "U.S. Immigration and Customs Enforcement established, inheriting training programs from the dissolved Immigration and Naturalization Service (INS).",
+            title: `ICE Created Under Department of Homeland Security`,
+            excerpt: `U.S. Immigration and Customs Enforcement established, inheriting training programs from the dissolved Immigration and Naturalization Service (INS).`,
             content: `<p>In the wake of the September 11 attacks, the Homeland Security Act of 2002 dissolved the Immigration and Naturalization Service (under the Justice Department) and the U.S. Customs Service (under the Treasury Department), transferring most of their functions to three new agencies within the newly created Department of Homeland Security.</p>
                 <p><strong>The reorganization created:</strong></p>
                 <ul>
@@ -45,22 +45,22 @@ const timelineData = {
                 </ul>
                 <p>ICE inherited training programs and personnel from the legacy INS enforcement division. The new agency would be responsible for developing standardized training curricula for immigration enforcement officers through the Federal Law Enforcement Training Centers (FLETC).</p>
                 <p>This represented the largest government reorganization since the creation of the Department of Defense in the 1940s.</p>`,
-            source: "DHS / ICE History",
+            source: `DHS / ICE History`,
             sourceUrl: "https://www.ice.gov/features/history",
             media: {
                 type: "image",
                 src: "images/homeland-security-act-signing.jpeg",
-                alt: "President George W. Bush signs the Homeland Security Act of 2002",
-                caption: "President George W. Bush signs the Homeland Security Act on November 25, 2002, creating the Department of Homeland Security and ICE."
+                alt: `President George W. Bush signs the Homeland Security Act of 2002`,
+                caption: `President George W. Bush signs the Homeland Security Act on November 25, 2002, creating the Department of Homeland Security and ICE.`
             }
         },
         {
             id: 3,
-            date: "June 25, 2004",
+            date: `June 25, 2004`,
             year: 2004,
             category: "policy",
-            title: "DHS Establishes First Use of Deadly Force Policy",
-            excerpt: "Department of Homeland Security issues foundational policy on use of deadly force that would govern ICE training for nearly two decades.",
+            title: `DHS Establishes First Use of Deadly Force Policy`,
+            excerpt: `Department of Homeland Security issues foundational policy on use of deadly force that would govern ICE training for nearly two decades.`,
             content: `<p>The Department of Homeland Security issued its first "Use of Deadly Force Policy," establishing the framework that would govern ICE agent training on lethal force for years to come.</p>
                 <p><strong>Key policy elements:</strong></p>
                 <ul>
@@ -70,13 +70,13 @@ const timelineData = {
                 </ul>
                 <p class="warning-highlight">Investigative reporting later revealed that training materials from 2006-2011 contained no de-escalation guidance and taught that deadly force "can be initiated immediately."</p>
                 <p>This policy framework would remain largely unchanged until 2023, when an Executive Order mandated updates including de-escalation training requirements.</p>`,
-            source: "American Immigration Lawyers Association (AILA) / Congressional Memorandum",
+            source: `American Immigration Lawyers Association (AILA) / Congressional Memorandum`,
             sourceUrl: "https://www.aila.org/library/dhs-use-of-deadly-force-policy",
             media: {
                 type: "image",
                 src: "images/dhs-use-of-deadly-force-statement.png",
-                alt: "An except from the DHS Use of Deadly Force Policy, issued in 2004.",
-                caption: "Except from the DHS Use of Deadly Force Policy, issued in 2004."
+                alt: `An except from the DHS Use of Deadly Force Policy, issued in 2004.`,
+                caption: `Except from the DHS Use of Deadly Force Policy, issued in 2004.`
             }
         },
         {
@@ -84,8 +84,8 @@ const timelineData = {
             date: "2007",
             year: 2007,
             category: "policy",
-            title: "ICE Training Academy Established at FLETC Charleston",
-            excerpt: "ICE consolidates training operations at dedicated academy in Charleston, South Carolina, establishing centralized curriculum for deportation officers.",
+            title: `ICE Training Academy Established at FLETC Charleston`,
+            excerpt: `ICE consolidates training operations at dedicated academy in Charleston, South Carolina, establishing centralized curriculum for deportation officers.`,
             content: `<p>The Immigration and Customs Enforcement Training Academy was established at the Federal Law Enforcement Training Centers (FLETC) site in Charleston, South Carolina, marking a shift toward centralized, standardized training.</p>
                 <p><strong>Training program structure:</strong></p>
                 <ul>
@@ -96,22 +96,22 @@ const timelineData = {
                 </ul>
                 <p>The centralized academy model was designed to ensure consistent training standards across the agency.</p>
                 <p class="warning-highlight">However, a 2018 OIG alert would later warn that ICE was considering reverting to decentralized training "without adequate assessment" of risks.</p>`,
-            source: "fletc.gov / FLETC",
+            source: `fletc.gov / FLETC`,
             sourceUrl: "https://www.fletc.gov/about",
             media: {
                 type: "image",
                 src: "images/FLETC.webp",
-                alt: "FLETC Training Academy in Charleston, South Carolina.",
-                caption: "FLETC Training Academy in Charleston, South Carolina. Image: CEA Engineering."
+                alt: `FLETC Training Academy in Charleston, South Carolina.`,
+                caption: `FLETC Training Academy in Charleston, South Carolina. Image: CEA Engineering.`
             }
         },
         {
             id: 5,
-            date: "January 2009",
+            date: `January 2009`,
             year: 2009,
             category: "watchdog",
-            title: "GAO Finds Weak Controls Over 287(g) Training and Supervision",
-            excerpt: "Government Accountability Office reports ICE lacks adequate controls to govern 287(g) program, with unclear supervisory responsibilities for trained officers.",
+            title: `GAO Finds Weak Controls Over 287(g) Training and Supervision`,
+            excerpt: `Government Accountability Office reports ICE lacks adequate controls to govern 287(g) program, with unclear supervisory responsibilities for trained officers.`,
             content: `<p>The Government Accountability Office released report GAO-09-109, "Immigration Enforcement: Better Controls Needed over Program Authorizing State and Local Enforcement of Federal Immigration Laws," documenting significant oversight gaps in the 287(g) program.</p>
                 <p><strong>Key findings:</strong></p>
                 <ul class="warning-highlight">
@@ -121,22 +121,22 @@ const timelineData = {
                     <li>GAO compared ICE controls against Standards for Internal Control in the Federal Government and found deficiencies</li>
                 </ul>
                 <p>The report examined memorandums of agreement between ICE and 29 program participants and found systematic gaps in how trained officers were being supervised and monitored.</p>`,
-            source: "GAO Report GAO-09-109",
+            source: `GAO Report GAO-09-109`,
             sourceUrl: "https://www.gao.gov/products/gao-09-109",
             media: {
                 type: "image",
                 src: "images/gao-09-109.png",
-                alt: "Excerpt from GAO Report GAO-09-109",
-                caption: "Excerpt from GAO Report GAO-09-109."
+                alt: `Excerpt from GAO Report GAO-09-109`,
+                caption: `Excerpt from GAO Report GAO-09-109.`
             }
         },
         {
             id: 6,
-            date: "March 2010",
+            date: `March 2010`,
             year: 2010,
             category: "watchdog",
-            title: "OIG Finds 287(g) Civil Rights Training Inadequate",
-            excerpt: "Inspector General report finds ICE failed to comply with 287(g) agreements, civil rights training was inadequate, and program was poorly supervised.",
+            title: `OIG Finds 287(g) Civil Rights Training Inadequate`,
+            excerpt: `Inspector General report finds ICE failed to comply with 287(g) agreements, civil rights training was inadequate, and program was poorly supervised.`,
             content: `<p>The DHS Office of Inspector General released report OIG-10-63, "The Performance of 287(g) Agreements," delivering a comprehensive critique of the program's training and oversight failures.</p>
                 <p><strong>Critical findings:</strong></p>
                 <ul class="warning-highlight">
@@ -148,18 +148,18 @@ const timelineData = {
                 </ul>
                 <p class="warning-highlight">The report also documented how one agency improperly engaged in "random street operations" to target minor offenses—activities explicitly prohibited under 287(g) guidelines.</p>
                 <p>The ACLU noted the report gave "official backing to years of criticism" and included "extensive commentary on 287(g)'s vulnerability to civil rights abuses such as racial profiling."</p>`,
-            source: "DHS OIG Report OIG-10-63",
+            source: `DHS OIG Report OIG-10-63`,
             sourceUrl: "https://www.oig.dhs.gov/sites/default/files/assets/Mgmt/OIG_10-63_Mar10.pdf",
             mediaType: "document",
-            mediaPlaceholder: "OIG Report Document"
+            mediaPlaceholder: `OIG Report Document`
         },
         {
             id: 7,
-            date: "December 2012",
+            date: `December 2012`,
             year: 2012,
             category: "policy",
-            title: "Obama Administration Ends 287(g) Task Force Model",
-            excerpt: "Following DOJ findings of civil rights violations including racial profiling, the 287(g) Task Force Model is discontinued; last agreements expire.",
+            title: `Obama Administration Ends 287(g) Task Force Model`,
+            excerpt: `Following DOJ findings of civil rights violations including racial profiling, the 287(g) Task Force Model is discontinued; last agreements expire.`,
             content: `<p>The Obama Administration announced it would discontinue the 287(g) Task Force Model and Hybrid Model following Department of Justice investigations that found participating agencies had engaged in illegal racial profiling and civil rights violations.</p>
                 <p><strong>Key developments:</strong></p>
                 <ul class="warning-highlight">
@@ -170,64 +170,64 @@ const timelineData = {
                 </ul>
                 <p>An ICE policy memo stated other enforcement programs were "a more efficient use of resources for focusing on priority cases." The number of participating agencies declined from 72 in 2011 to 35 by the end of the Obama Administration.</p>
                 <p>The Task Force Model would remain dormant until its revival in January 2025, though the more limited Jail Enforcement Model—which only allows status checks on individuals already in custody—continued operating and was the subject of subsequent OIG oversight reports.</p>`,
-            source: "American Immigration Council",
+            source: `American Immigration Council`,
             sourceUrl: "https://www.americanimmigrationcouncil.org/fact-sheet/287g-program-immigration/",
             mediaType: "document",
-            mediaPlaceholder: "Policy Document"
+            mediaPlaceholder: `Policy Document`
         },
         {
             id: 8,
-            date: "January 2018",
+            date: `January 2018`,
             year: 2018,
             category: "watchdog",
-            title: "DHS Inspector General Issues Alert on Decentralized Training",
-            excerpt: "OIG warns that ICE proposed reverting to decentralized training 'without adequate assessment' of the potential risks.",
+            title: `DHS Inspector General Issues Alert on Decentralized Training`,
+            excerpt: `OIG warns that ICE proposed reverting to decentralized training 'without adequate assessment' of the potential risks.`,
             content: `<p class="warning-highlight">The Department of Homeland Security Office of Inspector General issued an alert (OIG-18-42) warning that ICE had proposed reverting to a decentralized training model without properly assessing the potential risks and consequences.</p>
                 <p>The alert raised concerns that moving away from centralized, standardized training could create inconsistencies in how agents are prepared for field work and potentially compromise the quality of instruction.</p>
                 <p>This early warning would prove prescient as subsequent reports documented the consequences of inadequate training oversight.</p>`,
-            source: "DHS OIG Alert OIG-18-42",
+            source: `DHS OIG Alert OIG-18-42`,
             sourceUrl: "https://www.oig.dhs.gov/sites/default/files/assets/Mga/2018/oig-18-42-jan18.pdf",
             mediaType: "document",
-            mediaPlaceholder: "OIG Alert Document"
+            mediaPlaceholder: `OIG Alert Document`
         },
         {
             id: 9,
-            date: "September 2018",
+            date: `September 2018`,
             year: 2018,
             category: "watchdog",
-            title: "OIG Finds ICE Not Monitoring 287(g) Officer Training Completion",
-            excerpt: "Inspector General report reveals ICE failed to track whether local officers completed required training under the 287(g) program.",
+            title: `OIG Finds ICE Not Monitoring 287(g) Officer Training Completion`,
+            excerpt: `Inspector General report reveals ICE failed to track whether local officers completed required training under the 287(g) program.`,
             content: `<p>The DHS Office of Inspector General released report OIG-18-77, revealing significant oversight failures in the 287(g) Jail Enforcement Model, which deputizes local law enforcement to check immigration status of individuals already in custody.</p>
                 <p class="warning-highlight">The investigation found that ICE was not properly monitoring whether participating officers completed all required training before exercising their immigration enforcement authorities.</p>
                 <p class="warning-highlight">This lack of oversight meant that officers could potentially be making arrest and detention decisions without the necessary legal and procedural training, increasing the risk of civil rights violations and improper enforcement actions.</p>`,
-            source: "DHS OIG Report OIG-18-77",
+            source: `DHS OIG Report OIG-18-77`,
             sourceUrl: "https://www.oig.dhs.gov/sites/default/files/assets/2018-09/OIG-18-77-Sep18.pdf",
             mediaType: "document",
-            mediaPlaceholder: "OIG Report Document"
+            mediaPlaceholder: `OIG Report Document`
         },
         {
             id: 10,
-            date: "November 2018",
+            date: `November 2018`,
             year: 2018,
             category: "watchdog",
-            title: "OIG Warns Training Challenges Create 'Safety Risk'",
-            excerpt: "Inspector General report explicitly warns that training deficiencies could leave 'trainees less prepared for their assigned field environment, potentially increasing safety risk.'",
+            title: `OIG Warns Training Challenges Create 'Safety Risk'`,
+            excerpt: `Inspector General report explicitly warns that training deficiencies could leave 'trainees less prepared for their assigned field environment, potentially increasing safety risk.'`,
             content: `<p>In one of the most explicit warnings about ICE training deficiencies, the DHS Office of Inspector General released report OIG-19-07, directly connecting inadequate training to safety risks for both agents and the public.</p>
                 <p class="warning-highlight"><strong>The report stated that training challenges could leave "trainees less prepared for their assigned field environment, potentially increasing safety risk."</strong></p>
                 <p>The findings documented systemic issues with training infrastructure, instructor availability, and curriculum adequacy. The OIG recommended comprehensive reforms to ensure agents received proper preparation before deployment.</p>
                 <p class="warning-highlight">This warning would go largely unheeded, as subsequent years saw training programs shortened rather than strengthened.</p>`,
-            source: "DHS OIG Report OIG-19-07",
+            source: `DHS OIG Report OIG-19-07`,
             sourceUrl: "https://www.oig.dhs.gov/sites/default/files/assets/2018-11/OIG-19-07-Nov18.pdf",
             mediaType: "document",
-            mediaPlaceholder: "OIG Report Document"
+            mediaPlaceholder: `OIG Report Document`
         },
         {
             id: 11,
-            date: "July 2021",
+            date: `July 2021`,
             year: 2021,
             category: "watchdog",
-            title: "GAO Finds Training Materials Contradict Policy on U.S. Citizens",
-            excerpt: "Government Accountability Office reveals ICE training materials contradict official policy on handling potential U.S. citizens; documents 674 potential citizens arrested, 70 removed.",
+            title: `GAO Finds Training Materials Contradict Policy on U.S. Citizens`,
+            excerpt: `Government Accountability Office reveals ICE training materials contradict official policy on handling potential U.S. citizens; documents 674 potential citizens arrested, 70 removed.`,
             content: `<p>The Government Accountability Office released report GAO-21-487, revealing a disturbing disconnect between ICE's official policies and its actual training materials regarding the treatment of potential U.S. citizens.</p>
                 <p><strong>Key findings included:</strong></p>
                 <ul class="warning-highlight">
@@ -236,18 +236,18 @@ const timelineData = {
                     <li>Training materials contained guidance that contradicted official policy on verifying citizenship claims</li>
                 </ul>
                 <p class="warning-highlight">The report highlighted how inadequate and inconsistent training could lead to the wrongful detention and deportation of American citizens—one of the most severe consequences possible in immigration enforcement.</p>`,
-            source: "GAO Report GAO-21-487",
+            source: `GAO Report GAO-21-487`,
             sourceUrl: "https://www.gao.gov/assets/gao-21-487.pdf",
             mediaType: "document",
-            mediaPlaceholder: "GAO Report Document"
+            mediaPlaceholder: `GAO Report Document`
         },
         {
             id: 12,
-            date: "August 2024",
+            date: `August 2024`,
             year: 2024,
             category: "investigation",
-            title: "Investigation Reveals Training Documents Lack De-escalation Guidance",
-            excerpt: "Joint investigation finds ICE training materials contain no de-escalation instruction; quiz answer states deadly force 'can be initiated immediately.'",
+            title: `Investigation Reveals Training Documents Lack De-escalation Guidance`,
+            excerpt: `Joint investigation finds ICE training materials contain no de-escalation instruction; quiz answer states deadly force 'can be initiated immediately.'`,
             content: `<p>A joint investigation by Business Insider, The Trace, and Type Investigations obtained hundreds of pages of ICE training materials spanning 2006-2011, revealing significant gaps in use-of-force instruction.</p>
                 <p><strong>Critical findings:</strong></p>
                 <ul class="warning-highlight">
@@ -258,18 +258,18 @@ const timelineData = {
                 </ul>
                 <p class="warning-highlight">The investigation documented 23 deaths by ICE officers from 2015-2021.</p>
                 <p>ICE disputed the findings, claiming officers receive de-escalation training.</p>`,
-            source: "Type Investigations / Business Insider / The Trace",
+            source: `Type Investigations / Business Insider / The Trace`,
             sourceUrl: "https://www.typeinvestigations.org/investigation/2024/08/12/ice-agents-training-use-of-force/",
             mediaType: "document",
-            mediaPlaceholder: "Investigation Report"
+            mediaPlaceholder: `Investigation Report`
         },
         {
             id: 13,
-            date: "August 2025",
+            date: `August 2025`,
             year: 2025,
             category: "policy",
-            title: "Training Cut from 5 Months to 47 Days Amid Hiring Surge",
-            excerpt: "The Atlantic reports ICE training reduced from approximately 5 months to just 47 days as agency rushes to meet hiring targets.",
+            title: `Training Cut from 5 Months to 47 Days Amid Hiring Surge`,
+            excerpt: `The Atlantic reports ICE training reduced from approximately 5 months to just 47 days as agency rushes to meet hiring targets.`,
             content: `<p>As the administration pushed for aggressive deportation targets, ICE dramatically shortened its training program to expedite the deployment of new agents.</p>
                 <p><strong>The timeline of cuts:</strong></p>
                 <ul class="warning-highlight">
@@ -279,18 +279,18 @@ const timelineData = {
                 </ul>
                 <p>The accelerated training came as ICE offered $50,000 signing bonuses and waived age limits for applicants, prioritizing quantity of hires over quality of preparation.</p>
                 <p class="warning-highlight">By comparison, FBI training remains at 20 weeks and state police academies average 21 weeks—roughly three times the new ICE training duration.</p>`,
-            source: "The Atlantic",
+            source: `The Atlantic`,
             sourceUrl: "https://www.theatlantic.com/",
             mediaType: "image",
-            mediaPlaceholder: "Training Duration Comparison Chart"
+            mediaPlaceholder: `Training Duration Comparison Chart`
         },
         {
             id: 14,
-            date: "October 2025",
+            date: `October 2025`,
             year: 2025,
             category: "incident",
-            title: "NBC News: Over 200 Recruits Dismissed for Vetting Failures",
-            excerpt: "Investigation reveals ICE placed recruits into training before completing vetting; dismissed over 200 for failed drug tests, criminal histories, or disqualifying backgrounds.",
+            title: `NBC News: Over 200 Recruits Dismissed for Vetting Failures`,
+            excerpt: `Investigation reveals ICE placed recruits into training before completing vetting; dismissed over 200 for failed drug tests, criminal histories, or disqualifying backgrounds.`,
             content: `<p class="warning-highlight">NBC News obtained internal ICE data revealing that the agency had placed new recruits into training programs before completing mandatory vetting procedures—a shortcut that exposed serious screening gaps.</p>
                 <p><strong>Key revelations:</strong></p>
                 <ul class="warning-highlight">
@@ -300,18 +300,18 @@ const timelineData = {
                     <li>ICE's HR office, overwhelmed with 150,000+ applicants, rushed clearances to meet the goal of hiring 10,000 agents by year's end</li>
                 </ul>
                 <p class="warning-highlight">One official raised the concerning question: "What about the ones who don't admit it?"—referring to potentially undiscovered disqualifying issues among those who passed screening.</p>`,
-            source: "NBC News",
+            source: `NBC News`,
             sourceUrl: "https://www.nbcnews.com/politics/immigration/new-ice-recruits-showed-training-full-vetting-rcna238739",
             mediaType: "image",
-            mediaPlaceholder: "NBC News Investigation"
+            mediaPlaceholder: `NBC News Investigation`
         },
         {
             id: 15,
-            date: "October 2025",
+            date: `October 2025`,
             year: 2025,
             category: "court",
-            title: "Federal Judge: ICE Use of Force 'Shocks the Conscience'",
-            excerpt: "In Chicago Headline Club v. Noem, judge finds ICE agents receive 'very little training on crowd control tactics' and use of force 'shocks the conscience.'",
+            title: `Federal Judge: ICE Use of Force 'Shocks the Conscience'`,
+            excerpt: `In Chicago Headline Club v. Noem, judge finds ICE agents receive 'very little training on crowd control tactics' and use of force 'shocks the conscience.'`,
             content: `<p>In a significant federal court ruling in Chicago Headline Club v. Noem, a judge issued findings that directly connected ICE's training deficiencies to unconstitutional conduct.</p>
                 <p><strong>The court found:</strong></p>
                 <ul class="warning-highlight">
@@ -320,18 +320,18 @@ const timelineData = {
                     <li>Agents were unprepared to handle situations involving media and public gatherings</li>
                 </ul>
                 <p class="warning-highlight">The ruling provided judicial confirmation of what government watchdogs had been warning about for years: inadequate training was resulting in constitutional violations.</p>`,
-            source: "Federal Court Opinion",
+            source: `Federal Court Opinion`,
             sourceUrl: "https://cst.brightspotcdn.com/49/34/daecfb4d4b86971a884bd736a564/ellisopinion.pdf",
             mediaType: "document",
-            mediaPlaceholder: "Court Opinion Document"
+            mediaPlaceholder: `Court Opinion Document`
         },
         {
             id: 16,
-            date: "January 2026",
+            date: `January 2026`,
             year: 2026,
             category: "policy",
-            title: "287(g) Training Slashed from 4 Weeks In-Person to 40 Hours Online",
-            excerpt: "National Immigration Forum reports the 287(g) program training reduced from a four-week in-person program to just 40 hours of online coursework.",
+            title: `287(g) Training Slashed from 4 Weeks In-Person to 40 Hours Online`,
+            excerpt: `National Immigration Forum reports the 287(g) program training reduced from a four-week in-person program to just 40 hours of online coursework.`,
             content: `<p>The National Immigration Forum documented a dramatic reduction in training requirements for the revived 287(g) Task Force Model, which authorizes local law enforcement to perform federal immigration enforcement during routine patrols and community encounters.</p>
                 <p><strong>Training changes:</strong></p>
                 <ul class="warning-highlight">
@@ -340,18 +340,18 @@ const timelineData = {
                 </ul>
                 <p>As of September 2025, the program had expanded dramatically with 8,501 Task Force Officers trained and over 2,000 additional officers in training across 40 states—all with significantly less preparation than previous models required.</p>
                 <p class="warning-highlight">The DHS Office of Inspector General had previously raised concerns in 2010 that civil rights law training for 287(g) participants was inadequate even under the longer training model.</p>`,
-            source: "National Immigration Forum",
+            source: `National Immigration Forum`,
             sourceUrl: "https://forumtogether.org/article/explainer-training-under-the-revived-287g-task-force-model/",
             mediaType: "image",
-            mediaPlaceholder: "287(g) Program Statistics"
+            mediaPlaceholder: `287(g) Program Statistics`
         },
         {
             id: 17,
-            date: "January 9, 2026",
+            date: `January 9, 2026`,
             year: 2026,
             category: "investigation",
-            title: "Former DHS Official: Training Cuts Create Agents 'Without Time to Have Judgment'",
-            excerpt: "Juliette Kayyem, former DHS Assistant Secretary, tells NPR that compressed training produces agents lacking judgment for complex field situations.",
+            title: `Former DHS Official: Training Cuts Create Agents 'Without Time to Have Judgment'`,
+            excerpt: `Juliette Kayyem, former DHS Assistant Secretary, tells NPR that compressed training produces agents lacking judgment for complex field situations.`,
             content: `<p>In an NPR interview, Juliette Kayyem, former DHS Assistant Secretary for Intergovernmental Affairs, provided expert analysis of how training cuts affect agent preparedness.</p>
                 <blockquote class="warning-highlight">"Training has been reduced from about 16 weeks to about six, six and a half weeks."</blockquote>
                 <p><strong>Kayyem emphasized that compressed training creates agents who are:</strong></p>
@@ -365,15 +365,15 @@ const timelineData = {
             source: "NPR",
             sourceUrl: "https://www.npr.org/2026/01/09/nx-s1-5671120/homeland-security-expert-talks-about-ices-truncated-training-after-hiring-blitz",
             mediaType: "audio",
-            mediaPlaceholder: "NPR Interview Audio"
+            mediaPlaceholder: `NPR Interview Audio`
         },
         {
             id: 18,
-            date: "January 2026",
+            date: `January 2026`,
             year: 2026,
             category: "incident",
-            title: "AI Tool Error Sends ~200 Recruits to Field Without Proper Training",
-            excerpt: "NBC News reveals an AI malfunction misclassified recruits, sending approximately 200 to field offices without completing required 8-week academy training.",
+            title: `AI Tool Error Sends ~200 Recruits to Field Without Proper Training`,
+            excerpt: `NBC News reveals an AI malfunction misclassified recruits, sending approximately 200 to field offices without completing required 8-week academy training.`,
             content: `<p>NBC News reported that an artificial intelligence tool used by ICE to categorize new recruits malfunctioned, resulting in hundreds of improperly trained agents being deployed to field offices.</p>
                 <p><strong>What happened:</strong></p>
                 <ul class="warning-highlight">
@@ -383,18 +383,18 @@ const timelineData = {
                 </ul>
                 <p class="warning-highlight">One official noted that "a bunch of the people who were LEOs weren't LEOs," meaning many lacked any actual law enforcement experience but received abbreviated training designed for experienced officers.</p>
                 <p>The error was discovered in mid-fall, and ICE subsequently implemented manual resume reviews to correct the problem.</p>`,
-            source: "NBC News",
+            source: `NBC News`,
             sourceUrl: "https://www.nbcnews.com/politics/immigration/ice-error-meant-recruits-sent-field-offices-proper-training-sources-sa-rcna254054",
             mediaType: "image",
-            mediaPlaceholder: "AI Classification Error Diagram"
+            mediaPlaceholder: `AI Classification Error Diagram`
         },
         {
             id: 19,
-            date: "January 2026",
+            date: `January 2026`,
             year: 2026,
             category: "investigation",
-            title: "ProPublica Documents 40+ Cases of Banned Chokeholds by ICE Agents",
-            excerpt: "Investigation reveals over 40 incidents of immigration agents using life-threatening neck restraints on immigrants, citizens, and protesters—techniques banned by DHS policy.",
+            title: `ProPublica Documents 40+ Cases of Banned Chokeholds by ICE Agents`,
+            excerpt: `Investigation reveals over 40 incidents of immigration agents using life-threatening neck restraints on immigrants, citizens, and protesters—techniques banned by DHS policy.`,
             content: `<p>ProPublica conducted an extensive investigation documenting widespread use of prohibited restraint techniques by immigration agents, directly contradicting official policy and training standards.</p>
                 <p><strong>Key findings:</strong></p>
                 <ul class="warning-highlight">
@@ -412,15 +412,15 @@ const timelineData = {
             source: "ProPublica",
             sourceUrl: "https://www.propublica.org/article/videos-ice-dhs-immigration-agents-using-chokeholds-citizens",
             mediaType: "video",
-            mediaPlaceholder: "ProPublica Investigation Video"
+            mediaPlaceholder: `ProPublica Investigation Video`
         },
         {
             id: 20,
-            date: "January 2026",
+            date: `January 2026`,
             year: 2026,
             category: "incident",
-            title: "Whistleblower: New Hires Told to Ignore Written Training on Warrantless Entry",
-            excerpt: "Senate letter reveals whistleblower complaint that new ICE hires were verbally instructed to follow guidance contradicting their written training materials on warrantless home entry.",
+            title: `Whistleblower: New Hires Told to Ignore Written Training on Warrantless Entry`,
+            excerpt: `Senate letter reveals whistleblower complaint that new ICE hires were verbally instructed to follow guidance contradicting their written training materials on warrantless home entry.`,
             content: `<p>A whistleblower complaint transmitted to the Senate Homeland Security Committee revealed a troubling disconnect between official training materials and verbal instructions given to new ICE agents.</p>
                 <p><strong>The complaint alleged:</strong></p>
                 <ul class="warning-highlight">
@@ -430,18 +430,18 @@ const timelineData = {
                 </ul>
                 <p>Senator Blumenthal transmitted the complaint to the Federal Law Enforcement Training Centers (FLETC), requesting an investigation into the alleged training contradictions.</p>
                 <p class="warning-highlight">The complaint suggests a systematic effort to circumvent constitutional training, raising serious concerns about the legal exposure of both agents and the agency.</p>`,
-            source: "Senate Homeland Security Committee",
+            source: `Senate Homeland Security Committee`,
             sourceUrl: "https://www.hsgac.senate.gov/wp-content/uploads/2026-01-21-Letter-from-Blumenthal-to-FLETC.pdf",
             mediaType: "document",
-            mediaPlaceholder: "Senate Letter Document"
+            mediaPlaceholder: `Senate Letter Document`
         },
         {
             id: 21,
-            date: "January 2026",
+            date: `January 2026`,
             year: 2026,
             category: "court",
-            title: "ACLU Files Lawsuit Over Inaccessible 287(g) Training Materials",
-            excerpt: "ACLU lawsuit reveals 287(g) officers 'cannot print out training materials' and must rely on memory when making enforcement decisions.",
+            title: `ACLU Files Lawsuit Over Inaccessible 287(g) Training Materials`,
+            excerpt: `ACLU lawsuit reveals 287(g) officers 'cannot print out training materials' and must rely on memory when making enforcement decisions.`,
             content: `<p>The ACLU of New Hampshire filed a FOIA lawsuit seeking 287(g) training documents from ICE, highlighting significant transparency concerns about how deputized local officers are prepared for immigration enforcement.</p>
                 <p><strong>The lawsuit revealed:</strong></p>
                 <ul class="warning-highlight">
@@ -451,18 +451,18 @@ const timelineData = {
                 </ul>
                 <p>The ACLU argued that "the public has a right to know" how officers deputized to enforce federal immigration law are being trained, particularly given documented cases of concerning arrests under the program in New Hampshire.</p>
                 <p class="warning-highlight">The inability to reference training materials in the field could lead to errors in complex legal situations where constitutional rights are at stake.</p>`,
-            source: "ACLU of New Hampshire",
+            source: `ACLU of New Hampshire`,
             sourceUrl: "https://www.aclu-nh.org/press-releases/aclu-nh-files-foia-lawsuit-seeking-nh-287g-training-documents-from-ice/",
             mediaType: "document",
-            mediaPlaceholder: "ACLU Lawsuit Filing"
+            mediaPlaceholder: `ACLU Lawsuit Filing`
         },
         {
             id: 22,
-            date: "January 2026",
+            date: `January 2026`,
             year: 2026,
             category: "investigation",
-            title: "Former Acting ICE Director: 'Lowered Standards Dramatically Increase Risks'",
-            excerpt: "John Sandweg warns that shortened training combined with lowered hiring standards 'increase dramatically the risks' of dangerous incidents.",
+            title: `Former Acting ICE Director: 'Lowered Standards Dramatically Increase Risks'`,
+            excerpt: `John Sandweg warns that shortened training combined with lowered hiring standards 'increase dramatically the risks' of dangerous incidents.`,
             content: `<p>John Sandweg, former acting director of ICE, provided stark warnings about the consequences of combining lowered hiring standards with shortened training programs.</p>
                 <blockquote class="warning-highlight">"When you're putting officers on the street where you have lowered the standards and you have shortened the training, you increase dramatically the risks of incidents like this."</blockquote>
                 <p><strong>Sandweg identified several compounding risk factors:</strong></p>
@@ -473,18 +473,18 @@ const timelineData = {
                     <li>Pressure that intensifies operational tactics and raises tensions</li>
                 </ul>
                 <p>Sandweg emphasized the importance of agent experience level, questioning whether agents involved in recent incidents were among the newly hired personnel with abbreviated training.</p>`,
-            source: "PBS NewsHour",
+            source: `PBS NewsHour`,
             sourceUrl: "https://www.pbs.org/newshour/show/ex-ice-chief-calls-dhs-rush-to-judgement-after-minneapolis-shooting-irresponsible",
             mediaType: "video",
-            mediaPlaceholder: "PBS NewsHour Interview"
+            mediaPlaceholder: `PBS NewsHour Interview`
         },
         {
             id: 23,
-            date: "January 2026",
+            date: `January 2026`,
             year: 2026,
             category: "investigation",
-            title: "25-Year DHS Veteran: 'Blatant Disregard for Training' in Minneapolis Shooting",
-            excerpt: "Retired ICE agent Eric Balliet analyzes video of fatal shooting, identifying multiple tactical failures and lack of de-escalation.",
+            title: `25-Year DHS Veteran: 'Blatant Disregard for Training' in Minneapolis Shooting`,
+            excerpt: `Retired ICE agent Eric Balliet analyzes video of fatal shooting, identifying multiple tactical failures and lack of de-escalation.`,
             content: `<p>Eric Balliet, a 25-year DHS veteran and retired ICE agent, conducted a detailed analysis of video from the fatal Minneapolis shooting of Renee Good, identifying multiple departures from proper federal law enforcement protocols.</p>
                 <p><strong>Balliet identified three major tactical concerns:</strong></p>
                 <ul class="warning-highlight">
@@ -494,18 +494,18 @@ const timelineData = {
                 </ul>
                 <p class="warning-highlight">Balliet emphasized that proper law enforcement requires managing surrounding tension and focusing on objectives, concluding that what he observed "isn't policing and law enforcement as I practiced it for 25 years."</p>
                 <p>His analysis disputes the DHS narrative that officers acted in legitimate self-defense.</p>`,
-            source: "CBS Minnesota",
+            source: `CBS Minnesota`,
             sourceUrl: "https://www.cbsnews.com/minnesota/news/ice-shooting-minneapolis-retired-agent-video-analysis/",
             mediaType: "video",
-            mediaPlaceholder: "CBS Minnesota Analysis Video"
+            mediaPlaceholder: `CBS Minnesota Analysis Video`
         },
         {
             id: 24,
             date: "2024-2026",
             year: 2025,
             category: "investigation",
-            title: "Physicians for Human Rights: 44% of Detainee Deaths Linked to Staffing Issues",
-            excerpt: "Medical human rights organization finds that 44% of 52 detainee deaths examined showed 'serious staffing issues, including improper training.'",
+            title: `Physicians for Human Rights: 44% of Detainee Deaths Linked to Staffing Issues`,
+            excerpt: `Medical human rights organization finds that 44% of 52 detainee deaths examined showed 'serious staffing issues, including improper training.'`,
             content: `<p>Physicians for Human Rights conducted a comprehensive review of deaths in U.S. immigration detention facilities, finding a disturbing pattern connecting fatalities to staffing and training deficiencies.</p>
                 <p><strong>Key findings:</strong></p>
                 <ul class="warning-highlight">
@@ -515,138 +515,156 @@ const timelineData = {
                 </ul>
                 <p class="warning-highlight">The report titled "Deadly Failures: Preventable Deaths in U.S. Immigration Detention" documented how training deficiencies extend beyond enforcement operations to detention facility management, with fatal consequences.</p>
                 <p>The findings suggest that training failures across ICE operations create compounding risks—from initial encounters through detention.</p>`,
-            source: "Physicians for Human Rights",
+            source: `Physicians for Human Rights`,
             sourceUrl: "https://phr.org/our-work/resources/deadly-failures-preventable-deaths-in-u-s-immigration-detention/",
             mediaType: "document",
-            mediaPlaceholder: "PHR Report Document"
+            mediaPlaceholder: `PHR Report Document`
+        },
+        {
+            id: 25,
+            date: `February 27, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `CNN Analysis: ICE Deportation Officers Among Least Trained Federal Law Enforcement Agents`,
+            excerpt: `A CNN review of training requirements across the 30 largest sworn federal officer roles found that ICE deportation officers — whose training was cut from roughly 100 days to 42 days — receive less training than almost any other federal agents, including those who investigate odometer fraud and protect fisheries.`,
+            content: `<p>A February 27, 2026 CNN analysis reviewed academy training requirements for approximately 30 sworn officer roles across the 20 largest federal law enforcement agencies. The investigation found that only U.S. Court probation officers and federal prison guards require fewer training days than ICE deportation officers.</p><p class="warning-highlight">ICE deportation officers were previously required to complete approximately 20 weeks (roughly 100 days) of training before assuming field duties. Under the Trump administration's surge hiring program, that was cut to 42 days — less than half. By contrast, IRS criminal investigators, Secret Service police officers, and Capitol Police officers receive more than double the training. Even law enforcement officers at the National Oceanic and Atmospheric Administration (who guard fisheries) and Bureau of Engraving and Printing police complete longer programs than ICE deportation officers.</p><ul><li>Former FLETC trainer Marc Brown told CNN: "They're not being adequately trained for what they're being tasked with. Some of the mistakes you would make in training, now you're making them in the field."</li><li>Whistleblower Ryan Schwank, whose congressional testimony was published the same day, said: "ICE made the program shorter, and they removed so many essential parts that what remains is a dangerous husk"</li><li>ICE did not address CNN's specific analysis but said training was streamlined "without sacrificing basic subject matter content"</li><li>CNN reported that training documents provided to Congress by the whistleblower did not reflect ICE's claim of extended 12-hour training days</li></ul>`,
+            source: "CNN",
+            sourceUrl: "https://www.cnn.com/2026/02/27/us/ice-deportation-officers-training-agents-invs",
+            mediaType: "document",
+            mediaPlaceholder: `Comparative chart of training days required across 30 federal law enforcement officer roles, showing ICE near the bottom`
         }
     ],
 
     sources: [
         {
-            type: "Government Document",
-            name: "ICE History and Formation (March 2003)",
+            type: `Government Document`,
+            name: `ICE History and Formation (March 2003)`,
             url: "https://www.ice.gov/features/history"
         },
         {
-            type: "Congressional Document",
-            name: "287(g) Program Congressional Hearing (2005)",
+            type: `Congressional Document`,
+            name: `287(g) Program Congressional Hearing (2005)`,
             url: "https://www.govinfo.gov/content/pkg/CHRG-109hhrg28332/html/CHRG-109hhrg28332.htm"
         },
         {
-            type: "Government Policy",
-            name: "DHS Use of Force Policy (June 2004)",
+            type: `Government Policy`,
+            name: `DHS Use of Force Policy (June 2004)`,
             url: "https://www.dhs.gov/sites/default/files/publications/mgmt/law-enforcement/mgmt-dir_044-05-department-policy-on-the-use-of-force.pdf"
         },
         {
-            type: "Training Information",
-            name: "FLETC ICE Training Academy",
+            type: `Training Information`,
+            name: `FLETC ICE Training Academy`,
             url: "https://www.fletc.gov/us-immigration-and-customs-enforcement-training-academy"
         },
         {
-            type: "Government Report",
-            name: "GAO Report GAO-09-109: 287(g) Controls (January 2009)",
+            type: `Government Report`,
+            name: `GAO Report GAO-09-109: 287(g) Controls (January 2009)`,
             url: "https://www.gao.gov/products/gao-09-109"
         },
         {
-            type: "Government Report",
-            name: "DHS OIG Report OIG-10-63: 287(g) Performance (March 2010)",
+            type: `Government Report`,
+            name: `DHS OIG Report OIG-10-63: 287(g) Performance (March 2010)`,
             url: "https://www.oig.dhs.gov/sites/default/files/assets/Mgmt/OIG_10-63_Mar10.pdf"
         },
         {
-            type: "Policy Analysis",
-            name: "American Immigration Council: 287(g) Program Overview",
+            type: `Policy Analysis`,
+            name: `American Immigration Council: 287(g) Program Overview`,
             url: "https://www.americanimmigrationcouncil.org/fact-sheet/287g-program-immigration/"
         },
         {
-            type: "Government Report",
-            name: "DHS OIG Alert OIG-18-42 (January 2018)",
+            type: `Government Report`,
+            name: `DHS OIG Alert OIG-18-42 (January 2018)`,
             url: "https://www.oig.dhs.gov/sites/default/files/assets/Mga/2018/oig-18-42-jan18.pdf"
         },
         {
-            type: "Government Report",
-            name: "DHS OIG Report OIG-18-77 (September 2018)",
+            type: `Government Report`,
+            name: `DHS OIG Report OIG-18-77 (September 2018)`,
             url: "https://www.oig.dhs.gov/sites/default/files/assets/2018-09/OIG-18-77-Sep18.pdf"
         },
         {
-            type: "Government Report",
-            name: "DHS OIG Report OIG-19-07 (November 2018)",
+            type: `Government Report`,
+            name: `DHS OIG Report OIG-19-07 (November 2018)`,
             url: "https://www.oig.dhs.gov/sites/default/files/assets/2018-11/OIG-19-07-Nov18.pdf"
         },
         {
-            type: "Government Report",
-            name: "GAO Report GAO-21-487 (July 2021)",
+            type: `Government Report`,
+            name: `GAO Report GAO-21-487 (July 2021)`,
             url: "https://www.gao.gov/assets/gao-21-487.pdf"
         },
         {
-            type: "Investigative Journalism",
-            name: "Type Investigations: ICE Training on Use of Force (August 2024)",
+            type: `Investigative Journalism`,
+            name: `Type Investigations: ICE Training on Use of Force (August 2024)`,
             url: "https://www.typeinvestigations.org/investigation/2024/08/12/ice-agents-training-use-of-force/"
         },
         {
-            type: "News Report",
-            name: "NBC News: ICE Vetting Failures (October 2025)",
+            type: `News Report`,
+            name: `NBC News: ICE Vetting Failures (October 2025)`,
             url: "https://www.nbcnews.com/politics/immigration/new-ice-recruits-showed-training-full-vetting-rcna238739"
         },
         {
-            type: "News Report",
-            name: "NBC News: AI Tool Malfunction (January 2026)",
+            type: `News Report`,
+            name: `NBC News: AI Tool Malfunction (January 2026)`,
             url: "https://www.nbcnews.com/politics/immigration/ice-error-meant-recruits-sent-field-offices-proper-training-sources-sa-rcna254054"
         },
         {
-            type: "Court Document",
-            name: "Chicago Headline Club v. Noem Opinion (October 2025)",
+            type: `Court Document`,
+            name: `Chicago Headline Club v. Noem Opinion (October 2025)`,
             url: "https://cst.brightspotcdn.com/49/34/daecfb4d4b86971a884bd736a564/ellisopinion.pdf"
         },
         {
-            type: "News Report",
-            name: "NPR: Homeland Security Expert on Training Cuts (January 2026)",
+            type: `News Report`,
+            name: `NPR: Homeland Security Expert on Training Cuts (January 2026)`,
             url: "https://www.npr.org/2026/01/09/nx-s1-5671120/homeland-security-expert-talks-about-ices-truncated-training-after-hiring-blitz"
         },
         {
-            type: "Investigative Journalism",
-            name: "ProPublica: ICE Agents Using Chokeholds (January 2026)",
+            type: `Investigative Journalism`,
+            name: `ProPublica: ICE Agents Using Chokeholds (January 2026)`,
             url: "https://www.propublica.org/article/videos-ice-dhs-immigration-agents-using-chokeholds-citizens"
         },
         {
-            type: "Congressional Document",
-            name: "Senator Blumenthal Letter to FLETC (January 2026)",
+            type: `Congressional Document`,
+            name: `Senator Blumenthal Letter to FLETC (January 2026)`,
             url: "https://www.hsgac.senate.gov/wp-content/uploads/2026-01-21-Letter-from-Blumenthal-to-FLETC.pdf"
         },
         {
-            type: "Policy Analysis",
-            name: "National Immigration Forum: 287(g) Training Explainer",
+            type: `Policy Analysis`,
+            name: `National Immigration Forum: 287(g) Training Explainer`,
             url: "https://forumtogether.org/article/explainer-training-under-the-revived-287g-task-force-model/"
         },
         {
-            type: "News Report",
-            name: "PBS NewsHour: Former ICE Director Interview (January 2026)",
+            type: `News Report`,
+            name: `PBS NewsHour: Former ICE Director Interview (January 2026)`,
             url: "https://www.pbs.org/newshour/show/ex-ice-chief-calls-dhs-rush-to-judgement-after-minneapolis-shooting-irresponsible"
         },
         {
-            type: "News Report",
-            name: "CBS Minnesota: Retired Agent Video Analysis (January 2026)",
+            type: `News Report`,
+            name: `CBS Minnesota: Retired Agent Video Analysis (January 2026)`,
             url: "https://www.cbsnews.com/minnesota/news/ice-shooting-minneapolis-retired-agent-video-analysis/"
         },
         {
-            type: "Medical Report",
-            name: "Physicians for Human Rights: Deadly Failures Report",
+            type: `Medical Report`,
+            name: `Physicians for Human Rights: Deadly Failures Report`,
             url: "https://phr.org/our-work/resources/deadly-failures-preventable-deaths-in-u-s-immigration-detention/"
         },
         {
-            type: "Legal Filing",
-            name: "ACLU-NH FOIA Lawsuit (January 2026)",
+            type: `Legal Filing`,
+            name: `ACLU-NH FOIA Lawsuit (January 2026)`,
             url: "https://www.aclu-nh.org/press-releases/aclu-nh-files-foia-lawsuit-seeking-nh-287g-training-documents-from-ice/"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `CNN: CNN Analysis: ICE Deportation Officers Among Least Trained F`,
+            url: "https://www.cnn.com/2026/02/27/us/ice-deportation-officers-training-agents-invs"
         }
     ],
 
     categories: {
         watchdog: {
-            label: "Watchdog Reports",
+            label: `Watchdog Reports`,
             color: "#1e40af"
         },
         court: {
-            label: "Court Cases",
+            label: `Court Cases`,
             color: "#7c2d12"
         },
         investigation: {
@@ -658,7 +676,7 @@ const timelineData = {
             color: "#991b1b"
         },
         policy: {
-            label: "Policy Changes",
+            label: `Policy Changes`,
             color: "#166534"
         }
     }
