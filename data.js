@@ -522,6 +522,19 @@ const timelineData = {
         },
         {
             id: 25,
+            date: `January 14, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `ICE Agent Shoots Venezuelan Man in North Minneapolis; Government Account Contradicted by Video`,
+            excerpt: `An ICE agent shot Julio Cesar Sosa-Celis in the leg during a north Minneapolis arrest operation. The Trump administration initially characterized the two Venezuelan men involved as violent attackers, but surveillance footage and dropped charges later contradicted the official account.`,
+            content: `<p>On January 14, 2026, an ICE agent shot Julio Cesar Sosa-Celis in the right thigh during an arrest operation in north Minneapolis. The Department of Homeland Security immediately branded Sosa-Celis and two other Venezuelan men as 'attempted murderers,' claiming they beat the ICE agent with brooms and a shovel.</p><p class="warning-highlight">The Justice Department subsequently dropped all charges against Sosa-Celis and his cousin Alfredo Aljorna in February, citing 'newly available evidence materially inconsistent with the allegations.' ICE's acting director acknowledged that two agents on the scene appeared to have made 'untruthful statements' in sworn testimony and placed them on administrative leave pending criminal investigation.</p><ul><li>City of Minneapolis surveillance footage released April 6, 2026, showed a struggle lasting approximately 12 seconds — contradicting the agents' sworn account of a 3-minute struggle.</li><li>The video does not show the men striking the officer with a shovel or broomstick; a shovel is visible on the ground for the duration of the encounter.</li><li>The federal government shifted its own narrative between a January 15 DHS press release and a January 16 DOJ charging document, with the later filing acknowledging agents had originally misidentified the driver.</li><li>The U.S. Attorney's Office stated the case was dismissed with prejudice, meaning charges cannot be refiled.</li></ul><blockquote>Acting ICE Director Todd Lyons: 'Lying under oath is a serious federal offense. The U.S. Attorney's Office is actively investigating these false statements.'</blockquote>`,
+            source: `CNN / NPR / Sahan Journal`,
+            sourceUrl: "https://www.cnn.com/2026/04/06/us/minneapolis-shooting-ice-video-immigrant",
+            mediaType: "video",
+            mediaPlaceholder: `City of Minneapolis traffic camera footage showing the 12-second struggle before the shooting`
+        },
+        {
+            id: 26,
             date: `February 27, 2026`,
             year: 2026,
             category: "investigation",
@@ -534,7 +547,7 @@ const timelineData = {
             mediaPlaceholder: `Comparative chart of training days required across 30 federal law enforcement officer roles, showing ICE near the bottom`
         },
         {
-            id: 26,
+            id: 27,
             date: `February 23, 2026`,
             year: 2026,
             category: "investigation",
@@ -547,7 +560,7 @@ const timelineData = {
             mediaPlaceholder: `Side-by-side comparison of the July 2025 and February 2026 ICE training syllabi showing eliminated courses and exams`
         },
         {
-            id: 27,
+            id: 28,
             date: `February 13, 2026`,
             year: 2026,
             category: "incident",
@@ -560,7 +573,7 @@ const timelineData = {
             mediaPlaceholder: `ICE Acting Director Todd Lyons' written statement acknowledging agents' untruthful sworn testimony`
         },
         {
-            id: 28,
+            id: 29,
             date: `March 10, 2026`,
             year: 2026,
             category: "investigation",
@@ -573,7 +586,7 @@ const timelineData = {
             mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         },
         {
-            id: 29,
+            id: 30,
             date: `March 9, 2026`,
             year: 2026,
             category: "court",
@@ -727,6 +740,11 @@ const timelineData = {
             type: `Court Document`,
             name: `OPB / Fox News / Oregon Capital Chronicle: Federal Judge Issues Injunction Finding DHS Has 'Unwritten P`,
             url: "https://www.opb.org/article/2026/03/09/federal-judge-limits-crowd-control-devices-portland-ice-building/"
+        },
+        {
+            type: `News Report`,
+            name: `CNN / NPR / Sahan Journal: ICE Agent Shoots Venezuelan Man in North Minneapolis; Govern`,
+            url: "https://www.cnn.com/2026/04/06/us/minneapolis-shooting-ice-video-immigrant"
         }
     ],
 
