@@ -822,6 +822,7 @@
         padding: 5px 10px;
     }
     .evidence-hint { font-size: 0.7rem; padding: 6px 12px; }
+    .evidence-zoom { display: none; }
 }
 
 /* Mobile: collapse view-switcher to icon-only tabs and align it vertically
