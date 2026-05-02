@@ -9,93 +9,165 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="views/views.css">
     <script>
-        // Apply saved theme immediately to avoid flash of wrong theme
+        // Apply saved view immediately so CSS that depends on data-view
+        // doesn't flash the wrong layout. Theme follows the system preference.
         (function() {
-            var t = localStorage.getItem('theme');
-            if (t) document.documentElement.setAttribute('data-theme', t);
+            var v = localStorage.getItem('view');
+            if (v !== 'timeline' && v !== 'evidence') v = 'evidence';
+            document.documentElement.setAttribute('data-view', v);
         })();
     </script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-content">
-            <h1 class="site-title">ICE Training Deficiencies</h1>
-            <p class="site-subtitle">A documented timeline of warnings, failures, and consequences</p>
-        </div>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
-    </header>
+    <div class="floating-controls" aria-label="View and theme controls">
+        <nav class="view-switcher" id="view-switcher" aria-label="Display modes">
+            <div class="view-switcher-inner">
+                <button class="view-tab active" data-view="evidence">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <rect x="4" y="5" width="7" height="9" transform="rotate(-6 7.5 9.5)"/>
+                        <rect x="12" y="8" width="7" height="9" transform="rotate(8 15.5 12.5)"/>
+                        <circle cx="7.5" cy="6" r="0.8" fill="currentColor"/>
+                        <circle cx="15.5" cy="9" r="0.8" fill="currentColor"/>
+                    </svg>
+                    <span>Evidence</span>
+                </button>
+                <button class="view-tab" data-view="timeline">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <line x1="6" y1="4" x2="6" y2="20"/>
+                        <circle cx="6" cy="7" r="1.6" fill="currentColor"/>
+                        <circle cx="6" cy="13" r="1.6" fill="currentColor"/>
+                        <circle cx="6" cy="19" r="1.6" fill="currentColor"/>
+                        <line x1="11" y1="7" x2="20" y2="7"/>
+                        <line x1="11" y1="13" x2="18" y2="13"/>
+                        <line x1="11" y1="19" x2="19" y2="19"/>
+                    </svg>
+                    <span>Timeline</span>
+                </button>
+            </div>
+        </nav>
+    </div>
 
     <nav class="timeline-nav">
         <div class="nav-content">
             <div class="search-container">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="M21 21l-4.35-4.35"></path>
-                </svg>
-                <input type="text" id="search-input" placeholder="Search events..." aria-label="Search events">
+                <input type="text" id="search-input" placeholder="Search events" aria-label="Search events">
                 <button class="clear-search" id="clear-search" aria-label="Clear search">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M18 6L6 18M6 6l12 12"></path>
                     </svg>
                 </button>
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
             </div>
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="watchdog">Watchdog Reports</button>
-                <button class="filter-btn" data-filter="court">Court Cases</button>
-                <button class="filter-btn" data-filter="investigation">Investigations</button>
-                <button class="filter-btn" data-filter="incident">Incidents</button>
-                <button class="filter-btn" data-filter="policy">Policy Changes</button>
+            <div class="filter-drawer" id="filter-drawer">
+                <button class="filter-drawer-handle" id="filter-drawer-handle" type="button"
+                        aria-controls="filter-container" aria-expanded="false">
+                    <span class="drawer-grip" aria-hidden="true"></span>
+                    <span class="drawer-label">Filter events</span>
+                </button>
+                <div class="filter-container" id="filter-container">
+                <button class="filter-btn active" data-filter="all">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                    <span>All</span>
+                </button>
+                <button class="filter-btn" data-filter="watchdog">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <span>Watchdog Reports</span>
+                </button>
+                <button class="filter-btn" data-filter="court">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <line x1="12" y1="3" x2="12" y2="21"/>
+                        <line x1="9" y1="21" x2="15" y2="21"/>
+                        <line x1="6" y1="7" x2="18" y2="7"/>
+                        <path d="M6 7l-3 6h6z"/>
+                        <path d="M18 7l-3 6h6z"/>
+                    </svg>
+                    <span>Court Cases</span>
+                </button>
+                <button class="filter-btn" data-filter="investigation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="21" y1="21" x2="16" y2="16"/>
+                    </svg>
+                    <span>Investigations</span>
+                </button>
+                <button class="filter-btn" data-filter="incident">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    <span>Incidents</span>
+                </button>
+                <button class="filter-btn" data-filter="policy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="9" y1="13" x2="15" y2="13"/>
+                        <line x1="9" y1="17" x2="13" y2="17"/>
+                    </svg>
+                    <span>Policy Changes</span>
+                </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <main class="timeline-container">
-        <div class="timeline-progress">
-            <div class="progress-bar" id="progress-bar"></div>
+    <div class="timeline-progress">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <main class="view view--timeline" data-view="timeline">
+        <div class="timeline-container">
+            <section class="executive-summary" id="summary">
+                <div class="summary-content">
+                    <h2>Summary</h2>
+                    <p class="summary-text">
+                        Since ICE's creation in 2003, government watchdogs have repeatedly warned about training deficiencies. These documented warnings about inadequate training, civil rights instruction gaps, and oversight failures have materialized in incidents of excessive force, constitutional violations, and fatal shootings.
+                    </p>
+                </div>
+            </section>
+
+            <div class="timeline" id="timeline">
+                <!-- Timeline events will be injected by JavaScript -->
+            </div>
+
+            <section class="sources-section" id="sources">
+                <h2>Sources & Documentation</h2>
+                <div class="sources-grid" id="sources-grid">
+                    <!-- Sources will be injected by JavaScript -->
+                </div>
+            </section>
         </div>
 
-        <section class="executive-summary" id="summary">
-            <div class="summary-content">
-                <h2>Summary</h2>
-                <p class="summary-text">
-                    Since ICE's creation in 2003, government watchdogs have repeatedly warned about training deficiencies. These documented warnings about inadequate training, civil rights instruction gaps, and oversight failures have materialized in incidents of excessive force, constitutional violations, and fatal shootings.
-                </p>
-            </div>
-        </section>
-
-        <div class="timeline" id="timeline">
-            <!-- Timeline events will be injected by JavaScript -->
-        </div>
-
-        <section class="sources-section" id="sources">
-            <h2>Sources & Documentation</h2>
-            <div class="sources-grid" id="sources-grid">
-                <!-- Sources will be injected by JavaScript -->
-            </div>
-        </section>
+        <footer class="site-footer">
+            <p>Data compiled from government reports, court documents, and investigative journalism.</p>
+            <p class="disclaimer">This timeline is for informational purposes. All sources are linked for verification.</p>
+        </footer>
     </main>
 
-    <footer class="site-footer">
-        <p>Data compiled from government reports, court documents, and investigative journalism.</p>
-        <p class="disclaimer">This timeline is for informational purposes. All sources are linked for verification.</p>
-    </footer>
+    <section class="view view--evidence active" data-view="evidence" aria-label="Evidence wall view">
+        <div class="evidence-frame" id="evidence-frame">
+            <div class="evidence-board" id="evidence-board">
+                <svg class="evidence-strings" id="evidence-strings" aria-hidden="true"></svg>
+                <div class="evidence-papers" id="evidence-papers"></div>
+            </div>
+        </div>
+        <div class="evidence-hint">
+            <span class="hint-key">Drag</span> to pan · <span class="hint-key">Pinch</span> or <span class="hint-key">⌘ Scroll</span> to zoom · <span class="hint-key">Click</span> any document
+        </div>
+    </section>
 
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal" id="modal">
@@ -118,5 +190,7 @@
 
     <script src="data.js"></script>
     <script src="app.js"></script>
+    <script src="views/views.js"></script>
+    <script src="views/evidence.js"></script>
 </body>
 </html>

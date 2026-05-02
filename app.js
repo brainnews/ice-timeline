@@ -18,8 +18,7 @@
         modalClose: document.getElementById('modal-close'),
         scrollTop: document.getElementById('scroll-top'),
         progressBar: document.getElementById('progress-bar'),
-        sourcesGrid: document.getElementById('sources-grid'),
-        themeToggle: document.getElementById('theme-toggle')
+        sourcesGrid: document.getElementById('sources-grid')
     };
 
     // State
@@ -27,29 +26,16 @@
     let searchQuery = '';
     let visibleEvents = new Set();
     let currentModalEventId = null;
+    const filterListeners = new Set();
+    const navigableProviders = []; // alternate views can supply navigable event lists
 
     // Initialize
     function init() {
-        initTheme();
         renderTimeline();
         renderSources();
         setupEventListeners();
         setupIntersectionObserver();
         updateScrollProgress();
-    }
-
-    // Theme management
-    function initTheme() {
-        elements.themeToggle.addEventListener('click', toggleTheme);
-    }
-
-    function toggleTheme() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const effectiveDark = current === 'dark' || (current !== 'light' && systemDark);
-        const newTheme = effectiveDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
     }
 
     // Render timeline events
@@ -149,6 +135,25 @@
             btn.addEventListener('click', () => handleFilter(btn.dataset.filter));
         });
 
+        // Mobile bottom-sheet drawer for filters: handle tap toggles open/closed.
+        // Tapping a filter pill auto-closes the sheet.
+        const drawer = document.getElementById('filter-drawer');
+        const drawerHandle = document.getElementById('filter-drawer-handle');
+        if (drawer && drawerHandle) {
+            drawerHandle.addEventListener('click', () => {
+                const open = drawer.classList.toggle('is-open');
+                drawerHandle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            elements.filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (drawer.classList.contains('is-open')) {
+                        drawer.classList.remove('is-open');
+                        drawerHandle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+
         // Modal
         elements.modalClose.addEventListener('click', closeModal);
         elements.modalOverlay.addEventListener('click', (e) => {
@@ -214,6 +219,17 @@
         filterEvents();
     }
 
+    // Determine which events match the current filter+search
+    function eventMatchesFilter(event) {
+        if (currentFilter !== 'all' && event.category !== currentFilter) return false;
+        if (searchQuery) {
+            const text = [event.title, event.excerpt, event.content, event.source, event.date]
+                .join(' ').toLowerCase();
+            if (!text.includes(searchQuery)) return false;
+        }
+        return true;
+    }
+
     // Filter events
     function filterEvents() {
         const eventElements = document.querySelectorAll('.timeline-event');
@@ -222,26 +238,7 @@
         eventElements.forEach(el => {
             const eventId = parseInt(el.dataset.eventId);
             const event = timelineData.events.find(e => e.id === eventId);
-            const category = el.dataset.category;
-
-            // Check category filter
-            const passesFilter = currentFilter === 'all' || category === currentFilter;
-
-            // Check search query
-            let passesSearch = true;
-            if (searchQuery) {
-                const searchableText = [
-                    event.title,
-                    event.excerpt,
-                    event.content,
-                    event.source,
-                    event.date
-                ].join(' ').toLowerCase();
-
-                passesSearch = searchableText.includes(searchQuery);
-            }
-
-            const isVisible = passesFilter && passesSearch;
+            const isVisible = event ? eventMatchesFilter(event) : false;
             el.classList.toggle('filtered-out', !isVisible);
 
             if (isVisible) {
@@ -262,6 +259,15 @@
 
         // Show no results message if needed
         showNoResults(visibleCount === 0);
+
+        // Broadcast to other views
+        const matchingIds = new Set(
+            timelineData.events.filter(eventMatchesFilter).map(e => e.id)
+        );
+        filterListeners.forEach(cb => {
+            try { cb({ category: currentFilter, query: searchQuery, matchingIds }); }
+            catch (e) { console.error('Filter listener error:', e); }
+        });
     }
 
     // Show no results
@@ -334,12 +340,14 @@
         elements.modalClose.focus();
     }
 
-    // Get events that are currently visible (not filtered out)
+    // Get events that are currently visible (not filtered out).
+    // Alternate views can register a custom provider via registerNavigableProvider().
     function getNavigableEvents() {
-        return timelineData.events.filter(e => {
-            const el = document.querySelector(`.timeline-event[data-event-id="${e.id}"]`);
-            return el && !el.classList.contains('filtered-out');
-        });
+        for (let i = navigableProviders.length - 1; i >= 0; i--) {
+            const list = navigableProviders[i]();
+            if (list && list.length) return list;
+        }
+        return timelineData.events.filter(eventMatchesFilter);
     }
 
     // Navigate to adjacent modal
@@ -602,4 +610,26 @@
     } else {
         init();
     }
+
+    // ========================================================================
+    // Public API for alternate views (evidence)
+    // ========================================================================
+    window.iceTimeline = {
+        openModal,
+        closeModal,
+        getEvents: () => timelineData.events,
+        getCategories: () => timelineData.categories,
+        getCategoryColor: (cat) => (timelineData.categories[cat] && timelineData.categories[cat].color) || '#888888',
+        getCategoryLabel: (cat) => (timelineData.categories[cat] && timelineData.categories[cat].label) || cat,
+        getFilterState: () => ({ category: currentFilter, query: searchQuery }),
+        eventMatches: (event) => eventMatchesFilter(event),
+        onFilterChange: (cb) => { filterListeners.add(cb); return () => filterListeners.delete(cb); },
+        registerNavigableProvider: (fn) => {
+            navigableProviders.push(fn);
+            return () => {
+                const idx = navigableProviders.indexOf(fn);
+                if (idx >= 0) navigableProviders.splice(idx, 1);
+            };
+        },
+    };
 })();
