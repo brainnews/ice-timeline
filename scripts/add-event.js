@@ -5,6 +5,8 @@ const path = require('path');
 const { loadData, saveData } = require('./lib/data');
 
 const ROOT = path.join(__dirname, '..');
+const PROPOSALS_MEDIA_DIR = path.join(ROOT, 'proposals-media');
+const IMAGES_DIR = path.join(ROOT, 'images');
 
 const MONTH_ORDER = [
   'january', 'february', 'march', 'april', 'may', 'june',
@@ -98,10 +100,52 @@ function main() {
     process.exit(1);
   }
 
-  // Strip any id from proposal — will be assigned by renumber
-  const { id: _unused, ...proposalWithoutId } = proposal;
+  // Strip any id from proposal — will be assigned by renumber.
+  // Also strip the staging-only fields (imageFile/imageAlt/imageUrl); they
+  // get folded into a `media` object below.
+  const {
+    id: _unused,
+    imageFile,
+    imageAlt,
+    imageUrl: _imgUrl,
+    mediaType,
+    mediaPlaceholder,
+    ...proposalWithoutId
+  } = proposal;
 
-  let events = insertChronologically(data.events, { ...proposalWithoutId, id: 0 });
+  let eventToInsert = { ...proposalWithoutId, id: 0 };
+
+  // If the scanner downloaded an og:image, move it into images/ and
+  // attach a media block. Drop mediaType/mediaPlaceholder when we have a
+  // real image so the evidence board renders the photo, not a fallback.
+  if (imageFile) {
+    const stagedPath = path.join(PROPOSALS_MEDIA_DIR, imageFile);
+    if (fs.existsSync(stagedPath)) {
+      fs.mkdirSync(IMAGES_DIR, { recursive: true });
+      const finalPath = path.join(IMAGES_DIR, imageFile);
+      fs.renameSync(stagedPath, finalPath);
+      eventToInsert.media = {
+        type: 'image',
+        src: `images/${imageFile}`,
+        alt: imageAlt || proposal.title,
+        caption: `${proposal.source} — ${proposal.date}`,
+      };
+      console.log(`  Image: images/${imageFile}`);
+    } else {
+      console.warn(`  Warning: imageFile referenced but not found: ${stagedPath}`);
+      if (mediaType && mediaPlaceholder) {
+        eventToInsert.mediaType = mediaType;
+        eventToInsert.mediaPlaceholder = mediaPlaceholder;
+      }
+    }
+  } else if (mediaType && mediaPlaceholder) {
+    // No real image — preserve the placeholder so the timeline modal can
+    // show the textual cue.
+    eventToInsert.mediaType = mediaType;
+    eventToInsert.mediaPlaceholder = mediaPlaceholder;
+  }
+
+  let events = insertChronologically(data.events, eventToInsert);
   events = renumberIds(events);
 
   const insertedEvent = events.find(e => e.sourceUrl === proposal.sourceUrl);

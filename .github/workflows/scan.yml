@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add proposals/
+          git add proposals/ proposals-media/ 2>/dev/null || git add proposals/
           COUNT=$(git diff --cached --name-only -- 'proposals/*.json' | wc -l | tr -d ' ')
           if [ "$COUNT" -gt "0" ]; then
             git commit -m "chore: add ${COUNT} news scan proposal(s) [$(date +%Y-%m-%d)]"

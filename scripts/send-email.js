@@ -43,6 +43,7 @@ function buildEventSection(proposal, filename, workerUrl, secret) {
       <h2 style="margin:0 0 8px;font-size:16px;line-height:1.4;color:#111827;font-weight:600;">
         ${escapeHtml(proposal.title)}
       </h2>
+      ${proposal.imageUrl ? `<img src="${escapeHtml(proposal.imageUrl)}" alt="${escapeHtml(proposal.imageAlt || '')}" style="display:block;width:100%;max-width:520px;height:auto;border-radius:6px;border:1px solid #e5e7eb;margin:0 0 12px;">` : ''}
       <p style="margin:0 0 10px;font-size:14px;line-height:1.5;color:#374151;">
         ${escapeHtml(proposal.excerpt)}
       </p>

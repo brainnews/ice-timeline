@@ -4,9 +4,11 @@ const Anthropic = require('@anthropic-ai/sdk');
 const fs = require('fs');
 const path = require('path');
 const { loadData } = require('./lib/data');
+const { downloadOgImage } = require('./lib/og-image');
 
 const ROOT = path.join(__dirname, '..');
 const PROPOSALS_DIR = path.join(ROOT, 'proposals');
+const PROPOSALS_MEDIA_DIR = path.join(ROOT, 'proposals-media');
 
 const VALID_CATEGORIES = ['watchdog', 'court', 'investigation', 'incident', 'policy'];
 const VALID_MEDIA_TYPES = ['document', 'video', 'audio', 'image'];
@@ -154,6 +156,21 @@ async function main() {
     const slug = slugify(proposal.title);
     const filename = `${dateStr}-${slug}.json`;
     const filepath = path.join(PROPOSALS_DIR, filename);
+
+    // Best-effort: download the article's og:image into proposals-media/.
+    // The file is committed alongside the proposal so it's available at
+    // approval time even though the worker runs later. Failures are
+    // non-fatal — the proposal is still saved without media.
+    const mediaSlug = `${dateStr}-${slug}`;
+    const og = await downloadOgImage(proposal.sourceUrl, mediaSlug, PROPOSALS_MEDIA_DIR);
+    if (og.ok) {
+      proposal.imageFile = og.filename;
+      proposal.imageAlt = og.alt || proposal.title;
+      proposal.imageUrl = og.imageUrl;
+      console.log(`    og:image → ${og.filename}`);
+    } else {
+      console.log(`    og:image skipped (${og.reason})`);
+    }
 
     fs.writeFileSync(filepath, JSON.stringify(proposal, null, 2));
     console.log(`  Saved: ${filename}`);
