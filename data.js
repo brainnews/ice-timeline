@@ -302,8 +302,12 @@ const timelineData = {
                 <p class="warning-highlight">One official raised the concerning question: "What about the ones who don't admit it?"—referring to potentially undiscovered disqualifying issues among those who passed screening.</p>`,
             source: `NBC News`,
             sourceUrl: "https://www.nbcnews.com/politics/immigration/new-ice-recruits-showed-training-full-vetting-rcna238739",
-            mediaType: "image",
-            mediaPlaceholder: `NBC News Investigation`
+            media: {
+                type: "image",
+                src: "images/ice-recruits-nbc-2025.jpg",
+                alt: `ICE recruits in training, October 2025.`,
+                caption: `ICE recruits in training. (NBC News, October 2025)`
+            }
         },
         {
             id: 15,
@@ -384,9 +388,7 @@ const timelineData = {
                 <p class="warning-highlight">One official noted that "a bunch of the people who were LEOs weren't LEOs," meaning many lacked any actual law enforcement experience but received abbreviated training designed for experienced officers.</p>
                 <p>The error was discovered in mid-fall, and ICE subsequently implemented manual resume reviews to correct the problem.</p>`,
             source: `NBC News`,
-            sourceUrl: "https://www.nbcnews.com/politics/immigration/ice-error-meant-recruits-sent-field-offices-proper-training-sources-sa-rcna254054",
-            mediaType: "image",
-            mediaPlaceholder: `AI Classification Error Diagram`
+            sourceUrl: "https://www.nbcnews.com/politics/immigration/ice-error-meant-recruits-sent-field-offices-proper-training-sources-sa-rcna254054"
         },
         {
             id: 19,
@@ -431,9 +433,7 @@ const timelineData = {
                 <p>Senator Blumenthal transmitted the complaint to the Federal Law Enforcement Training Centers (FLETC), requesting an investigation into the alleged training contradictions.</p>
                 <p class="warning-highlight">The complaint suggests a systematic effort to circumvent constitutional training, raising serious concerns about the legal exposure of both agents and the agency.</p>`,
             source: `Senate Homeland Security Committee`,
-            sourceUrl: "https://www.hsgac.senate.gov/wp-content/uploads/2026-01-21-Letter-from-Blumenthal-to-FLETC.pdf",
-            mediaType: "document",
-            mediaPlaceholder: `Senate Letter Document`
+            sourceUrl: "https://www.hsgac.senate.gov/wp-content/uploads/2026-01-21-Letter-from-Blumenthal-to-FLETC.pdf"
         },
         {
             id: 21,
