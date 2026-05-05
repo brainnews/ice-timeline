@@ -47,7 +47,11 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add -A proposals/ proposals-media/ 2>/dev/null || git add -A proposals/
             git commit -m "chore: prune ${PRUNED} proposal(s) older than 28 days"
-            git push
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "Push attempt $i failed; retrying..."
+              sleep 2
+            done
           fi
 
       - name: Run news scan
@@ -67,7 +71,11 @@ jobs:
           COUNT=$(git diff --cached --name-only -- 'proposals/*.json' | wc -l | tr -d ' ')
           if [ "$COUNT" -gt "0" ]; then
             git commit -m "chore: add ${COUNT} news scan proposal(s) [$(date +%Y-%m-%d)]"
-            git push
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "Push attempt $i failed; retrying..."
+              sleep 2
+            done
             echo "Committed $COUNT proposal(s)"
           else
             echo "No new proposal files to commit"
