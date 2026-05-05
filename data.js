@@ -619,6 +619,23 @@ const timelineData = {
             sourceUrl: "https://www.propublica.org/article/caught-in-crackdown-ice-cbp-doj-trump-arrests-convictions",
             mediaType: "video",
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
+        },
+        {
+            id: 33,
+            date: `April 2, 2026`,
+            year: 2026,
+            category: "court",
+            title: `ACLU Lawsuit Challenges Secret ICE 'Home Entry Memo'; Trainers Told to Ignore Written Materials`,
+            excerpt: `Six Minnesota residents, represented by the ACLU and Protect Democracy, filed a federal lawsuit challenging a secret DHS memo authorizing ICE agents to enter homes without judicial warrants. The complaint cited congressional testimony that FLETC instructors were verbally directing new agents to follow the memo and disregard written training materials.`,
+            content: `<p>On April 2, 2026, six Minnesota residents filed a federal lawsuit in D.C. district court challenging a secret May 2025 DHS directive — dubbed the "Home Entry Memo" or "Lyons Memo" — that authorized ICE agents to use administrative (non-judicial) warrants to forcibly enter and search homes.</p><p class="warning-highlight">The lawsuit cited congressional testimony by whistleblower Ryan Schwank, a former ICE attorney, that Federal Law Enforcement Training Center instructors were now directed to verbally train all new ICE agents to follow the Home Entry Memo — while explicitly instructing them to disregard the written course materials, which stated the opposite. No written record of these instructions was kept.</p><ul><li>The plaintiffs included Garrison and Teyana Gibson, whose north Minneapolis home was raided by masked agents using a battering ram on January 11, 2026, while their 11-year-old daughter, niece, and sister-in-law were inside.</li><li>The lawsuit described the policy as a "flagrantly unconstitutional" departure from decades of ICE training that agents must obtain judicial warrants before entering homes.</li><li>The complaint alleged the memo was "conducted under a veil of secrecy" — agents were shown the memo but prohibited from taking notes or keeping a copy.</li><li>A separate federal judge had already ruled in January 2026 that agents violated the Fourth Amendment in the Gibson raid specifically.</li><li>Incoming DHS Secretary Markwayne Mullin testified at his confirmation hearing that he would review the policy and ensure it was consistent with the Constitution, though advocates said no formal reversal had been issued at the time of filing.</li></ul>`,
+            source: `Courthouse News Service`,
+            sourceUrl: "https://courthousenews.com/minnesotans-sue-feds-over-warrantless-ice-raids/",
+            media: {
+                type: "image",
+                src: "images/2026-05-04-aclu-lawsuit-challenges-secret-ice-home-entry-memo.jpg",
+                alt: `Law enforcement officers stand amid tear gas at the scene of a reported shooting Wednesday, Jan. 14, 2026, in Minneapolis. (AP Photo/Adam Gray)`,
+                caption: `Courthouse News Service — April 2, 2026`
+            }
         }
     ],
 
@@ -777,6 +794,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `ProPublica / FRONTLINE: ProPublica/FRONTLINE 'Caught in the Crackdown': 300+ Protest`,
             url: "https://www.propublica.org/article/caught-in-crackdown-ice-cbp-doj-trump-arrests-convictions"
+        },
+        {
+            type: `Court Document`,
+            name: `Courthouse News Service: ACLU Lawsuit Challenges Secret ICE 'Home Entry Memo'; Traine`,
+            url: "https://courthousenews.com/minnesotans-sue-feds-over-warrantless-ice-raids/"
         }
     ],
 
