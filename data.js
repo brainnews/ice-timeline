@@ -533,6 +533,23 @@ const timelineData = {
         },
         {
             id: 26,
+            date: `January 30, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `Medical Examiner Rules ICE Detainee Death at Fort Bliss a Homicide`,
+            excerpt: `The El Paso County medical examiner ruled that Geraldo Lunas Campos, 55, died of 'asphyxia due to neck and torso compression' while being restrained by guards at ICE's Camp East Montana facility — classifying his death as a homicide. ICE had previously described his death as 'medical distress.'`,
+            content: `<p>Geraldo Lunas Campos, 55, a Cuban national, died on January 3, 2026, at the Camp East Montana ICE detention facility at Fort Bliss in El Paso, Texas. On January 30, the final autopsy report — obtained by NBC News via a FOIA request — classified the death as a homicide.</p><p class="warning-highlight">The medical examiner found the cause of death to be "asphyxia due to neck and torso compression," noting that Lunas Campos "was witnessed to become unresponsive while being physically restrained by law enforcement." ICE's original January 9 press release had described his death as resulting from "medical distress" with no mention of physical restraint.</p><ul><li>Fellow detainees testified they heard Lunas Campos pleading for medication before guards tackled him; one witness said a guard told him, "Shut up, or we're going to make you faint."</li><li>Lunas Campos was one of three detainees to die at Camp East Montana, a tent facility at Fort Bliss opened in August 2025 with capacity for up to 5,000 people, in less than six weeks.</li><li>The Texas Civil Rights Project stated the homicide ruling "completely dispels the government's claim that this was a suicide."</li><li>ICE maintained the death was under active investigation and said it "takes seriously the health and safety of all those detained in our custody."</li><li>A wrongful-death lawsuit filed by Lunas Campos's family was ongoing as of March 2026.</li></ul>`,
+            source: `NBC News`,
+            sourceUrl: "https://www.nbcnews.com/news/us-news/lunas-campos-ice-detainee-homicide-autopsy-rcna256566",
+            media: {
+                type: "image",
+                src: "images/2026-05-04-medical-examiner-rules-ice-detainee-death-at-fort.jpg",
+                alt: `Medical Examiner Rules ICE Detainee Death at Fort Bliss a Homicide`,
+                caption: `NBC News — January 30, 2026`
+            }
+        },
+        {
+            id: 27,
             date: `February 27, 2026`,
             year: 2026,
             category: "investigation",
@@ -545,7 +562,7 @@ const timelineData = {
             mediaPlaceholder: `Comparative chart of training days required across 30 federal law enforcement officer roles, showing ICE near the bottom`
         },
         {
-            id: 27,
+            id: 28,
             date: `February 23, 2026`,
             year: 2026,
             category: "investigation",
@@ -558,7 +575,7 @@ const timelineData = {
             mediaPlaceholder: `Side-by-side comparison of the July 2025 and February 2026 ICE training syllabi showing eliminated courses and exams`
         },
         {
-            id: 28,
+            id: 29,
             date: `February 13, 2026`,
             year: 2026,
             category: "incident",
@@ -569,7 +586,7 @@ const timelineData = {
             sourceUrl: "https://www.npr.org/2026/02/13/nx-s1-5713947/immigration-agents-lie-minnesota"
         },
         {
-            id: 29,
+            id: 30,
             date: `February 3, 2026`,
             year: 2026,
             category: "investigation",
@@ -586,7 +603,7 @@ const timelineData = {
             }
         },
         {
-            id: 30,
+            id: 31,
             date: `March 10, 2026`,
             year: 2026,
             category: "investigation",
@@ -599,7 +616,7 @@ const timelineData = {
             mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         },
         {
-            id: 31,
+            id: 32,
             date: `March 9, 2026`,
             year: 2026,
             category: "court",
@@ -612,7 +629,7 @@ const timelineData = {
             mediaPlaceholder: `Court order text with highlighted finding of 'unwritten policy' of excessive force; video stills submitted as evidence`
         },
         {
-            id: 32,
+            id: 33,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -625,7 +642,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 33,
+            id: 34,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -638,7 +655,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 34,
+            id: 35,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -655,7 +672,7 @@ const timelineData = {
             }
         },
         {
-            id: 35,
+            id: 36,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -843,6 +860,11 @@ const timelineData = {
             type: `News Report`,
             name: `Democracy Now!: ICE Custody Deaths Reach 17 in 2026 — Averaging One Per Week`,
             url: "https://www.democracynow.org/2026/4/21/ice_custody_deaths_ghandehari_detention_watch"
+        },
+        {
+            type: `News Report`,
+            name: `NBC News: Medical Examiner Rules ICE Detainee Death at Fort Bliss a Ho`,
+            url: "https://www.nbcnews.com/news/us-news/lunas-campos-ice-detainee-homicide-autopsy-rcna256566"
         }
     ],
 
