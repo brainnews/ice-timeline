@@ -570,6 +570,23 @@ const timelineData = {
         },
         {
             id: 29,
+            date: `February 3, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `CS Monitor: Dozens of Excessive Force Tort Claims Filed Against ICE Since Mid-2025`,
+            excerpt: `A Christian Science Monitor review of over a dozen federal tort claims, filed between June and December 2025, documented a pattern of injuries — including bruises, lacerations, and head injuries — suffered by people during ICE and Border Patrol encounters, raising questions about agent accountability under sovereign immunity.`,
+            content: `<p>A February 2026 investigation by The Christian Science Monitor reviewed more than a dozen Federal Tort Claims Act (FTCA) filings against ICE and CBP, submitted between June and December 2025, in which claimants described being physically assaulted or detained without cause during immigration enforcement operations.</p><p class="warning-highlight">Claimants described leaving encounters with bruises, lacerations, and head injuries. Nearly a dozen alleged they were tackled or thrown to the ground, and multiple claimants said officers pushed their knees into detainees' faces, necks, or backs. One man said agents pepper sprayed him before repeatedly punching him in the face and head.</p><ul><li>The article documented that the surge in urban immigration operations had made encounters between civilians and federal law enforcement more common, and that these complaints were not isolated incidents but part of a documented pattern.</li><li>The federal government and its employees are generally shielded by sovereign immunity from being sued for official acts — a protection that does not apply to state and local law enforcement — limiting legal recourse for victims.</li><li>Attorneys noted that "all of this really highlights the lack of federal accountability" for constitutional violations by immigration agents.</li><li>ICE and DHS did not respond to requests for comment for the article.</li></ul>`,
+            source: `The Christian Science Monitor`,
+            sourceUrl: "https://www.csmonitor.com/USA/Justice/2026/0203/homeland-security-excessive-force-ice-immigration",
+            media: {
+                type: "image",
+                src: "images/2026-05-04-cs-monitor-dozens-of-excessive-force-tort-claims-f.jpg",
+                alt: `CS Monitor: Dozens of Excessive Force Tort Claims Filed Against ICE Since Mid-2025`,
+                caption: `The Christian Science Monitor — February 3, 2026`
+            }
+        },
+        {
+            id: 30,
             date: `March 10, 2026`,
             year: 2026,
             category: "investigation",
@@ -582,7 +599,7 @@ const timelineData = {
             mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         },
         {
-            id: 30,
+            id: 31,
             date: `March 9, 2026`,
             year: 2026,
             category: "court",
@@ -595,7 +612,7 @@ const timelineData = {
             mediaPlaceholder: `Court order text with highlighted finding of 'unwritten policy' of excessive force; video stills submitted as evidence`
         },
         {
-            id: 31,
+            id: 32,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -608,7 +625,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 32,
+            id: 33,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -621,7 +638,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 33,
+            id: 34,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -799,6 +816,11 @@ const timelineData = {
             type: `Court Document`,
             name: `Courthouse News Service: ACLU Lawsuit Challenges Secret ICE 'Home Entry Memo'; Traine`,
             url: "https://courthousenews.com/minnesotans-sue-feds-over-warrantless-ice-raids/"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `The Christian Science Monitor: CS Monitor: Dozens of Excessive Force Tort Claims Filed Agai`,
+            url: "https://www.csmonitor.com/USA/Justice/2026/0203/homeland-security-excessive-force-ice-immigration"
         }
     ],
 
