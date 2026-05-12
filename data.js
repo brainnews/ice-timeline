@@ -630,6 +630,23 @@ const timelineData = {
         },
         {
             id: 33,
+            date: `March 7, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `CBS News Bodycam Video Contradicts ICE Account of Martinez Shooting; Car Was Barely Moving`,
+            excerpt: `CBS News obtained police body camera footage of the March 2025 ICE shooting of U.S. citizen Ruben Ray Martinez, showing his car was barely moving when he was shot and no agent appeared to be in front of the vehicle — directly contradicting DHS's claim that the agent fired defensively after being run over.`,
+            content: `<p>CBS News obtained police body camera footage of the March 15, 2025, fatal shooting of Ruben Ray Martinez and published its analysis on March 7, 2026.</p><p class="warning-highlight">The footage showed Martinez being shot three times at close range through his vehicle window. Attorneys for his family said the video confirms 'Ruben's car was barely moving when he was shot,' that 'nobody was on the hood of his car,' and that 'nobody was in front of his car when he was shot' — all contradicting DHS's public account.</p><ul><li>After being shot, Martinez was pulled from his vehicle, thrown face-down, and handcuffed. Medical care was not provided until after he was handcuffed.</li><li>DHS's acting ICE director Todd Lyons defended the outcome: 'We stand by the grand jury's unanimous decision that found no criminality.'</li><li class="warning-highlight">The footage raised further questions about accountability mechanisms when ICE agents use deadly force with no body camera requirement for deportation officers.</li></ul>`,
+            source: `CBS News`,
+            sourceUrl: "https://www.cbsnews.com/news/bodycam-video-ice-fatal-shooting-ruben-ray-martinez-texas/",
+            media: {
+                type: "image",
+                src: "images/2026-05-11-cbs-news-bodycam-video-contradicts-ice-account-of.jpg",
+                alt: `CBS News Bodycam Video Contradicts ICE Account of Martinez Shooting; Car Was Barely Moving`,
+                caption: `CBS News — March 7, 2026`
+            }
+        },
+        {
+            id: 34,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -642,7 +659,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 34,
+            id: 35,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -655,7 +672,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 35,
+            id: 36,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -672,7 +689,7 @@ const timelineData = {
             }
         },
         {
-            id: 36,
+            id: 37,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -865,6 +882,11 @@ const timelineData = {
             type: `News Report`,
             name: `NBC News: Medical Examiner Rules ICE Detainee Death at Fort Bliss a Ho`,
             url: "https://www.nbcnews.com/news/us-news/lunas-campos-ice-detainee-homicide-autopsy-rcna256566"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `CBS News: CBS News Bodycam Video Contradicts ICE Account of Martinez S`,
+            url: "https://www.cbsnews.com/news/bodycam-video-ice-fatal-shooting-ruben-ray-martinez-texas/"
         }
     ],
 
