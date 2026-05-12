@@ -604,6 +604,23 @@ const timelineData = {
         },
         {
             id: 31,
+            date: `February 20, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `ICE Concealed Killing of U.S. Citizen Ruben Ray Martinez for Nearly 11 Months`,
+            excerpt: `American Oversight obtained internal FOIA records revealing that an ICE agent fatally shot 23-year-old U.S. citizen Ruben Ray Martinez in Texas in March 2025 — the first known ICE killing of a U.S. citizen in Trump's second term. ICE's involvement was not publicly disclosed for nearly 11 months.`,
+            content: `<p>On March 15, 2025, federal immigration agents fatally shot Ruben Ray Martinez, 23, a U.S. citizen from San Antonio, on South Padre Island, Texas, while assisting local police with traffic control. The incident was reported locally but ICE's involvement was concealed.</p><p class="warning-highlight">American Oversight obtained internal records through FOIA that confirmed ICE's role. DHS did not publicly acknowledge its involvement until February 2026 — nearly 11 months after the shooting — making Martinez the first publicly known U.S. citizen killed by immigration agents during Trump's second term.</p><ul><li>DHS claimed Martinez 'intentionally ran over' an agent; body camera footage later obtained by CBS News appeared to contradict this account, showing the car was barely moving and no agent was in front of the vehicle when shots were fired.</li><li>A witness in Martinez's vehicle, Joshua Orta, stated in a sworn affidavit that Martinez 'did not hit anyone' and was shot at point-blank range 'without warning.'</li><li>A Texas grand jury declined to indict the agent in February 2026. Orta died in an unrelated car crash days after the grand jury decision.</li><li class="warning-highlight">Congressional Democrats called the delay an '8-month cover-up' and demanded a full investigation into both the shooting and the failure to disclose ICE's role.</li></ul>`,
+            source: `American Oversight / Newsweek`,
+            sourceUrl: "https://americanoversight.org/lawmakers-call-for-investigation-after-records-reveal-undisclosed-ice-shooting-death-of-u-s-citizen/",
+            media: {
+                type: "image",
+                src: "images/2026-05-11-ice-concealed-killing-of-us-citizen-ruben-ray-mart.png",
+                alt: `ICE Concealed Killing of U.S. Citizen Ruben Ray Martinez for Nearly 11 Months`,
+                caption: `American Oversight / Newsweek — February 20, 2026`
+            }
+        },
+        {
+            id: 32,
             date: `March 10, 2026`,
             year: 2026,
             category: "investigation",
@@ -616,7 +633,7 @@ const timelineData = {
             mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         },
         {
-            id: 32,
+            id: 33,
             date: `March 9, 2026`,
             year: 2026,
             category: "court",
@@ -629,7 +646,7 @@ const timelineData = {
             mediaPlaceholder: `Court order text with highlighted finding of 'unwritten policy' of excessive force; video stills submitted as evidence`
         },
         {
-            id: 33,
+            id: 34,
             date: `March 7, 2026`,
             year: 2026,
             category: "investigation",
@@ -646,7 +663,7 @@ const timelineData = {
             }
         },
         {
-            id: 34,
+            id: 35,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -659,7 +676,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 35,
+            id: 36,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -672,7 +689,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 36,
+            id: 37,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -689,7 +706,7 @@ const timelineData = {
             }
         },
         {
-            id: 37,
+            id: 38,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -706,7 +723,7 @@ const timelineData = {
             }
         },
         {
-            id: 38,
+            id: 39,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -909,6 +926,11 @@ const timelineData = {
             type: `Court Document`,
             name: `ACLU of D.C.: D.C. Federal Judge Blocks ICE 'Lyons Memo' Arrest Standard, `,
             url: "https://www.acludc.org/press-releases/federal-court-requires-trump-comply-warrantless-arrests/"
+        },
+        {
+            type: `News Report`,
+            name: `American Oversight / Newsweek: ICE Concealed Killing of U.S. Citizen Ruben Ray Martinez for`,
+            url: "https://americanoversight.org/lawmakers-call-for-investigation-after-records-reveal-undisclosed-ice-shooting-death-of-u-s-citizen/"
         }
     ],
 
