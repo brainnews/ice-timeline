@@ -772,6 +772,23 @@ const timelineData = {
                 alt: `Rhode Island Federal Judge Orders Disciplinary Investigation After ICE Attorneys Concealed Murder Warrant`,
                 caption: `Rhode Island Current — May 5, 2026`
             }
+        },
+        {
+            id: 42,
+            date: `May 1, 2026`,
+            year: 2026,
+            category: "court",
+            title: `Trump-Appointed Federal Judge (EDNY): ICE Arrest Practices Are 'Perversion of Customary Law Enforcement'`,
+            excerpt: `U.S. District Judge Gary Brown, a Trump appointee in the Eastern District of New York, ruled that testimony from three ICE agents about Long Island arrests demonstrated that 'arrest and detention practices deployed by ICE constitute a perversion of customary law enforcement practices in America.' He ordered ICE to file a plan ensuring future lawful enforcement.`,
+            content: `<p>In a ruling published in March 2026 and reported publicly in May 2026, U.S. District Judge Gary Brown — appointed to the Eastern District of New York by President Trump during his first term — delivered a withering assessment of ICE training following testimony from three federal agents about arrests they made on Long Island.</p><blockquote class="warning-highlight">'Collectively, the officers' testimony illustrates that arrest and detention practices deployed by ICE constitute a perversion of customary law enforcement practices in America.' — Judge Gary Brown, EDNY</blockquote><p class="warning-highlight">Former ICE whistleblower Schwank, commenting on the ruling, said: 'If they don't know they can't do something, then they're more likely to do it. And if these officers don't know things like who is or is not amenable to an arrest, that's a strong indicator that they don't know what the limits are on their arrest authority.'</p><ul><li>Brown ordered the government to file a response within 21 days 'identifying the steps that will be taken to ensure that future ICE enforcement actions within the Eastern District of New York shall be conducted in a lawful manner.'</li><li>One of the arrested individuals had Special Immigrant Juvenile status and deferred action — suggesting agents were unaware of categories of individuals protected from removal.</li><li>A former ICE trainer who reviewed the testimony told Spectrum News NY1: 'They needed a refresher class. Had they had that, it may have changed how this went down.'</li></ul>`,
+            source: `Spectrum News NY1`,
+            sourceUrl: "https://spectrumlocalnews.com/nys/central-ny/news/2026/05/01/ny1-exclusive--former-ice-trainer-says-local-agents-need-more-training-when-testifying-in-arrests",
+            media: {
+                type: "image",
+                src: "images/2026-05-11-trump-appointed-federal-judge-edny-ice-arrest-prac.jpg",
+                alt: `Trump-Appointed Federal Judge (EDNY): ICE Arrest Practices Are 'Perversion of Customary Law Enforcement'`,
+                caption: `Spectrum News NY1 — May 1, 2026`
+            }
         }
     ],
 
@@ -975,6 +992,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `Stateline: Stateline/WSJ Investigation: Pattern of Conflicting DHS Acco`,
             url: "https://stateline.org/2026/01/23/footage-documents-at-odds-with-dhs-accounts-of-immigration-enforcement-incidents/"
+        },
+        {
+            type: `Court Document`,
+            name: `Spectrum News NY1: Trump-Appointed Federal Judge (EDNY): ICE Arrest Practices A`,
+            url: "https://spectrumlocalnews.com/nys/central-ny/news/2026/05/01/ny1-exclusive--former-ice-trainer-says-local-agents-need-more-training-when-testifying-in-arrests"
         }
     ],
 
