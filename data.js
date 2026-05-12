@@ -704,6 +704,23 @@ const timelineData = {
                 alt: `ICE Custody Deaths Reach 17 in 2026 — Averaging One Per Week, Highest in Two Decades`,
                 caption: `Democracy Now! — April 21, 2026`
             }
+        },
+        {
+            id: 38,
+            date: `May 7, 2026`,
+            year: 2026,
+            category: "court",
+            title: `D.C. Federal Judge Blocks ICE 'Lyons Memo' Arrest Standard, Citing Flawed Guidance Pushed to New Officers`,
+            excerpt: `U.S. District Judge Beryl A. Howell of D.C. ordered ICE not to rely on a January 2026 memo by acting director Todd Lyons that had stripped community ties from the probable cause analysis for warrantless arrests — a memo that whistleblowers said was used to train new ICE officers and contradicted existing written training materials.`,
+            content: `<p>On May 7, 2026, Judge Beryl A. Howell of the U.S. District Court for the District of Columbia granted plaintiffs' motion and ordered that federal agents could not rely on the 'Lyons memo' — a five-page January 2026 memo from acting ICE Director Todd Lyons — when conducting civil immigration arrests without a warrant in the District.</p><p class="warning-highlight">The ACLU and plaintiffs had presented evidence of dozens of arrests in which agents made no effort to assess community ties, and a supplemental brief showed that new ICE officers were being trained to follow the Lyons memo's guidance instead of written training materials that actually contradicted it.</p><blockquote class="warning-highlight">'The Lyons memo stripped community ties out of the probable cause analysis entirely, narrowed the meaning of escape risk past the breaking point, and handed agents a green light to arrest D.C. residents on sight.' — National Immigration Project attorney Yulie Landan</blockquote><ul><li>The ruling built on a preliminary injunction already in place and comprehensively rejected what advocates described as ICE's 'arrest first, ask questions later' policy in D.C.</li><li>The court found that 'ICE leadership took a federal statute and wrote a memo telling officers to ignore most of it.'</li><li class="warning-highlight">The Lyons memo had been in use nationally — not just in D.C. — raising questions about whether officers across the country were trained on legally deficient arrest standards.</li></ul>`,
+            source: `ACLU of D.C.`,
+            sourceUrl: "https://www.acludc.org/press-releases/federal-court-requires-trump-comply-warrantless-arrests/",
+            media: {
+                type: "image",
+                src: "images/2026-05-11-dc-federal-judge-blocks-ice-lyons-memo-arrest-stan.png",
+                alt: `D.C. Federal Judge Blocks ICE 'Lyons Memo' Arrest Standard, Citing Flawed Guidance Pushed to New Officers`,
+                caption: `ACLU of D.C. — May 7, 2026`
+            }
         }
     ],
 
@@ -887,6 +904,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `CBS News: CBS News Bodycam Video Contradicts ICE Account of Martinez S`,
             url: "https://www.cbsnews.com/news/bodycam-video-ice-fatal-shooting-ruben-ray-martinez-texas/"
+        },
+        {
+            type: `Court Document`,
+            name: `ACLU of D.C.: D.C. Federal Judge Blocks ICE 'Lyons Memo' Arrest Standard, `,
+            url: "https://www.acludc.org/press-releases/federal-court-requires-trump-comply-warrantless-arrests/"
         }
     ],
 
