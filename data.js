@@ -550,6 +550,23 @@ const timelineData = {
         },
         {
             id: 27,
+            date: `January 23, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `Stateline/WSJ Investigation: Pattern of Conflicting DHS Accounts Across 17 Shooting Incidents`,
+            excerpt: `Stateline documented a pattern in which DHS repeatedly claimed self-defense in use-of-force incidents while video and witness accounts contradicted official narratives. A Wall Street Journal investigation separately found 13 incidents since July 2025 in which immigration agents fired at or into civilian vehicles.`,
+            content: `<p>A Stateline investigation published January 23, 2026, documented a systemic pattern of DHS providing public accounts of use-of-force incidents that were later contradicted by video footage, eyewitness testimony, or official revisions.</p><ul><li class="warning-highlight">Since July 2025, at least 17 open-fire incidents involved federal immigration agents, per data from The Trace.</li><li class="warning-highlight">A Wall Street Journal visual investigation found 13 incidents in that period in which immigration agents fired at or into civilian vehicles.</li><li>In a December 2025 Glen Burnie, Maryland, shooting, DHS revised its account after local police contradicted its initial version — one injured man was already in custody inside an ICE vehicle when he was shot.</li><li>In August 2025, DHS justified a San Bernardino, CA, family vehicle shooting as self-defense; surveillance footage did not show agents being struck by the vehicle.</li><li>DHS did not respond to multiple requests for comment from Stateline on the discrepancies.</li></ul><blockquote class="warning-highlight">'A growing pattern of aggressive tactics and conflicting evidence has raised serious questions about how federal immigration agents use lethal and less-lethal force, and how DHS officials describe the incidents to the public.'</blockquote>`,
+            source: "Stateline",
+            sourceUrl: "https://stateline.org/2026/01/23/footage-documents-at-odds-with-dhs-accounts-of-immigration-enforcement-incidents/",
+            media: {
+                type: "image",
+                src: "images/2026-05-11-statelinewsj-investigation-pattern-of-conflicting.jpg",
+                alt: `Stateline/WSJ Investigation: Pattern of Conflicting DHS Accounts Across 17 Shooting Incidents`,
+                caption: `Stateline — January 23, 2026`
+            }
+        },
+        {
+            id: 28,
             date: `February 27, 2026`,
             year: 2026,
             category: "investigation",
@@ -562,7 +579,7 @@ const timelineData = {
             mediaPlaceholder: `Comparative chart of training days required across 30 federal law enforcement officer roles, showing ICE near the bottom`
         },
         {
-            id: 28,
+            id: 29,
             date: `February 23, 2026`,
             year: 2026,
             category: "investigation",
@@ -575,7 +592,7 @@ const timelineData = {
             mediaPlaceholder: `Side-by-side comparison of the July 2025 and February 2026 ICE training syllabi showing eliminated courses and exams`
         },
         {
-            id: 29,
+            id: 30,
             date: `February 13, 2026`,
             year: 2026,
             category: "incident",
@@ -586,7 +603,7 @@ const timelineData = {
             sourceUrl: "https://www.npr.org/2026/02/13/nx-s1-5713947/immigration-agents-lie-minnesota"
         },
         {
-            id: 30,
+            id: 31,
             date: `February 3, 2026`,
             year: 2026,
             category: "investigation",
@@ -603,7 +620,7 @@ const timelineData = {
             }
         },
         {
-            id: 31,
+            id: 32,
             date: `February 20, 2026`,
             year: 2026,
             category: "incident",
@@ -620,7 +637,7 @@ const timelineData = {
             }
         },
         {
-            id: 32,
+            id: 33,
             date: `March 10, 2026`,
             year: 2026,
             category: "investigation",
@@ -633,7 +650,7 @@ const timelineData = {
             mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         },
         {
-            id: 33,
+            id: 34,
             date: `March 9, 2026`,
             year: 2026,
             category: "court",
@@ -646,7 +663,7 @@ const timelineData = {
             mediaPlaceholder: `Court order text with highlighted finding of 'unwritten policy' of excessive force; video stills submitted as evidence`
         },
         {
-            id: 34,
+            id: 35,
             date: `March 7, 2026`,
             year: 2026,
             category: "investigation",
@@ -663,7 +680,7 @@ const timelineData = {
             }
         },
         {
-            id: 35,
+            id: 36,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -676,7 +693,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 36,
+            id: 37,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -689,7 +706,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 37,
+            id: 38,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -706,7 +723,7 @@ const timelineData = {
             }
         },
         {
-            id: 38,
+            id: 39,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -723,7 +740,7 @@ const timelineData = {
             }
         },
         {
-            id: 39,
+            id: 40,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -740,7 +757,7 @@ const timelineData = {
             }
         },
         {
-            id: 40,
+            id: 41,
             date: `May 5, 2026`,
             year: 2026,
             category: "court",
@@ -953,6 +970,11 @@ const timelineData = {
             type: `Court Document`,
             name: `Rhode Island Current: Rhode Island Federal Judge Orders Disciplinary Investigation`,
             url: "https://rhodeislandcurrent.com/2026/05/05/ri-federal-judge-orders-investigation-after-ice-failed-to-disclose-mans-murder-warrant/"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `Stateline: Stateline/WSJ Investigation: Pattern of Conflicting DHS Acco`,
+            url: "https://stateline.org/2026/01/23/footage-documents-at-odds-with-dhs-accounts-of-immigration-enforcement-incidents/"
         }
     ],
 
