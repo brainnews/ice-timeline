@@ -738,6 +738,23 @@ const timelineData = {
                 alt: `D.C. Federal Judge Blocks ICE 'Lyons Memo' Arrest Standard, Citing Flawed Guidance Pushed to New Officers`,
                 caption: `ACLU of D.C. — May 7, 2026`
             }
+        },
+        {
+            id: 40,
+            date: `May 5, 2026`,
+            year: 2026,
+            category: "court",
+            title: `Rhode Island Federal Judge Orders Disciplinary Investigation After ICE Attorneys Concealed Murder Warrant`,
+            excerpt: `U.S. District Judge Melissa DuBose referred ICE attorneys to the full court for a disciplinary investigation after discovering that federal immigration officials had instructed lawyers to withhold from the court an outstanding murder warrant for a detainee — a case that exposed another layer of ICE misconduct and non-transparency.`,
+            content: `<p>On May 5, 2026, U.S. District Court Judge Melissa DuBose in Rhode Island announced she was referring the matter of ICE's conduct to the full court for review by a magistrate judge or special master after finding that federal immigration officials had instructed attorneys to withhold information about a 2023 Dominican Republic homicide arrest warrant for a detainee.</p><p class="warning-highlight">The judge had previously released the detainee, Bryan Rafael Gomez, on a habeas petition — unaware of the outstanding warrant because ICE officials had deliberately concealed it from the court. DuBose cited the Trump administration's 'lack of candor' as warranting formal disciplinary inquiry.</p><ul><li>DHS had publicly attacked Judge DuBose as an 'activist judge' for releasing Gomez, even though it was ICE that withheld the information that would have kept him detained.</li><li>DHS later admitted to the court that it had not disclosed the murder warrant — contradicting its own public messaging that blamed the judge.</li><li class="warning-highlight">The case is part of a broader pattern in which ICE has been found to have misled federal courts — including the February 2026 admission that two ICE agents lied under oath in the Minneapolis shooting case.</li><li>ICE subsequently failed to re-detain Gomez by the court's deadline, and as of May 8, 2026, the agency reported it could not locate him.</li></ul>`,
+            source: `Rhode Island Current`,
+            sourceUrl: "https://rhodeislandcurrent.com/2026/05/05/ri-federal-judge-orders-investigation-after-ice-failed-to-disclose-mans-murder-warrant/",
+            media: {
+                type: "image",
+                src: "images/2026-05-11-rhode-island-federal-judge-orders-disciplinary-inv.jpg",
+                alt: `Rhode Island Federal Judge Orders Disciplinary Investigation After ICE Attorneys Concealed Murder Warrant`,
+                caption: `Rhode Island Current — May 5, 2026`
+            }
         }
     ],
 
@@ -931,6 +948,11 @@ const timelineData = {
             type: `News Report`,
             name: `American Oversight / Newsweek: ICE Concealed Killing of U.S. Citizen Ruben Ray Martinez for`,
             url: "https://americanoversight.org/lawmakers-call-for-investigation-after-records-reveal-undisclosed-ice-shooting-death-of-u-s-citizen/"
+        },
+        {
+            type: `Court Document`,
+            name: `Rhode Island Current: Rhode Island Federal Judge Orders Disciplinary Investigation`,
+            url: "https://rhodeislandcurrent.com/2026/05/05/ri-federal-judge-orders-investigation-after-ice-failed-to-disclose-mans-murder-warrant/"
         }
     ],
 
