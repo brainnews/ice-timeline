@@ -862,6 +862,19 @@ const timelineData = {
             sourceUrl: "https://www.cnn.com/2026/05/15/us/ice-immigration-detention-centers-medical-care-deaths-invs-vis",
             mediaType: "video",
             mediaPlaceholder: `CNN video report following family of Jose Ramos, who died at Adelanto ICE Processing Facility`
+        },
+        {
+            id: 48,
+            date: `May 12, 2026`,
+            year: 2026,
+            category: "court",
+            title: `Colorado Federal Judge Orders ICE to Retrain All Arresting Officers Within 45 Days`,
+            excerpt: `Senior U.S. District Judge R. Brooke Jackson issued a 60-page enforcement order finding that Colorado ICE officers 'materially violated' his preliminary injunction by continuing unlawful warrantless arrests, and ordered the agency to develop new compliance training within two weeks and complete agent retraining within 45 days.`,
+            content: `<p>On May 12, 2026, Senior U.S. District Judge R. Brooke Jackson in Denver issued a 60-page enforcement order finding that ICE had demonstrated "material noncompliance" with his November 2025 preliminary injunction barring warrantless arrests in Colorado without a probable-cause flight-risk determination.</p><p class="warning-highlight">Key findings and orders:</p><ul><li class="warning-highlight">At hearings earlier in 2026, Colorado ICE officers and supervisors testified that they "didn't really read their emails, they didn't really understand all of the rules in making warrantless arrests, and that generally they were unaware of what was required of them."</li><li class="warning-highlight">The Denver ICE field office assistant director testified that the office had hired "dozens of new officers recently" and was making 15–25 arrests per day even as training hours had been cut.</li><li class="warning-highlight">Jackson found ICE's efforts to train agents on the preliminary injunction "have been insufficient" and that deportation officers have "an inadequate understanding of their obligations."</li><li>ICE must develop a compliant training program within two weeks and train every officer authorized to make warrantless arrests in Colorado within 45 days; officers not trained within that window are prohibited from making warrantless arrests.</li><li>Any ICE agents hired after May 12, 2026 cannot make warrantless arrests until completing the required training.</li><li>ICE must monthly provide plaintiffs' counsel with a list of trained officers, all training materials, and a list of people arrested without a warrant.</li></ul><blockquote class="warning-highlight">"The court made clear that ICE is not above the law and cannot continue to violate the law." — Tim Macdonald, Legal Director, ACLU of Colorado</blockquote>`,
+            source: `The Colorado Sun / CPR News / ACLU of Colorado`,
+            sourceUrl: "https://coloradosun.com/2026/05/12/ice-must-retrain-arresting-officers-in-colorado-federal-judge-rules/",
+            mediaType: "document",
+            mediaPlaceholder: `60-page court order and footage of federal courthouse in Denver`
         }
     ],
 
@@ -1095,6 +1108,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `CNN: CNN Investigation: Medical Understaffing and DHS Policy Driv`,
             url: "https://www.cnn.com/2026/05/15/us/ice-immigration-detention-centers-medical-care-deaths-invs-vis"
+        },
+        {
+            type: `Court Document`,
+            name: `The Colorado Sun / CPR News / ACLU of Colorado: Colorado Federal Judge Orders ICE to Retrain All Arresting O`,
+            url: "https://coloradosun.com/2026/05/12/ice-must-retrain-arresting-officers-in-colorado-federal-judge-rules/"
         }
     ],
 
