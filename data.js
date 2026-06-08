@@ -567,6 +567,19 @@ const timelineData = {
         },
         {
             id: 28,
+            date: `January 29, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `CNN Analysis: CBP Agents' Deadly Escalation Reflects 'Dangers of Flooding Cities With Ill-Equipped Officers'`,
+            excerpt: `CNN's analysis of the Alex Pretti shooting, reviewed by use-of-force experts, concluded that the fatal escalation likely stemmed from lack of training or a failure to follow it, citing the dangers of deploying immigration officers in urban protest environments without adequate preparation.`,
+            content: `<p>CNN's detailed video analysis of the January 24 shooting of Alex Pretti found that two CBP officers were the primary drivers of escalation, pepper-spraying and striking Pretti before drawing weapons and firing at him even after he was on the ground.</p><p class="warning-highlight">Law enforcement experts who reviewed the footage for CNN said the officers' use of deadly force 'likely stemmed from lack of training or a failure by the agents to follow it during the heated encounter.'</p><ul><li>Former FLETC instructor Marc Brown noted: 'The key is the hands — if the hands are occupied on the ground, the weapon is a concern, but not necessarily a problem or threat.'</li><li>Retired police captain Ashley Heiberger observed: 'If you take people who are not trained or experienced in a particular function, and have them do that without supervision, you shouldn't be surprised when it doesn't go well.'</li><li class="warning-highlight">The conduct illustrated, experts said, 'the dangers of flooding American cities with officers ill-equipped to deal with protesters in urban environments.'</li><li>White House Deputy Chief of Staff Stephen Miller acknowledged the administration was 'evaluating why the CBP team may not have been following that protocol.'</li></ul>`,
+            source: "CNN",
+            sourceUrl: "https://www.cnn.com/2026/01/29/us/immigration-agents-shooting-alex-pretti-invs",
+            mediaType: "video",
+            mediaPlaceholder: `CNN visual analysis of multi-angle footage showing the sequence of escalating force leading to Pretti's death`
+        },
+        {
+            id: 29,
             date: `February 27, 2026`,
             year: 2026,
             category: "investigation",
@@ -579,7 +592,7 @@ const timelineData = {
             mediaPlaceholder: `Comparative chart of training days required across 30 federal law enforcement officer roles, showing ICE near the bottom`
         },
         {
-            id: 29,
+            id: 30,
             date: `February 23, 2026`,
             year: 2026,
             category: "investigation",
@@ -592,7 +605,7 @@ const timelineData = {
             mediaPlaceholder: `Side-by-side comparison of the July 2025 and February 2026 ICE training syllabi showing eliminated courses and exams`
         },
         {
-            id: 30,
+            id: 31,
             date: `February 13, 2026`,
             year: 2026,
             category: "incident",
@@ -603,7 +616,7 @@ const timelineData = {
             sourceUrl: "https://www.npr.org/2026/02/13/nx-s1-5713947/immigration-agents-lie-minnesota"
         },
         {
-            id: 31,
+            id: 32,
             date: `February 3, 2026`,
             year: 2026,
             category: "investigation",
@@ -620,7 +633,7 @@ const timelineData = {
             }
         },
         {
-            id: 32,
+            id: 33,
             date: `February 20, 2026`,
             year: 2026,
             category: "incident",
@@ -637,7 +650,7 @@ const timelineData = {
             }
         },
         {
-            id: 33,
+            id: 34,
             date: `March 10, 2026`,
             year: 2026,
             category: "investigation",
@@ -650,7 +663,7 @@ const timelineData = {
             mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         },
         {
-            id: 34,
+            id: 35,
             date: `March 9, 2026`,
             year: 2026,
             category: "court",
@@ -663,7 +676,7 @@ const timelineData = {
             mediaPlaceholder: `Court order text with highlighted finding of 'unwritten policy' of excessive force; video stills submitted as evidence`
         },
         {
-            id: 35,
+            id: 36,
             date: `March 7, 2026`,
             year: 2026,
             category: "investigation",
@@ -680,7 +693,7 @@ const timelineData = {
             }
         },
         {
-            id: 36,
+            id: 37,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -693,7 +706,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 37,
+            id: 38,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -706,7 +719,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 38,
+            id: 39,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -723,7 +736,7 @@ const timelineData = {
             }
         },
         {
-            id: 39,
+            id: 40,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -740,7 +753,7 @@ const timelineData = {
             }
         },
         {
-            id: 40,
+            id: 41,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -757,7 +770,7 @@ const timelineData = {
             }
         },
         {
-            id: 41,
+            id: 42,
             date: `May 5, 2026`,
             year: 2026,
             category: "court",
@@ -774,7 +787,7 @@ const timelineData = {
             }
         },
         {
-            id: 42,
+            id: 43,
             date: `May 1, 2026`,
             year: 2026,
             category: "court",
@@ -997,6 +1010,11 @@ const timelineData = {
             type: `Court Document`,
             name: `Spectrum News NY1: Trump-Appointed Federal Judge (EDNY): ICE Arrest Practices A`,
             url: "https://spectrumlocalnews.com/nys/central-ny/news/2026/05/01/ny1-exclusive--former-ice-trainer-says-local-agents-need-more-training-when-testifying-in-arrests"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `CNN: CNN Analysis: CBP Agents' Deadly Escalation Reflects 'Danger`,
+            url: "https://www.cnn.com/2026/01/29/us/immigration-agents-shooting-alex-pretti-invs"
         }
     ],
 
