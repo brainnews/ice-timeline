@@ -784,6 +784,23 @@ const timelineData = {
         },
         {
             id: 43,
+            date: `April 30, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `Illinois Accountability Commission: 'Illegal and Violent Conduct' in Operation Midway Blitz Final Report`,
+            excerpt: `The Illinois Accountability Commission — the first state body in U.S. history to independently investigate federal immigration enforcement misconduct — issued a 204-page final report documenting unconstitutional use of force, warrantless arrests, and systematic deception by ICE and CBP during Operation Midway Blitz, and referred specific agents for criminal prosecution.`,
+            content: `<p>On April 30, 2026, Illinois Governor JB Pritzker's Illinois Accountability Commission — created by executive order in October 2025 — released its 204-page final report following months of investigation that included 16 formal inquiries, over 60 witness interviews, and review of nearly 100 hours of body-camera footage.</p><p class="warning-highlight">The report's central findings:</p><ul><li class="warning-highlight">Federal immigration agents engaged in "dangerous high-speed vehicular pursuits, extreme physical force, indiscriminate use of chemical agents, shootings, beatings, and other violent acts, amounting to unconstitutional uses of force."</li><li class="warning-highlight">Officials from ICE, CBP, DHS, and the White House "routinely lied to the public about the motivations and outcomes of Operation Midway Blitz and concealed and distorted key facts."</li><li class="warning-highlight">Federal agents conducted "discriminatory stops and unlawful warrantless arrests, creating widespread fear throughout the Chicago metropolitan area."</li><li class="warning-highlight">High-level White House, DHS, and other federal officials "enabled and encouraged misconduct" by urging agents to "go hard," defending incidents of use of force, and "lifting safeguards."</li></ul><p>The Commission sent referral letters to relevant law enforcement agencies recommending criminal and civil prosecution where it found reasonable cause that agents violated agency policy, state or federal criminal law, or individual human rights. The report recommended prohibiting roving patrols, ending warrantless arrests, halting paramilitary tactics, and requiring body-worn cameras for all agents.</p><blockquote class="warning-highlight">"The evidence led straight up to the White House. It started from the top with executive orders, went straight through federal agencies, and came all the way down to the streets of the city of Chicago." — Commission Vice Chair Patricia Brown Holmes</blockquote>`,
+            source: `Capitol News Illinois / WTTW Chicago`,
+            sourceUrl: "https://capitolnewsillinois.com/news/accountability-commission-refers-federal-agents-for-investigation-possible-prosecution-for-conduct-last-fall/",
+            media: {
+                type: "image",
+                src: "images/2026-05-25-illinois-accountability-commission-illegal-and-vio.jpg",
+                alt: `Illinois Accountability Commission: 'Illegal and Violent Conduct' in Operation Midway Blitz Final Report`,
+                caption: `Capitol News Illinois / WTTW Chicago — April 30, 2026`
+            }
+        },
+        {
+            id: 44,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -800,7 +817,7 @@ const timelineData = {
             }
         },
         {
-            id: 44,
+            id: 45,
             date: `May 5, 2026`,
             year: 2026,
             category: "court",
@@ -817,7 +834,7 @@ const timelineData = {
             }
         },
         {
-            id: 45,
+            id: 46,
             date: `May 1, 2026`,
             year: 2026,
             category: "court",
@@ -834,7 +851,7 @@ const timelineData = {
             }
         },
         {
-            id: 46,
+            id: 47,
             date: `May 2, 2026`,
             year: 2026,
             category: "incident",
@@ -851,7 +868,7 @@ const timelineData = {
             }
         },
         {
-            id: 47,
+            id: 48,
             date: `May 15, 2026`,
             year: 2026,
             category: "investigation",
@@ -864,7 +881,7 @@ const timelineData = {
             mediaPlaceholder: `CNN video report following family of Jose Ramos, who died at Adelanto ICE Processing Facility`
         },
         {
-            id: 48,
+            id: 49,
             date: `May 12, 2026`,
             year: 2026,
             category: "court",
@@ -1113,6 +1130,11 @@ const timelineData = {
             type: `Court Document`,
             name: `The Colorado Sun / CPR News / ACLU of Colorado: Colorado Federal Judge Orders ICE to Retrain All Arresting O`,
             url: "https://coloradosun.com/2026/05/12/ice-must-retrain-arresting-officers-in-colorado-federal-judge-rules/"
+        },
+        {
+            type: `Government Report`,
+            name: `Capitol News Illinois / WTTW Chicago: Illinois Accountability Commission: 'Illegal and Violent Con`,
+            url: "https://capitolnewsillinois.com/news/accountability-commission-refers-federal-agents-for-investigation-possible-prosecution-for-conduct-last-fall/"
         }
     ],
 
