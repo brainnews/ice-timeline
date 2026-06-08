@@ -754,6 +754,23 @@ const timelineData = {
         },
         {
             id: 41,
+            date: `April 22, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `Colorado Charges CBP Agent with Assault for Banned Chokehold on Protester`,
+            excerpt: `Colorado prosecutors charged CBP officer Nicholas Rice with third-degree assault and criminal mischief after video showed him placing a 57-year-old protester in a chokehold and throwing her down an embankment outside an ICE facility in Durango — a tactic banned under Colorado law since 2020.`,
+            content: `<p>A Colorado district attorney announced charges on April 22, 2026, against U.S. Customs and Border Protection officer Nicholas Rice following a state-level investigation initiated at the request of the Durango Police Department chief.</p><ul><li class="warning-highlight">Multiple bystander videos captured a masked federal agent placing Franci Stagi, a 57-year-old retired hypnotherapist, in a chokehold during an October 2025 protest outside the Durango ICE facility. Stagi said the agent grabbed her by the hair and threw her down an embankment.</li><li class="warning-highlight">Chokeholds have been banned or severely restricted under Colorado law since George Floyd's death in 2020. DHS policy also prohibits carotid chokeholds except when deadly force is authorized — a threshold not present here.</li><li>Rice was charged with third-degree assault (misdemeanor, up to one year in jail) and criminal mischief for allegedly damaging Stagi's cellphone. Court documents did not use the word "chokehold" in describing the assault charge.</li><li>The Colorado Bureau of Investigations launched its own probe at Durango Police Chief Brice Current's request — described as "an unusual if not unprecedented" step for a municipal department to request a state investigation of a federal officer.</li></ul><blockquote>"She hopes the prosecution sends a message that immigration officers can't tackle people indiscriminately and use excessive force," PBS NewsHour reported.</blockquote><p class="warning-highlight">The charges, coming days after the Minnesota charges against Agent Morgan, signaled a growing wave of state-level efforts to hold federal immigration agents criminally accountable — a legal terrain the Justice Department has openly contested, warning such actions violate the Supremacy Clause.</p>`,
+            source: `Colorado Sun`,
+            sourceUrl: "https://coloradosun.com/2026/04/22/ice-agent-arrest-durango-assault-charge/",
+            media: {
+                type: "image",
+                src: "images/2026-05-18-colorado-charges-cbp-agent-with-assault-for-banned.jpg",
+                alt: `Colorado Charges CBP Agent with Assault for Banned Chokehold on Protester`,
+                caption: `Colorado Sun — April 22, 2026`
+            }
+        },
+        {
+            id: 42,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -770,7 +787,7 @@ const timelineData = {
             }
         },
         {
-            id: 42,
+            id: 43,
             date: `May 5, 2026`,
             year: 2026,
             category: "court",
@@ -787,7 +804,7 @@ const timelineData = {
             }
         },
         {
-            id: 43,
+            id: 44,
             date: `May 1, 2026`,
             year: 2026,
             category: "court",
@@ -1015,6 +1032,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `CNN: CNN Analysis: CBP Agents' Deadly Escalation Reflects 'Danger`,
             url: "https://www.cnn.com/2026/01/29/us/immigration-agents-shooting-alex-pretti-invs"
+        },
+        {
+            type: `News Report`,
+            name: `Colorado Sun: Colorado Charges CBP Agent with Assault for Banned Chokehold`,
+            url: "https://coloradosun.com/2026/04/22/ice-agent-arrest-durango-assault-charge/"
         }
     ],
 
