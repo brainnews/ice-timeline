@@ -832,6 +832,23 @@ const timelineData = {
                 alt: `Trump-Appointed Federal Judge (EDNY): ICE Arrest Practices Are 'Perversion of Customary Law Enforcement'`,
                 caption: `Spectrum News NY1 — May 1, 2026`
             }
+        },
+        {
+            id: 46,
+            date: `May 2, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `CBS News: ICE Reports 18th Detainee Death in 4 Months, on Track for All-Time High`,
+            excerpt: `ICE reported its 18th detainee death of 2026 after a 33-year-old Cuban man was found unresponsive at the Stewart Detention Center in Georgia, putting the agency on pace to surpass both the prior-year record and the all-time high set in 2004.`,
+            content: `<p>On approximately May 2, 2026, ICE notified Congress and issued a public statement reporting the death of Denny Adan Gonzalez, 33, a Cuban national who was found unresponsive in his cell at the privately-operated Stewart Detention Center in Lumpkin, Georgia. The agency described the suspected cause as suicide and said its investigation was ongoing.</p><ul><li class="warning-highlight">The death was the 18th in ICE detention in the first four months of 2026, compared to 31 for all of 2025 — itself a two-decade high — and the all-time record of 32 set in 2004.</li><li class="warning-highlight">A CBS News analysis found that 2025 had the highest death rate — 5.6 per 10,000 detainees — since the COVID-19 pandemic year of 2020.</li><li>At the time, ICE held approximately 60,000 detainees — higher than under any prior administration — down from a peak of more than 70,000 earlier in 2026.</li><li>Deaths in 2026 included an Afghan refugee who had worked with U.S. military forces and a Mexican teenager.</li><li class="warning-highlight">Reports throughout the year documented overcrowding, inadequate medical care, and insufficient food at numerous facilities, with DHS and its contractors declining to release medical staffing data to lawmakers, investigators, or the press.</li></ul>`,
+            source: `CBS News`,
+            sourceUrl: "https://www.cbsnews.com/news/ice-detainee-deaths-2026/",
+            media: {
+                type: "image",
+                src: "images/2026-05-25-cbs-news-ice-reports-18th-detainee-death-in-4-mont.jpg",
+                alt: `CBS News: ICE Reports 18th Detainee Death in 4 Months, on Track for All-Time High`,
+                caption: `CBS News — May 2, 2026`
+            }
         }
     ],
 
@@ -1055,6 +1072,11 @@ const timelineData = {
             type: `News Report`,
             name: `NPR: Minnesota Charges ICE Agent Morgan with Felony Assault for G`,
             url: "https://www.npr.org/2026/04/16/nx-s1-5787958/minnesota-charged-ice-officer-assault-immigration-surge"
+        },
+        {
+            type: `News Report`,
+            name: `CBS News: CBS News: ICE Reports 18th Detainee Death in 4 Months, on Tr`,
+            url: "https://www.cbsnews.com/news/ice-detainee-deaths-2026/"
         }
     ],
 
