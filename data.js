@@ -1059,6 +1059,19 @@ const timelineData = {
                 alt: `ICE Scraps 42-Day Training, Mandates Supplemental Program for Officers Already in Field`,
                 caption: `CBS News — June 10, 2026`
             }
+        },
+        {
+            id: 61,
+            date: `June 25, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `OIG Reports Use-of-Force Violations at Louisiana ICE Facility Including Prohibited Chokehold`,
+            excerpt: `A DHS Inspector General report on the Winn Correctional Center in Louisiana found documented use-of-force violations at the ICE detention facility, including a prohibited chokehold and a guard's use of a pen to stab a detainee — findings that directly prompted the OIG to announce a broader national use-of-force review.`,
+            content: `<p>The DHS Office of Inspector General released a report (OIG-26-08) documenting findings from an inspection of ICE operations at the Winn Correctional Center in Winnfield, Louisiana, including multiple use-of-force violations.</p><ul><li class="warning-highlight">The OIG report documented a prohibited chokehold applied by detention staff against a detainee — a technique explicitly banned under ICE detention standards.</li><li class="warning-highlight">The report also described a guard using a pen to stab a detainee who would not close a cell door — a clear violation of use-of-force policy and a potential assault.</li><li>The findings directly prompted the DHS Inspector General to announce a broader national review of use-of-force compliance across all ICE detention facilities.</li><li>The Winn Correctional Center had also recorded a detainee death in June 2026: Mamuka Artmeladze, a 43-year-old Georgian national, was found unresponsive at the facility and died on June 4.</li></ul><p class="warning-highlight">The OIG noted that its funding lapsed for approximately 60% of FY2026, delaying routine and regular reporting. The use-of-force violations documented at Winn are consistent with a nationwide pattern identified by ProPublica, the ACLU, and congressional investigators since early 2026.</p>`,
+            source: `DHS Office of Inspector General`,
+            sourceUrl: "https://www.oig.dhs.gov/sites/default/files/assets/2026-06/OIG-26-08-Jun26.pdf",
+            mediaType: "document",
+            mediaPlaceholder: `DHS OIG report cover page for the Winn Correctional Center inspection findings (OIG-26-08)`
         }
     ],
 
@@ -1357,6 +1370,11 @@ const timelineData = {
             type: `News Report`,
             name: `CBS News: ICE Scraps 42-Day Training, Mandates Supplemental Program fo`,
             url: "https://www.cbsnews.com/news/ice-training-new-hires-backlash/"
+        },
+        {
+            type: `Government Report`,
+            name: `DHS Office of Inspector General: OIG Reports Use-of-Force Violations at Louisiana ICE Facilit`,
+            url: "https://www.oig.dhs.gov/sites/default/files/assets/2026-06/OIG-26-08-Jun26.pdf"
         }
     ],
 
