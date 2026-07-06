@@ -938,6 +938,19 @@ const timelineData = {
         },
         {
             id: 53,
+            date: `May 18, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `ICE Agent Christian Castro Criminally Charged and Arrested for Minneapolis Shooting`,
+            excerpt: `Hennepin County prosecutors charged ICE agent Christian Castro with four counts of second-degree assault and one count of falsely reporting a crime in connection with the January 14 shooting of Venezuelan immigrant Julio Sosa-Celis. City surveillance video disproved Castro's account that he was attacked with a shovel.`,
+            content: `<p>On May 18, 2026, Hennepin County Attorney Mary Moriarty announced criminal charges against ICE agent Christian Castro in connection with the January 14, 2026 shooting of Julio Sosa-Celis at his Minneapolis home. Castro was charged with four counts of second-degree assault and one count of falsely reporting a crime. A nationwide arrest warrant was issued; he was arrested in Texas on May 29.</p><p class="warning-highlight">City surveillance video showed the entire nine-minute incident and directly contradicted Castro's account to supervisors that Sosa-Celis and his cousin attacked him with a broom and shovel for three minutes. The video showed the shovel was dropped immediately, no one struck Castro, and the struggle lasted approximately 12 seconds before Castro fired one shot through the front door of the home, striking Sosa-Celis in the leg. Four adults and two children were inside at the time of the shooting.</p><ul><li>ICE agents deployed tear gas after the shooting, entered the home without a warrant, and detained all four adults. Paramedics were not allowed to treat Sosa-Celis for nearly an hour.</li><li>DHS called Castro's state arrest 'unlawful' and 'a political stunt,' insisting the matter belonged in federal court.</li><li>Castro is one of at least two federal immigration officers charged with state crimes stemming from the Minneapolis crackdown.</li><li>Minnesota AG Keith Ellison stated: 'Nobody is above the law, including agents of the federal government.'</li></ul>`,
+            source: `CNN / Washington Post / MPR News`,
+            sourceUrl: "https://www.cnn.com/2026/05/18/us/ice-agent-charged-minneapolis-shooting",
+            mediaType: "image",
+            mediaPlaceholder: `Booking photo of ICE agent Christian Castro and Hennepin County press conference announcing charges`
+        },
+        {
+            id: 54,
             date: `June 3, 2026`,
             year: 2026,
             category: "policy",
@@ -1215,6 +1228,11 @@ const timelineData = {
             type: `Court Document`,
             name: `Colorado Public Radio / Colorado Sun: Federal Judge Orders ICE to Retrain All Colorado Arresting O`,
             url: "https://www.cpr.org/2026/05/12/immigration-ice-judge-orders-more-training-warrentless-arrests/"
+        },
+        {
+            type: `News Report`,
+            name: `CNN / Washington Post / MPR News: ICE Agent Christian Castro Criminally Charged and Arrested f`,
+            url: "https://www.cnn.com/2026/05/18/us/ice-agent-charged-minneapolis-shooting"
         }
     ],
 
