@@ -965,6 +965,19 @@ const timelineData = {
                 alt: `DHS Secretary Mullin Announces ICE Training Restored to 72 Days Starting July 1`,
                 caption: `Spectrum News / Reuters / Washington Times — June 3, 2026`
             }
+        },
+        {
+            id: 55,
+            date: `June 2, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `DHS OIG Report: Winn Correctional Found Banned Chokeholds, Medical Failures`,
+            excerpt: `A DHS Office of Inspector General report from an unannounced March 2025 inspection of Winn Correctional Center in Louisiana found violations of use-of-force policies — including an officer who applied a banned chokehold on a detainee and another who stabbed a detainee's thumb with a pen — along with serious medical record failures and unsanitary conditions. The report was published just two days before a second detainee death at the same facility in 2026.`,
+            content: `<p>On June 2, 2026, DHS OIG published report OIG-26-08, the result of an unannounced inspection of Winn Correctional Center in Winnfield, Louisiana, conducted from March 4–6, 2025. At the time of inspection, the facility held 1,576 male detainees at its contractual maximum.</p><ul><li class="warning-highlight">The inspection found violations of use-of-force policies, including an officer who put a detainee in a banned chokehold and a second officer who stabbed a detainee's thumb with a pen after the detainee refused to comply with an order.</li><li class="warning-highlight">Medical staff failed to keep updated treatment documents and laboratory testing records, which OIG warned could "negatively impact detainee health care and safety."</li><li>Environmental deficiencies included water leaking through vents in the kitchen, holes and exposed insulation in the intake building, and food stored in freezers above required temperatures.</li><li>The report was published just two days before Mamuka Artmeladze, a 43-year-old Georgian national with no criminal record, was found unresponsive and died at the same facility on June 4, 2026.</li></ul><p>A DHS spokesperson responded by claiming the report demonstrated the facility's compliance with detention standards, despite the documented excessive-force incidents and medical failures.</p>`,
+            source: `Washington Times / Associated Press`,
+            sourceUrl: "https://www.washingtontimes.com/news/2026/jun/8/ice-facility-louisiana-reports-second-detainee-death-less-2-months/",
+            mediaType: "document",
+            mediaPlaceholder: `DHS OIG inspection report OIG-26-08 cover page and aerial photo of Winn Correctional Center`
         }
     ],
 
@@ -1233,6 +1246,11 @@ const timelineData = {
             type: `News Report`,
             name: `CNN / Washington Post / MPR News: ICE Agent Christian Castro Criminally Charged and Arrested f`,
             url: "https://www.cnn.com/2026/05/18/us/ice-agent-charged-minneapolis-shooting"
+        },
+        {
+            type: `Government Report`,
+            name: `Washington Times / Associated Press: DHS OIG Report: Winn Correctional Found Banned Chokeholds, M`,
+            url: "https://www.washingtontimes.com/news/2026/jun/8/ice-facility-louisiana-reports-second-detainee-death-less-2-months/"
         }
     ],
 
