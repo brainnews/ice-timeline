@@ -1025,6 +1025,23 @@ const timelineData = {
                 alt: `DHS OIG Launches New Reviews of ICE Detainee Deaths and Use of Force in Facilities`,
                 caption: `NBC News — June 25, 2026`
             }
+        },
+        {
+            id: 59,
+            date: `June 25, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `HRW/PHR Report: 52 ICE Custody Deaths in 500 Days; Mortality Rate Highest in 20 Years`,
+            excerpt: `A joint report by Human Rights Watch and Physicians for Human Rights found that 52 people died in ICE custody in the first 500 days of Trump's second term — a mortality rate more than double the prior administration's, nearly four times the Biden rate, and higher than during the COVID-19 pandemic.`,
+            content: `<p>On June 25, 2026, Human Rights Watch and Physicians for Human Rights jointly released "Dying in Detention: Rising Deaths in an Expanding US Immigration Detention System," a 73-page report documenting a mortality crisis in ICE custody.</p><ul><li class="warning-highlight">52 people died in ICE custody between January 20, 2025 and June 4, 2026 — a mortality rate at its highest level in over a decade, more than double that of Trump's first term and nearly four times that of the Biden administration.</li><li class="warning-highlight">Deaths increased at a rate disproportionate to the growth in detained population: the detained population grew 77% (from ~40,000 to ~71,000), but the mortality rate rose 140%.</li><li class="warning-highlight">Seven people died by apparent suicide from January 20, 2025 to January 19, 2026, compared to just one reported death by suicide in all of 2024. PHR found that the government may be failing to adequately respond to suicide risk.</li><li>PHR found that in all 39 cases reviewed from the first year of the administration, the government failed to publicly provide sufficient medical information to support a definitive clinical assessment of the death.</li><li class="warning-highlight">The report states: "ICE so severely limits the information it provides to Congress, families, and the public that oversight is nearly impossible," according to PHR co-author Dr. Katherine Peeler of Harvard Medical School.</li><li>The increase in the mortality rate comes as the Trump administration gutted internal oversight mechanisms while subjecting record numbers of immigrants to mandatory detention in conditions described as inhuman and degrading.</li></ul><p>The report called on Congress to establish new independent oversight mechanisms with real enforcement authority, including mandatory independent investigations of every in-custody death and public disclosure of all death reviews and autopsy reports.</p>`,
+            source: `Human Rights Watch / Physicians for Human Rights`,
+            sourceUrl: "https://www.hrw.org/report/2026/06/25/dying-in-detention/rising-deaths-in-an-expanding-us-immigration-detention-system",
+            media: {
+                type: "image",
+                src: "images/2026-06-29-hrwphr-report-52-ice-custody-deaths-in-500-days-mo.jpg",
+                alt: `Detainees stand by a window inside the federal immigration center at Delaney Hall`,
+                caption: `Human Rights Watch / Physicians for Human Rights — June 25, 2026`
+            }
         }
     ],
 
@@ -1313,6 +1330,11 @@ const timelineData = {
             type: `Government Report`,
             name: `NBC News: DHS OIG Launches New Reviews of ICE Detainee Deaths and Use `,
             url: "https://www.nbcnews.com/politics/immigration/dhs-watchdog-announces-new-ice-reviews-rcna351729"
+        },
+        {
+            type: `Government Report`,
+            name: `Human Rights Watch / Physicians for Human Rights: HRW/PHR Report: 52 ICE Custody Deaths in 500 Days; Mortality`,
+            url: "https://www.hrw.org/report/2026/06/25/dying-in-detention/rising-deaths-in-an-expanding-us-immigration-detention-system"
         }
     ],
 
