@@ -651,6 +651,23 @@ const timelineData = {
         },
         {
             id: 34,
+            date: `February 18, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `DHS Funding Lapse Forces OIG to Pause 85% of ICE Oversight Audits`,
+            excerpt: `A partial government shutdown caused DHS OIG to pause approximately 85% of its audits and inspections, halting at least seven active probes into ICE conduct including investigations into excessive force accountability, detention standards compliance, and CBP domestic operations.`,
+            content: `<p>A partial government shutdown that began in February 2026 forced the DHS Office of Inspector General to suspend the vast majority of its active oversight work, including multiple reviews directly relevant to escalating use-of-force concerns.</p><p class="warning-highlight">Probes that were suspended included: investigations into whether ICE investigates allegations of excessive force and holds personnel accountable; unannounced inspections of ICE detention facilities to assess compliance with detention standards; and a review of whether CBP agents are conducting domestic U.S. operations in accordance with DHS policies and federal law.</p><ul><li>The OIG confirmed in a public statement that 'most of OIG's audits, inspections, and similar reviews are paused during the lapse in appropriations.'</li><li>Only criminal investigations and a small number of disaster-relief-related audits continued.</li><li>DHS OIG's own website later acknowledged that 'DHS OIG suffered a lapse in appropriation for approximately 60% of FY 2026.'</li><li>The suspension came precisely as incidents of ICE use of force were under intense public and congressional scrutiny following the deaths of Renée Good and Alex Pretti.</li></ul>`,
+            source: `Fox News Digital / DHS OIG`,
+            sourceUrl: "https://www.foxnews.com/politics/democrats-dhs-shutdown-halts-ice-oversight-demanded",
+            media: {
+                type: "image",
+                src: "images/2026-06-08-dhs-funding-lapse-forces-oig-to-pause-85-of-ice-ov.jpg",
+                alt: `DHS Funding Lapse Forces OIG to Pause 85% of ICE Oversight Audits`,
+                caption: `Fox News Digital / DHS OIG — February 18, 2026`
+            }
+        },
+        {
+            id: 35,
             date: `March 10, 2026`,
             year: 2026,
             category: "investigation",
@@ -663,7 +680,7 @@ const timelineData = {
             mediaPlaceholder: `Video compilation of federal agents deploying less-lethal munitions against protesters in violation of their own agency policies`
         },
         {
-            id: 35,
+            id: 36,
             date: `March 9, 2026`,
             year: 2026,
             category: "court",
@@ -676,7 +693,7 @@ const timelineData = {
             mediaPlaceholder: `Court order text with highlighted finding of 'unwritten policy' of excessive force; video stills submitted as evidence`
         },
         {
-            id: 36,
+            id: 37,
             date: `March 7, 2026`,
             year: 2026,
             category: "investigation",
@@ -693,7 +710,7 @@ const timelineData = {
             }
         },
         {
-            id: 37,
+            id: 38,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -706,7 +723,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 38,
+            id: 39,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -719,7 +736,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 39,
+            id: 40,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -736,7 +753,7 @@ const timelineData = {
             }
         },
         {
-            id: 40,
+            id: 41,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -753,7 +770,7 @@ const timelineData = {
             }
         },
         {
-            id: 41,
+            id: 42,
             date: `April 22, 2026`,
             year: 2026,
             category: "incident",
@@ -770,7 +787,7 @@ const timelineData = {
             }
         },
         {
-            id: 42,
+            id: 43,
             date: `April 16, 2026`,
             year: 2026,
             category: "incident",
@@ -783,7 +800,7 @@ const timelineData = {
             mediaPlaceholder: `Hennepin County criminal complaint and arrest warrant for Gregory Donnell Morgan Jr.`
         },
         {
-            id: 43,
+            id: 44,
             date: `April 30, 2026`,
             year: 2026,
             category: "watchdog",
@@ -800,7 +817,7 @@ const timelineData = {
             }
         },
         {
-            id: 44,
+            id: 45,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -817,7 +834,7 @@ const timelineData = {
             }
         },
         {
-            id: 45,
+            id: 46,
             date: `May 5, 2026`,
             year: 2026,
             category: "court",
@@ -834,7 +851,7 @@ const timelineData = {
             }
         },
         {
-            id: 46,
+            id: 47,
             date: `May 1, 2026`,
             year: 2026,
             category: "court",
@@ -851,7 +868,7 @@ const timelineData = {
             }
         },
         {
-            id: 47,
+            id: 48,
             date: `May 2, 2026`,
             year: 2026,
             category: "incident",
@@ -868,7 +885,7 @@ const timelineData = {
             }
         },
         {
-            id: 48,
+            id: 49,
             date: `May 15, 2026`,
             year: 2026,
             category: "investigation",
@@ -881,7 +898,7 @@ const timelineData = {
             mediaPlaceholder: `CNN video report following family of Jose Ramos, who died at Adelanto ICE Processing Facility`
         },
         {
-            id: 49,
+            id: 50,
             date: `May 12, 2026`,
             year: 2026,
             category: "court",
@@ -894,7 +911,7 @@ const timelineData = {
             mediaPlaceholder: `60-page court order and footage of federal courthouse in Denver`
         },
         {
-            id: 50,
+            id: 51,
             date: `May 18, 2026`,
             year: 2026,
             category: "incident",
@@ -907,7 +924,7 @@ const timelineData = {
             mediaPlaceholder: `Press conference footage and charging documents showing criminal complaint against ICE agent Christian Castro`
         },
         {
-            id: 51,
+            id: 52,
             date: `June 3, 2026`,
             year: 2026,
             category: "policy",
@@ -1175,6 +1192,11 @@ const timelineData = {
             type: `News Report`,
             name: `Spectrum News / Reuters / Washington Times: DHS Secretary Mullin Announces ICE Training Restored to 72 D`,
             url: "https://spectrumlocalnews.com/us/snplus/politics/2026/06/04/homeland-security-secretary-mark-wayne-mullin-says-ice-will-increase-new-officer-training-next-monthhomela"
+        },
+        {
+            type: `Government Report`,
+            name: `Fox News Digital / DHS OIG: DHS Funding Lapse Forces OIG to Pause 85% of ICE Oversight A`,
+            url: "https://www.foxnews.com/politics/democrats-dhs-shutdown-halts-ice-oversight-demanded"
         }
     ],
 
