@@ -951,6 +951,19 @@ const timelineData = {
         },
         {
             id: 54,
+            date: `May 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `OIG Unannounced Inspection Finds Violations at ICE Washington Field Office, Chantilly VA`,
+            excerpt: `The DHS Office of Inspector General released report OIG-26-07 following an unannounced inspection of the ICE Washington Field Office holding facility in Chantilly, Virginia — a non-detention office that had been used to hold dozens of migrants for days under overcrowded conditions since 2025.`,
+            content: `<p>The DHS Office of Inspector General published report <strong>OIG-26-07</strong> in May 2026 documenting an unannounced inspection of the ICE Washington Field Office holding facility in Chantilly, Virginia.</p><p>The Chantilly facility — an office-park-style processing center with no beds — had drawn intense scrutiny since August 2025, when attorneys and advocates reported:</p><ul><li class="warning-highlight">Up to 80–100 detainees held in a single room for seven or more days at a time, well beyond the three-day limit.</li><li class="warning-highlight">Detainees denied access to attorneys and, in some cases, medical care and basic hygiene for multiple days.</li><li class="warning-highlight">One meal per day — a single burrito — provided to some detainees.</li></ul><p>The OIG inspection report (OIG-26-07) represents the federal watchdog's formal written findings on conditions at the facility. The report was issued during a period when the OIG had acknowledged a lapse in appropriations covering approximately 60% of FY 2026, potentially delaying routine oversight reporting. The inspection follows a pattern of OIG unannounced inspections at ICE holding facilities that have repeatedly documented overcrowding and standards violations during the surge in immigration enforcement operations.</p>`,
+            source: `DHS Office of Inspector General`,
+            sourceUrl: "https://www.oig.dhs.gov/sites/default/files/assets/2026-06/OIG-26-07-May26.pdf",
+            mediaType: "document",
+            mediaPlaceholder: `OIG-26-07 report cover page showing inspection findings for Chantilly holding facility`
+        },
+        {
+            id: 55,
             date: `June 3, 2026`,
             year: 2026,
             category: "policy",
@@ -967,7 +980,7 @@ const timelineData = {
             }
         },
         {
-            id: 55,
+            id: 56,
             date: `June 2, 2026`,
             year: 2026,
             category: "watchdog",
@@ -980,7 +993,7 @@ const timelineData = {
             mediaPlaceholder: `DHS OIG inspection report OIG-26-08 cover page and aerial photo of Winn Correctional Center`
         },
         {
-            id: 56,
+            id: 57,
             date: `June 5, 2026`,
             year: 2026,
             category: "policy",
@@ -1273,6 +1286,11 @@ const timelineData = {
             type: `News Report`,
             name: `NBC News / Associated Press: ICE Eliminates Rule Requiring Reporting of Detainee Deaths A`,
             url: "https://www.nbcnews.com/news/us-news/ice-will-no-longer-report-deaths-detainees-recently-released-custody-rcna348719"
+        },
+        {
+            type: `Government Report`,
+            name: `DHS Office of Inspector General: OIG Unannounced Inspection Finds Violations at ICE Washingto`,
+            url: "https://www.oig.dhs.gov/sites/default/files/assets/2026-06/OIG-26-07-May26.pdf"
         }
     ],
 
