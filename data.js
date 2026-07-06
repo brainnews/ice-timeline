@@ -711,6 +711,19 @@ const timelineData = {
         },
         {
             id: 38,
+            date: `March 26, 2026`,
+            year: 2026,
+            category: "court",
+            title: `DOJ Admits ICE Courthouse Arrest Policy Was Based on Erroneous Legal Memo`,
+            excerpt: `In a filing before a New York federal judge, DOJ attorneys conceded that a 2025 ICE memo — repeatedly cited in court to justify courthouse arrests — did not actually apply to immigration courts, undermining the legal basis for hundreds of civil arrests at immigration hearings.`,
+            content: `<p>On March 26, 2026, Department of Justice attorneys filed a letter with U.S. District Judge P. Kevin Castel of the Southern District of New York admitting that a 2025 ICE guidance memo, which the government had repeatedly cited in litigation to defend courthouse arrests, <strong>did not apply to immigration courts</strong>.</p><ul><li class="warning-highlight">The May 2025 ICE memo stated agents could conduct <em>'civil immigration enforcement actions in or near courthouses'</em> when they had credible information a target would be present — but DOJ acknowledged the memo explicitly excluded immigration courts from its scope.</li><li>The admission came in a lawsuit brought by African Communities Together and The Door, two New York City immigrant advocacy organizations that challenged ICE courthouse arrest operations at 26 Federal Plaza and other Manhattan immigration courts.</li><li>Judge Castel had been presiding over extensive litigation about courthouse arrests since dramatic scenes of masked ICE agents arresting immigrants during routine hearings were broadcast nationally starting in early 2026.</li></ul><p class="warning-highlight">The DOJ's concession that it had relied on <em>erroneous information</em> in defending the courthouse arrest policy raised additional questions about whether ICE officers deployed to immigration courts had received legally accurate guidance about their arrest authority — a training and supervision failure with direct constitutional implications.</p>`,
+            source: "NPR",
+            sourceUrl: "https://www.npr.org/2026/03/26/nx-s1-5762691/doj-admits-ice-courthouse-arrests-relied-on-erroneous-information",
+            mediaType: "document",
+            mediaPlaceholder: `DOJ letter to Judge Castel and court filings acknowledging the erroneous legal memo`
+        },
+        {
+            id: 39,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -723,7 +736,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 39,
+            id: 40,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -736,7 +749,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 40,
+            id: 41,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -753,7 +766,7 @@ const timelineData = {
             }
         },
         {
-            id: 41,
+            id: 42,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -770,7 +783,7 @@ const timelineData = {
             }
         },
         {
-            id: 42,
+            id: 43,
             date: `April 22, 2026`,
             year: 2026,
             category: "incident",
@@ -787,7 +800,7 @@ const timelineData = {
             }
         },
         {
-            id: 43,
+            id: 44,
             date: `April 16, 2026`,
             year: 2026,
             category: "incident",
@@ -800,7 +813,7 @@ const timelineData = {
             mediaPlaceholder: `Hennepin County criminal complaint and arrest warrant for Gregory Donnell Morgan Jr.`
         },
         {
-            id: 44,
+            id: 45,
             date: `April 30, 2026`,
             year: 2026,
             category: "watchdog",
@@ -817,7 +830,7 @@ const timelineData = {
             }
         },
         {
-            id: 45,
+            id: 46,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -834,7 +847,7 @@ const timelineData = {
             }
         },
         {
-            id: 46,
+            id: 47,
             date: `May 5, 2026`,
             year: 2026,
             category: "court",
@@ -851,7 +864,7 @@ const timelineData = {
             }
         },
         {
-            id: 47,
+            id: 48,
             date: `May 1, 2026`,
             year: 2026,
             category: "court",
@@ -868,7 +881,7 @@ const timelineData = {
             }
         },
         {
-            id: 48,
+            id: 49,
             date: `May 2, 2026`,
             year: 2026,
             category: "incident",
@@ -885,7 +898,7 @@ const timelineData = {
             }
         },
         {
-            id: 49,
+            id: 50,
             date: `May 15, 2026`,
             year: 2026,
             category: "investigation",
@@ -898,7 +911,7 @@ const timelineData = {
             mediaPlaceholder: `CNN video report following family of Jose Ramos, who died at Adelanto ICE Processing Facility`
         },
         {
-            id: 50,
+            id: 51,
             date: `May 12, 2026`,
             year: 2026,
             category: "court",
@@ -911,7 +924,7 @@ const timelineData = {
             mediaPlaceholder: `60-page court order and footage of federal courthouse in Denver`
         },
         {
-            id: 51,
+            id: 52,
             date: `May 18, 2026`,
             year: 2026,
             category: "incident",
@@ -924,7 +937,7 @@ const timelineData = {
             mediaPlaceholder: `Press conference footage and charging documents showing criminal complaint against ICE agent Christian Castro`
         },
         {
-            id: 52,
+            id: 53,
             date: `May 12, 2026`,
             year: 2026,
             category: "court",
@@ -937,7 +950,7 @@ const timelineData = {
             mediaPlaceholder: `60-page court ruling ordering ICE retraining of Colorado arresting officers`
         },
         {
-            id: 53,
+            id: 54,
             date: `May 18, 2026`,
             year: 2026,
             category: "incident",
@@ -950,7 +963,7 @@ const timelineData = {
             mediaPlaceholder: `Booking photo of ICE agent Christian Castro and Hennepin County press conference announcing charges`
         },
         {
-            id: 54,
+            id: 55,
             date: `May 2026`,
             year: 2026,
             category: "watchdog",
@@ -963,7 +976,7 @@ const timelineData = {
             mediaPlaceholder: `OIG-26-07 report cover page showing inspection findings for Chantilly holding facility`
         },
         {
-            id: 55,
+            id: 56,
             date: `June 3, 2026`,
             year: 2026,
             category: "policy",
@@ -980,7 +993,7 @@ const timelineData = {
             }
         },
         {
-            id: 56,
+            id: 57,
             date: `June 2, 2026`,
             year: 2026,
             category: "watchdog",
@@ -993,7 +1006,7 @@ const timelineData = {
             mediaPlaceholder: `DHS OIG inspection report OIG-26-08 cover page and aerial photo of Winn Correctional Center`
         },
         {
-            id: 57,
+            id: 58,
             date: `June 5, 2026`,
             year: 2026,
             category: "policy",
@@ -1010,7 +1023,7 @@ const timelineData = {
             }
         },
         {
-            id: 58,
+            id: 59,
             date: `June 25, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1027,7 +1040,7 @@ const timelineData = {
             }
         },
         {
-            id: 59,
+            id: 60,
             date: `June 25, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1044,7 +1057,7 @@ const timelineData = {
             }
         },
         {
-            id: 60,
+            id: 61,
             date: `June 10, 2026`,
             year: 2026,
             category: "policy",
@@ -1061,7 +1074,7 @@ const timelineData = {
             }
         },
         {
-            id: 61,
+            id: 62,
             date: `June 25, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1375,6 +1388,11 @@ const timelineData = {
             type: `Government Report`,
             name: `DHS Office of Inspector General: OIG Reports Use-of-Force Violations at Louisiana ICE Facilit`,
             url: "https://www.oig.dhs.gov/sites/default/files/assets/2026-06/OIG-26-08-Jun26.pdf"
+        },
+        {
+            type: `Court Document`,
+            name: `NPR: DOJ Admits ICE Courthouse Arrest Policy Was Based on Erroneo`,
+            url: "https://www.npr.org/2026/03/26/nx-s1-5762691/doj-admits-ice-courthouse-arrests-relied-on-erroneous-information"
         }
     ],
 
