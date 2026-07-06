@@ -978,6 +978,23 @@ const timelineData = {
             sourceUrl: "https://www.washingtontimes.com/news/2026/jun/8/ice-facility-louisiana-reports-second-detainee-death-less-2-months/",
             mediaType: "document",
             mediaPlaceholder: `DHS OIG inspection report OIG-26-08 cover page and aerial photo of Winn Correctional Center`
+        },
+        {
+            id: 56,
+            date: `June 5, 2026`,
+            year: 2026,
+            category: "policy",
+            title: `ICE Eliminates Rule Requiring Reporting of Detainee Deaths After Release`,
+            excerpt: `Acting ICE Director David Venturella issued an internal memo ending the agency's requirement to report deaths occurring within 30 days of a detainee's release from custody — reversing a 2021 transparency safeguard designed to prevent ICE from avoiding accountability by discharging critically ill detainees just before death. Health experts warned the change creates a critical oversight blind spot as in-custody deaths hit a two-decade high.`,
+            content: `<p>On June 4–5, 2026, Acting ICE Director David Venturella issued an internal memo and confirmed in public statements that ICE was eliminating its requirement to report deaths occurring within 30 days of a detainee's release from custody.</p><ul><li class="warning-highlight">The change reversed a 2021 policy specifically designed to stop ICE from shedding accountability for critically ill detainees by discharging them just before death.</li><li class="warning-highlight">Critics warned the new policy would allow ICE to release imminently dying detainees without investigation and remove a key mechanism for Congress, watchdogs, medical experts, and attorneys to identify failures in detention medical care.</li><li>The rollback came as ICE had already logged 18 fatalities in the first five months of 2026, putting the year on pace to set an all-time record for in-custody deaths.</li><li>Dr. Homer Venters, former chief medical officer of the New York City jail system, stated: "Tracking deaths immediately after custody is a standard approach that allows health systems in jails, prisons and immigration detention to learn about gaps in care."</li></ul><p>An ACLU senior policy counsel noted that even before this change, ICE death reports lacked specific cause-of-death information and centered on the detainee's criminal history rather than medical circumstances.</p>`,
+            source: `NBC News / Associated Press`,
+            sourceUrl: "https://www.nbcnews.com/news/us-news/ice-will-no-longer-report-deaths-detainees-recently-released-custody-rcna348719",
+            media: {
+                type: "image",
+                src: "images/2026-06-15-ice-eliminates-rule-requiring-reporting-of-detaine.jpg",
+                alt: `ICE Eliminates Rule Requiring Reporting of Detainee Deaths After Release`,
+                caption: `NBC News / Associated Press — June 5, 2026`
+            }
         }
     ],
 
@@ -1251,6 +1268,11 @@ const timelineData = {
             type: `Government Report`,
             name: `Washington Times / Associated Press: DHS OIG Report: Winn Correctional Found Banned Chokeholds, M`,
             url: "https://www.washingtontimes.com/news/2026/jun/8/ice-facility-louisiana-reports-second-detainee-death-less-2-months/"
+        },
+        {
+            type: `News Report`,
+            name: `NBC News / Associated Press: ICE Eliminates Rule Requiring Reporting of Detainee Deaths A`,
+            url: "https://www.nbcnews.com/news/us-news/ice-will-no-longer-report-deaths-detainees-recently-released-custody-rcna348719"
         }
     ],
 
