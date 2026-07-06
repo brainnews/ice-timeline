@@ -1042,6 +1042,23 @@ const timelineData = {
                 alt: `Detainees stand by a window inside the federal immigration center at Delaney Hall`,
                 caption: `Human Rights Watch / Physicians for Human Rights — June 25, 2026`
             }
+        },
+        {
+            id: 60,
+            date: `June 10, 2026`,
+            year: 2026,
+            category: "policy",
+            title: `ICE Scraps 42-Day Training, Mandates Supplemental Program for Officers Already in Field`,
+            excerpt: `An internal ICE memo obtained by CBS News revealed the agency extended new-officer training to approximately 71 days and ordered all officers who graduated under the shortened 42-day program to complete a new 'Advanced Field Officer Training Program,' conceding months of inadequate preparation.`,
+            content: `<p>On June 10, 2026, CBS News reported on an internal ICE memo confirming that the agency had scrapped its controversial 42-day training program and extended the curriculum to approximately 71 days for new classes starting in July at the Federal Law Enforcement Training Center in Georgia.</p><ul><li class="warning-highlight">Officers who had already graduated under the shortened 42-day process were ordered to complete additional "follow-on" instruction called the Advanced Field Officer Training Program. The memo did not specify the length or content of this supplemental training.</li><li>The changes follow months of bipartisan concern and a February 2026 whistleblower complaint by former ICE instructor Ryan Schwank, who testified to Congress that the training program was "deficient, defective, and broken."</li><li>The revamp was previewed by newly installed DHS Secretary Markwayne Mullin, who told the Senate Appropriations Committee on June 2 that training would be modified to include crowd control.</li><li>The shortened 42-day training had been adopted under former DHS Secretary Kristi Noem as ICE rushed to onboard 10,000 new deportation agents. DHS confirmed to CBS News that the prior training had been cut from 72 to 42 days within a 7-month span.</li></ul><p class="warning-highlight">The move was widely interpreted as an implicit acknowledgment that the administration's rapid hiring surge had deployed inadequately trained officers into the field, contributing to the pattern of use-of-force incidents and constitutional violations documented throughout early 2026.</p>`,
+            source: `CBS News`,
+            sourceUrl: "https://www.cbsnews.com/news/ice-training-new-hires-backlash/",
+            media: {
+                type: "image",
+                src: "images/2026-06-29-ice-scraps-42-day-training-mandates-supplemental-p.jpg",
+                alt: `ICE Scraps 42-Day Training, Mandates Supplemental Program for Officers Already in Field`,
+                caption: `CBS News — June 10, 2026`
+            }
         }
     ],
 
@@ -1335,6 +1352,11 @@ const timelineData = {
             type: `Government Report`,
             name: `Human Rights Watch / Physicians for Human Rights: HRW/PHR Report: 52 ICE Custody Deaths in 500 Days; Mortality`,
             url: "https://www.hrw.org/report/2026/06/25/dying-in-detention/rising-deaths-in-an-expanding-us-immigration-detention-system"
+        },
+        {
+            type: `News Report`,
+            name: `CBS News: ICE Scraps 42-Day Training, Mandates Supplemental Program fo`,
+            url: "https://www.cbsnews.com/news/ice-training-new-hires-backlash/"
         }
     ],
 
