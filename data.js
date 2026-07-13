@@ -1085,6 +1085,23 @@ const timelineData = {
             sourceUrl: "https://www.oig.dhs.gov/sites/default/files/assets/2026-06/OIG-26-08-Jun26.pdf",
             mediaType: "document",
             mediaPlaceholder: `DHS OIG report cover page for the Winn Correctional Center inspection findings (OIG-26-08)`
+        },
+        {
+            id: 63,
+            date: `June 18, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `HRW '180-Page Manufactured Crisis' Report: Operation Metro Surge Caused Human Rights Crisis`,
+            excerpt: `Human Rights Watch released a comprehensive 180-page report documenting how Operation Metro Surge in Minnesota caused widespread human rights violations, including two unlawful killings, racial profiling, and hundreds of unjustified arrests — with over 75% of detainees having no criminal history.`,
+            content: `<p>On June 18, 2026, Human Rights Watch released "'A Manufactured Crisis': Minnesota Communities Terrorized by the Federal Government," a 180-page report documenting the human rights impact of the Trump administration's Operation Metro Surge, the largest interior deployment of immigration agents in U.S. history.</p><ul><li class="warning-highlight">HRW documented that federal officers unlawfully killed two people — U.S. citizens Renee Good and Alex Pretti — injured others, and made hundreds of unlawful arrests during the December 2025–March 2026 operation.</li><li class="warning-highlight">Of roughly 4,000 immigrants detained during the operation, over 75% had no criminal history, contradicting the administration's repeated claims that agents were targeting the "worst of the worst."</li><li class="warning-highlight">In January alone, the arrest rate for those without prior removal orders dropped to 19% — down from 37–39% under the Biden administration — consistent with testimony that agents stopped people based on race, ethnicity, and spoken language.</li><li>Of 532 habeas corpus cases resolved through the courts between December and mid-May, 466 resulted in orders for release, indicating the vast majority of arrests were legally unjustified.</li><li>HRW interviewed 136 people including immigrants, lawyers, healthcare providers, educators, and current and former government officials. Researchers analyzed 52 confirmed videos and photos, sworn declarations, judicial decisions, and government data.</li><li>The report found that untrained ICE officers used sticky notes to designate which cells held U.S. citizens versus immigrant detainees, according to National Lawyers Guild observers.</li></ul><p class="warning-highlight">HRW called for federal leaders to be investigated for creating a human rights crisis and urged Congress to overhaul DHS oversight mechanisms, ban racial profiling, and prohibit agents from wearing face coverings during operations.</p>`,
+            source: `Human Rights Watch`,
+            sourceUrl: "https://www.hrw.org/report/2026/06/18/a-manufactured-crisis/minnesota-communities-terrorized-by-the-federal-government",
+            media: {
+                type: "image",
+                src: "images/2026-06-29-hrw-180-page-manufactured-crisis-report-operation.jpg",
+                alt: `A protester sits on the street with his arms up in front of federal agents and Minneapolis Police`,
+                caption: `Human Rights Watch — June 18, 2026`
+            }
         }
     ],
 
@@ -1393,6 +1410,11 @@ const timelineData = {
             type: `Court Document`,
             name: `NPR: DOJ Admits ICE Courthouse Arrest Policy Was Based on Erroneo`,
             url: "https://www.npr.org/2026/03/26/nx-s1-5762691/doj-admits-ice-courthouse-arrests-relied-on-erroneous-information"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `Human Rights Watch: HRW '180-Page Manufactured Crisis' Report: Operation Metro S`,
+            url: "https://www.hrw.org/report/2026/06/18/a-manufactured-crisis/minnesota-communities-terrorized-by-the-federal-government"
         }
     ],
 
