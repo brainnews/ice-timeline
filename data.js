@@ -1119,6 +1119,19 @@ const timelineData = {
                 alt: `Harris County ME Rules Houston ICE Shooting a Homicide; DHS Admits Wrong Man Killed`,
                 caption: `KPRC Click2Houston / ABC News / Newsweek — July 9, 2026`
             }
+        },
+        {
+            id: 65,
+            date: `July 6, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `NIPNLG: At Least 21 ICE Custody Deaths in First Half of 2026, On Pace to Break Annual Record`,
+            excerpt: `The National Immigration Project of the National Lawyers Guild documented at least 21 deaths in ICE custody as of July 6, 2026 — approaching the full-year total of 33 recorded in 2025, which had itself been the highest in more than two decades. Advocacy organizations warned the 2026 death toll was on track to far exceed that record.`,
+            content: `<p>As of July 6, 2026, the National Immigration Project of the National Lawyers Guild (NIPNLG) documented at least 21 people who had reportedly died in ICE custody in the first six months of 2026 alone. The 2025 full-year total had been 33 — the highest in more than two decades — and advocacy organizations warned that 2026 was on pace to dramatically surpass that record.</p><p class="warning-highlight">Deaths in 2026 spanned facilities across multiple states, including Camp East Montana at Fort Bliss (where one death was ruled a homicide by asphyxia), the Adelanto ICE Processing Center in California, the Glades County Detention Center in Florida, and others. Medical neglect — including denied inhalers, untreated infections, and delayed emergency care — was cited by advocates and medical experts as a contributing factor in numerous cases. The Human Rights Watch/Physicians for Human Rights report published June 25 found that the 2026 mortality rate was nearly four times that of the Biden administration and higher than during the COVID-19 pandemic.</p><ul><li>Deaths documented in 2026 include individuals from Mexico, Cuba, Honduras, Cambodia, Nicaragua, Georgia (country), Vietnam, Iran, Haiti, Afghanistan, and Guatemala.</li><li>The youngest victim was 19-year-old Royer Pérez Jiménez of Mexico, who died at the Glades County Detention Center in March 2026.</li><li>Detention Watch Network advocacy director Setareh Ghandehari stated: "I have never seen anything like this, where I'm seeing ICE reporting out at least one death per week."</li><li>The deaths occurred amid ICE detention populations that had reached a record high of over 71,000 people earlier in 2026.</li></ul>`,
+            source: `National Immigration Project (NIPNLG)`,
+            sourceUrl: "https://nipnlg.org/news/mourning-those-who-have-died-ice-custody",
+            mediaType: "document",
+            mediaPlaceholder: `NIPNLG tracking list of 2026 ICE custody deaths with facility locations, ages, and countries of origin; bar chart comparing annual death totals since 2004`
         }
     ],
 
@@ -1437,6 +1450,11 @@ const timelineData = {
             type: `News Report`,
             name: `KPRC Click2Houston / ABC News / Newsweek: Harris County ME Rules Houston ICE Shooting a Homicide; DHS `,
             url: "https://www.click2houston.com/news/local/2026/07/09/harris-county-medical-examiner-rules-death-of-lorenzo-salgado-araujo-a-homicide/"
+        },
+        {
+            type: `Government Report`,
+            name: `National Immigration Project (NIPNLG): NIPNLG: At Least 21 ICE Custody Deaths in First Half of 2026`,
+            url: "https://nipnlg.org/news/mourning-those-who-have-died-ice-custody"
         }
     ],
 
