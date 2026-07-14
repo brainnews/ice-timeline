@@ -194,8 +194,6 @@
     transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1), filter 180ms ease, opacity 200ms ease;
     color: #1a1410;
     font-family: var(--font-sans);
-    will-change: transform;
-    animation: paper-drop-in 540ms cubic-bezier(0.32, 1.4, 0.5, 1) backwards;
 }
 @keyframes paper-drop-in {
     0% {
@@ -210,19 +208,36 @@
         transform: rotate(var(--rot, 0deg)) translateY(0) scale(1);
     }
 }
+/* will-change is scoped to only the cards actively animating (dropping in
+   or hovered) instead of being permanent on every card — permanently
+   promoting dozens of cards to compositor layers is what makes Safari
+   choke as the event count grows. */
+.paper--dropping {
+    will-change: transform;
+    animation: paper-drop-in 540ms cubic-bezier(0.32, 1.4, 0.5, 1) backwards;
+}
 .paper:hover {
-    transform: rotate(0deg) translateY(-6px) scale(1.06);
+    will-change: transform, filter;
+    transform: rotate(0deg) translateY(-2px) scale(1.02);
     z-index: 50 !important;
-    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.45));
+    filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.4));
 }
 .paper--filtered-out {
     opacity: 0.18;
     filter: grayscale(0.6);
     pointer-events: none;
 }
-.paper--dim {
+/* Dimming during hover is driven by a class on the container plus a
+   `paper--focus` class on only the hovered card + its connected neighbors,
+   so the CSS cascade handles "dim everyone else" for free instead of the
+   JS having to loop over every paper on every mouseenter/mouseleave. */
+.evidence-papers.is-hovering .paper {
     opacity: 0.45;
     filter: grayscale(0.3);
+}
+.evidence-papers.is-hovering .paper.paper--focus {
+    opacity: 1;
+    filter: none;
 }
 
 .paper .tack {

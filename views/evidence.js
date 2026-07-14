@@ -28,12 +28,22 @@
     let pointerDownAt = 0;
     let isActive = false;
     let papers = []; // [{ event, el, x, y, rot, w, h }]
+    let papersById = new Map(); // eventId -> paper
     let yarns = [];  // [{ a, b, path }]
+    let adjacency = new Map(); // eventId -> { yarns: [...], papers: [...] }
     let zCounter = 1;
     let didFitOnce = false;
     let boardW = 0, boardH = 0;
     let latestColCenterX = 0, latestColWidth = 0;
     let zoomBtnIn, zoomBtnOut, zoomBtnFit;
+
+    // -- hover-intent state --------------------------------------------------
+    // A single committed hover id + a short debounce so a card can never be
+    // left in a half-applied dim/focus state when the pointer oscillates
+    // rapidly between overlapping cards.
+    const HOVER_DELAY = 50; // ms
+    let hoverTimer = null;
+    let activeHoverId = null;
 
     // -- registration ------------------------------------------------------
     function register() {
@@ -90,8 +100,8 @@
         events.forEach(e => (byYear[e.year] = byYear[e.year] || []).push(e));
         const years = Object.keys(byYear).map(Number).sort();
 
-        const COL_W = 270;
-        const ROW_H = 290;
+        const COL_W = 300;
+        const ROW_H = 350;
         const PADDING_X = 220;
         // Top/bottom padding clears the floating UI (search bar at top,
         // hint pill at bottom) so the year banners are immediately legible.
@@ -120,6 +130,11 @@
         stringsEl.setAttribute('width', boardWidth);
         stringsEl.setAttribute('height', boardHeight);
 
+        // Build everything off-DOM in a fragment first, then append once —
+        // appending+measuring inside the loop forces a synchronous reflow
+        // per event (Safari chokes on this well before Chrome does).
+        const fragment = document.createDocumentFragment();
+
         // Year banners floating above each year column
         years.forEach(y => {
             const meta = yearMeta[y];
@@ -129,38 +144,48 @@
             banner.style.top = `${PADDING_Y - 90}px`;
             banner.style.transform = `translateX(-50%) rotate(${(hash(y) - 0.5) * 4}deg)`;
             banner.textContent = String(y);
-            papersEl.appendChild(banner);
+            fragment.appendChild(banner);
         });
 
         // Place artifacts
         papers = [];
         papersEl.querySelectorAll('.paper').forEach(p => p.remove());
+        const placed = [];
         events.forEach((e, sortedIdx) => {
             const list = byYear[e.year];
             const idx = list.indexOf(e);
             const meta = yearMeta[e.year];
             const colIdx = idx % meta.cols;
             const rowIdx = Math.floor(idx / meta.cols);
-            const x = meta.x + colIdx * COL_W + (hash(e.id * 7) - 0.5) * 30;
-            const y = PADDING_Y + rowIdx * ROW_H + (hash(e.id * 13) - 0.5) * 26;
+            const x = meta.x + colIdx * COL_W + (hash(e.id * 7) - 0.5) * 16;
+            const y = PADDING_Y + rowIdx * ROW_H + (hash(e.id * 13) - 0.5) * 12;
             const rot = (hash(e.id * 19) - 0.5) * 14; // -7..7 deg
 
             const paperEl = makePaper(e, { x, y, rot });
             // staggered drop-in: ~25ms between papers, with slight randomization
             paperEl.style.animationDelay = `${sortedIdx * 28 + hash(e.id) * 50}ms`;
-            papersEl.appendChild(paperEl);
-
-            const w = paperEl.offsetWidth;
-            const h = paperEl.offsetHeight;
-            papers.push({ event: e, el: paperEl, x, y, rot, w, h });
+            fragment.appendChild(paperEl);
+            placed.push({ event: e, el: paperEl, x, y, rot });
         });
+
+        papersEl.appendChild(fragment);
+
+        // Single measurement pass after everything is in the DOM — one
+        // reflow total instead of one per event.
+        placed.forEach(p => {
+            p.w = p.el.offsetWidth;
+            p.h = p.el.offsetHeight;
+        });
+        papers = placed;
+        papersById = new Map(papers.map(p => [p.event.id, p]));
     }
 
     // -- paper construction -------------------------------------------------
     function makePaper(event, { x, y, rot }) {
         const el = document.createElement('article');
         const kind = paperKindFor(event);
-        el.className = `paper paper--${kind}`;
+        el.className = `paper paper--${kind} paper--dropping`;
+        el.addEventListener('animationend', () => el.classList.remove('paper--dropping'), { once: true });
         el.dataset.eventId = String(event.id);
         el.dataset.category = event.category;
         el.style.left = `${x}px`;
@@ -189,10 +214,10 @@
         el.addEventListener('mouseenter', () => {
             zCounter += 1;
             el.style.zIndex = String(zCounter);
-            highlightConnected(event.id, true);
+            scheduleHoverOn(event.id);
         });
         el.addEventListener('mouseleave', () => {
-            highlightConnected(event.id, false);
+            scheduleHoverOff(event.id);
         });
         return el;
     }
@@ -404,11 +429,28 @@
                 addYarn(sorted[i], sorted[i + 1], '#c1121f', 'source', 0.85);
             }
         });
+
+        buildAdjacency();
+    }
+
+    // Precomputed once per drawYarn() so hover only ever touches the
+    // directly-connected yarns/papers (O(degree)) instead of scanning the
+    // entire board on every mouseenter/mouseleave (O(n)).
+    function buildAdjacency() {
+        adjacency = new Map(papers.map(p => [p.event.id, { yarns: [], papers: [] }]));
+        yarns.forEach(y => {
+            const aId = y.a.event.id;
+            const bId = y.b.event.id;
+            adjacency.get(aId).yarns.push(y);
+            adjacency.get(bId).yarns.push(y);
+            adjacency.get(aId).papers.push(y.b);
+            adjacency.get(bId).papers.push(y.a);
+        });
     }
 
     function addYarn(eventA, eventB, color, kind, opacity) {
-        const a = papers.find(p => p.event.id === eventA.id);
-        const b = papers.find(p => p.event.id === eventB.id);
+        const a = papersById.get(eventA.id);
+        const b = papersById.get(eventB.id);
         if (!a || !b) return;
 
         const ax = a.x + a.w / 2;
@@ -437,24 +479,49 @@
     }
 
     function highlightConnected(eventId, on) {
-        yarns.forEach(y => {
-            const involved = y.a.event.id === eventId || y.b.event.id === eventId;
-            if (involved) {
-                y.path.setAttribute('opacity', on ? '1' : String(y.baseOpacity));
-                y.path.setAttribute('stroke-width', on
-                    ? (y.kind === 'source' ? '3' : '2')
-                    : (y.kind === 'source' ? '2.2' : '1.2'));
-            }
+        const adj = adjacency.get(eventId);
+        if (!adj) return;
+        adj.yarns.forEach(y => {
+            y.path.setAttribute('opacity', on ? '1' : String(y.baseOpacity));
+            y.path.setAttribute('stroke-width', on
+                ? (y.kind === 'source' ? '3' : '2')
+                : (y.kind === 'source' ? '2.2' : '1.2'));
         });
-        // dim other papers
-        papers.forEach(p => {
-            const isThis = p.event.id === eventId;
-            const isConnected = yarns.some(y =>
-                (y.a.event.id === eventId && y.b.event.id === p.event.id) ||
-                (y.b.event.id === eventId && y.a.event.id === p.event.id)
-            );
-            p.el.classList.toggle('paper--dim', on && !isThis && !isConnected);
-        });
+        // The hovered card + its connected neighbors get `paper--focus`;
+        // `papersEl`'s `is-hovering` class dims everything else via CSS
+        // cascade, so this touches only O(degree) elements, not all papers.
+        const hoveredPaper = papersById.get(eventId);
+        if (hoveredPaper) hoveredPaper.el.classList.toggle('paper--focus', on);
+        adj.papers.forEach(p => p.el.classList.toggle('paper--focus', on));
+        papersEl.classList.toggle('is-hovering', on);
+    }
+
+    // -- hover-intent debounce ----------------------------------------------
+    // Overlapping/rotated cards can shift their hitbox under the cursor as
+    // they animate on hover, causing rapid mouseenter/mouseleave oscillation
+    // between neighbors. Committing hover state through a single timer with
+    // one "active" id at a time guarantees a card can never be left stuck in
+    // a dimmed state, regardless of how enter/leave events interleave.
+    function scheduleHoverOn(eventId) {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(() => commitHoverOn(eventId), HOVER_DELAY);
+    }
+    function scheduleHoverOff(eventId) {
+        clearTimeout(hoverTimer);
+        if (activeHoverId === eventId) {
+            hoverTimer = setTimeout(() => commitHoverOff(eventId), HOVER_DELAY);
+        }
+    }
+    function commitHoverOn(eventId) {
+        if (activeHoverId === eventId) return;
+        if (activeHoverId !== null) commitHoverOff(activeHoverId);
+        activeHoverId = eventId;
+        highlightConnected(eventId, true);
+    }
+    function commitHoverOff(eventId) {
+        if (activeHoverId !== eventId) return;
+        highlightConnected(eventId, false);
+        activeHoverId = null;
     }
 
     function applyFilter(state) {
