@@ -27,17 +27,25 @@ jobs:
           # Pull staged image filename out of the proposal JSON before
           # deleting it, so we can clean up proposals-media/ too.
           IMAGE_FILE=$(node -e "const p=require('./$FILEPATH'); if(p.imageFile) process.stdout.write(p.imageFile)")
-          rm "$FILEPATH"
-          if [ -n "$IMAGE_FILE" ] && [ -f "proposals-media/$IMAGE_FILE" ]; then
-            rm "proposals-media/$IMAGE_FILE"
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add proposals/ proposals-media/ 2>/dev/null || git add proposals/
-          git commit -m "chore: reject proposal ${{ inputs.file }}"
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
+            git fetch origin main
+            git reset --hard origin/main
+            rm -f "$FILEPATH"
+            if [ -n "$IMAGE_FILE" ] && [ -f "proposals-media/$IMAGE_FILE" ]; then
+              rm "proposals-media/$IMAGE_FILE"
+            fi
+            git add proposals/ proposals-media/ 2>/dev/null || git add proposals/
+            git commit -m "chore: reject proposal ${{ inputs.file }}"
+            if git push origin HEAD:main; then
+              echo "Rejected and deleted $FILEPATH"
+              break
+            fi
             echo "Push attempt $i failed; retrying..."
             sleep 2
+            if [ "$i" -eq 3 ]; then
+              echo "::error::Failed to push after 3 attempts"
+              exit 1
+            fi
           done
-          echo "Rejected and deleted $FILEPATH"
