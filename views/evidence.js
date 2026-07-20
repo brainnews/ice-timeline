@@ -180,9 +180,16 @@
         events.forEach(e => (byYear[e.year] = byYear[e.year] || []).push(e));
         const years = Object.keys(byYear).map(Number).sort((a, b) => a - b);
 
-        const COL_W = 300;
-        const ROW_GAP = 26;
-        const BLOCK_GAP_X = 60;
+        const COL_W = 320;
+        // Cards rotate up to ±5deg around a pivot near their top edge (see
+        // makePaper), so a tall card's bottom corners can swing sideways by
+        // tens of px beyond its unrotated box. ROW_GAP/BLOCK_GAP_X need to be
+        // wide enough to absorb that swing on both neighbors, or adjacent
+        // rotated cards can visually overlap — which reads as hover flicker
+        // (the browser's hit-test alternates between the two overlapping
+        // shapes) even though their axis-aligned boxes never touch.
+        const ROW_GAP = 56;
+        const BLOCK_GAP_X = 90;
         const YEAR_GAP_X = 90;
         const TIER_GAP_Y = 110;
         const BLOCKS_PER_TIER = 4;
@@ -235,7 +242,7 @@
                     const rowIdx = Math.floor(i / block.cols);
                     const colIdx = i % block.cols;
                     const x = layout.x + block.xOffset + colIdx * COL_W + (hash(e.id * 7) - 0.5) * 16;
-                    const rot = (hash(e.id * 19) - 0.5) * 14; // -7..7 deg
+                    const rot = (hash(e.id * 19) - 0.5) * 10; // -5..5 deg
 
                     const paperEl = makePaper(e, { x, y: 0, rot });
                     // staggered drop-in: ~22ms between papers, with slight randomization

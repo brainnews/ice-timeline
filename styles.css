@@ -610,7 +610,6 @@ a {
     padding: var(--space-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--color-border-light);
-    border-left: 3px solid transparent;
     cursor: pointer;
     transition: all var(--transition-base);
 }
@@ -624,14 +623,7 @@ a {
     transform: translateY(0);
 }
 
-.event-card[data-category="watchdog"] { border-left-color: var(--color-watchdog); }
-.event-card[data-category="court"] { border-left-color: var(--color-court); }
-.event-card[data-category="investigation"] { border-left-color: var(--color-investigation); }
-.event-card[data-category="incident"] { border-left-color: var(--color-incident); }
-.event-card[data-category="policy"] { border-left-color: var(--color-policy); }
-
 .event-card--notable {
-    border-left-width: 4px;
     box-shadow: var(--shadow-md);
 }
 
