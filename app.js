@@ -18,7 +18,8 @@
         modalClose: document.getElementById('modal-close'),
         scrollTop: document.getElementById('scroll-top'),
         progressBar: document.getElementById('progress-bar'),
-        sourcesGrid: document.getElementById('sources-grid')
+        sourcesGrid: document.getElementById('sources-grid'),
+        summaryStats: document.getElementById('summary-stats')
     };
 
     // State
@@ -33,9 +34,83 @@
     function init() {
         renderTimeline();
         renderSources();
+        renderSummaryStats();
         setupEventListeners();
         setupIntersectionObserver();
         updateScrollProgress();
+    }
+
+    // Render the at-a-glance stats strip: totals, category breakdown, and a
+    // per-year density row so the recent surge is visible before scrolling
+    // into the full list. Computed live from timelineData so it stays
+    // correct as the news-scan pipeline adds more events.
+    function renderSummaryStats() {
+        if (!elements.summaryStats) return;
+        const events = timelineData.events;
+        const years = events.map(e => e.year);
+        const yearMin = Math.min(...years);
+        const yearMax = Math.max(...years);
+
+        const byYear = {};
+        events.forEach(e => { byYear[e.year] = (byYear[e.year] || 0) + 1; });
+        const surgeYear = Object.keys(byYear).reduce((a, b) => (byYear[a] >= byYear[b] ? a : b));
+        const surgeCount = byYear[surgeYear];
+        const surgePct = Math.round((surgeCount / events.length) * 100);
+
+        const categoryOrder = ['watchdog', 'court', 'investigation', 'incident', 'policy'];
+        const byCategory = {};
+        events.forEach(e => { byCategory[e.category] = (byCategory[e.category] || 0) + 1; });
+        const maxCatCount = Math.max(...categoryOrder.map(c => byCategory[c] || 0));
+
+        const tilesHTML = `
+            <div class="stat">
+                <span class="stat-value">${events.length}</span>
+                <span class="stat-label">Documented events</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">${yearMin}–${yearMax}</span>
+                <span class="stat-label">Years covered</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">${surgeCount}</span>
+                <span class="stat-label">In ${surgeYear} alone — ${surgePct}% of all events</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">${categoryOrder.length}</span>
+                <span class="stat-label">Categories tracked</span>
+            </div>
+        `;
+
+        const breakdownHTML = categoryOrder.map(cat => {
+            const count = byCategory[cat] || 0;
+            const data = timelineData.categories[cat];
+            const pct = maxCatCount ? Math.round((count / maxCatCount) * 100) : 0;
+            return `
+                <div class="stats-category-row">
+                    <span class="stats-swatch" style="background:${data.color}"></span>
+                    <span class="stats-category-label">${data.label}</span>
+                    <span class="stats-bar"><span class="stats-bar-fill" style="width:${pct}%; background:${data.color}"></span></span>
+                    <span class="stats-category-count">${count}</span>
+                </div>
+            `;
+        }).join('');
+
+        // Per-year density, including zero-event years, so the shape of the
+        // surge (mostly quiet, then a sharp recent spike) reads at a glance.
+        const yearCounts = [];
+        for (let y = yearMin; y <= yearMax; y++) yearCounts.push({ year: y, count: byYear[y] || 0 });
+        const maxYearCount = Math.max(...yearCounts.map(y => y.count));
+        const sparklineHTML = yearCounts.map(y => {
+            const h = maxYearCount ? Math.max(4, Math.round((y.count / maxYearCount) * 100)) : 4;
+            const highlight = String(y.year) === surgeYear ? ' stats-sparkline-bar--peak' : '';
+            return `<span class="stats-sparkline-bar${highlight}" style="height:${h}%" title="${y.year}: ${y.count} event${y.count === 1 ? '' : 's'}"></span>`;
+        }).join('');
+
+        elements.summaryStats.innerHTML = `
+            <div class="summary-stats">${tilesHTML}</div>
+            <div class="stats-category-breakdown">${breakdownHTML}</div>
+            <div class="stats-sparkline" role="img" aria-label="Events per year from ${yearMin} to ${yearMax}: mostly sparse, with a sharp rise to ${surgeCount} events in ${surgeYear}.">${sparklineHTML}</div>
+        `;
     }
 
     // Render timeline events
@@ -44,8 +119,15 @@
         const groupedByYear = groupEventsByYear(events);
 
         let html = '';
+        let currentEra = null;
 
         for (const year of Object.keys(groupedByYear).sort()) {
+            const era = eraForYear(Number(year));
+            if (era && era !== currentEra) {
+                html += createEraBreak(era);
+                currentEra = era;
+            }
+
             html += `<div class="timeline-year" data-year="${year}">`;
             html += `<span class="year-marker">${year}</span>`;
 
@@ -77,31 +159,106 @@
         }, {});
     }
 
+    // Find the era (timelineData.eras) a given year falls in, if any.
+    function eraForYear(year) {
+        const eras = timelineData.eras || [];
+        return eras.find(e => year >= e.from && (e.to === null || year <= e.to)) || null;
+    }
+
+    function createEraBreak(era) {
+        const range = era.to === null ? `${era.from}–present` : `${era.from}–${era.to}`;
+        return `
+            <div class="era-break" data-era-from="${era.from}" data-era-to="${era.to === null ? '' : era.to}">
+                <span class="era-range">${range}</span>
+                <h2 class="era-label">${era.label}</h2>
+                ${era.description ? `<p class="era-description">${era.description}</p>` : ''}
+            </div>
+        `;
+    }
+
     // Create event card HTML
     function createEventCard(event) {
         const categoryData = timelineData.categories[event.category];
+        const notableClass = isNotableEvent(event) ? ' event-card--notable' : '';
+        const pullQuote = extractWarningHighlight(event);
 
         return `
             <article class="timeline-event" data-event-id="${event.id}" data-category="${event.category}">
-                <div class="event-card" data-event-id="${event.id}">
-                    <div class="event-header">
-                        <time class="event-date">${event.date}</time>
-                        <span class="event-category" data-category="${event.category}">${categoryData.label}</span>
-                    </div>
-                    <h3 class="event-title">${event.title}</h3>
-                    <p class="event-excerpt">${event.excerpt}</p>
-                    <div class="event-footer">
-                        <span class="event-source">${event.source}</span>
-                        <span class="event-expand">
-                            Read more
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
+                <div class="event-card${notableClass}" data-event-id="${event.id}" data-category="${event.category}">
+                    ${getCardImageHTML(event)}
+                    <div class="event-body">
+                        <div class="event-header">
+                            <time class="event-date">${event.date}</time>
+                            <span class="event-category" data-category="${event.category}">${categoryData.label}</span>
+                            ${getCardMediaBadgeHTML(event)}
+                        </div>
+                        <h3 class="event-title">${event.title}</h3>
+                        <p class="event-excerpt">${event.excerpt}</p>
+                        ${pullQuote ? `<blockquote class="card-pullquote">${pullQuote}</blockquote>` : ''}
+                        <div class="event-footer">
+                            <span class="event-source">${event.source}</span>
+                            <span class="event-expand">
+                                Read more
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </article>
         `;
+    }
+
+    // A card is "notable" if it already carries a curated signal of
+    // significance — a real photo, or an authored warning-highlight callout
+    // (see CLAUDE.md content conventions) — rather than a new field that
+    // would need backfilling across every existing event.
+    function isNotableEvent(event) {
+        const hasImage = !!(event.media && event.media.type === 'image' && event.media.src);
+        const hasWarning = !!(event.content && event.content.includes('warning-highlight'));
+        return hasImage || hasWarning;
+    }
+
+    // Pull the text of the first warning-highlight block in an event's
+    // modal content, if any, for a card-level pull-quote. Only the first —
+    // an event can carry more than one, and the rest still surface in the
+    // modal so nothing is lost.
+    function extractWarningHighlight(event) {
+        if (!event.content || !event.content.includes('warning-highlight')) return null;
+        try {
+            const doc = new DOMParser().parseFromString(event.content, 'text/html');
+            const el = doc.querySelector('.warning-highlight');
+            const text = el && el.textContent.trim();
+            return text || null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    // Inline image thumbnail for the card (only for actual images — video/
+    // audio/embed stay a small badge, see getCardMediaBadgeHTML, so the
+    // list doesn't load a dozen YouTube iframes at once). Full media still
+    // plays in the modal via getMediaHTML/renderMedia, unchanged.
+    function getCardImageHTML(event) {
+        const media = event.media;
+        if (media && media.type === 'image' && media.src) {
+            return `<div class="event-media"><img src="${media.src}" alt="${media.alt || ''}" class="event-media-img" loading="lazy"></div>`;
+        }
+        return '';
+    }
+
+    function getCardMediaBadgeHTML(event) {
+        const media = event.media;
+        if (!media || media.type === 'image') return '';
+        const icons = {
+            youtube: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`,
+            video: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`,
+            audio: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`,
+            embed: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect></svg>`,
+        };
+        const labels = { youtube: 'Video', video: 'Video', audio: 'Audio', embed: 'Media' };
+        return `<span class="event-media-badge">${icons[media.type] || icons.embed}${labels[media.type] || 'Media'}</span>`;
     }
 
     // Render sources section
@@ -255,6 +412,19 @@
         document.querySelectorAll('.timeline-year').forEach(yearEl => {
             const hasVisibleEvents = yearEl.querySelector('.timeline-event:not(.filtered-out)');
             yearEl.style.display = hasVisibleEvents ? '' : 'none';
+        });
+
+        // Hide era-break headers whose whole year range has no visible
+        // events left, so filtering never leaves dangling headers stacked
+        // with nothing under them.
+        document.querySelectorAll('.era-break').forEach(eraEl => {
+            const from = Number(eraEl.dataset.eraFrom);
+            const to = eraEl.dataset.eraTo === '' ? Infinity : Number(eraEl.dataset.eraTo);
+            const hasVisibleYear = [...document.querySelectorAll('.timeline-year')].some(yearEl => {
+                const year = Number(yearEl.dataset.year);
+                return year >= from && year <= to && yearEl.style.display !== 'none';
+            });
+            eraEl.style.display = hasVisibleYear ? '' : 'none';
         });
 
         // Show no results message if needed

@@ -339,7 +339,13 @@ a {
 }
 
 .timeline-progress {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 120;
+    background: transparent;
 }
 
 .progress-bar {
@@ -406,6 +412,71 @@ a {
     line-height: 1.4;
 }
 
+.stats-category-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.stats-category-row {
+    display: grid;
+    grid-template-columns: 10px minmax(7em, auto) 1fr 2ch;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.8rem;
+}
+
+.stats-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.stats-category-label {
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.stats-bar {
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-border-light);
+    overflow: hidden;
+}
+
+.stats-bar-fill {
+    display: block;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.stats-category-count {
+    text-align: right;
+    font-weight: 600;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+}
+
+.stats-sparkline {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 44px;
+}
+
+.stats-sparkline-bar {
+    flex: 1;
+    min-width: 2px;
+    background: var(--color-border);
+    border-radius: 2px 2px 0 0;
+}
+
+.stats-sparkline-bar--peak {
+    background: var(--color-incident);
+}
+
 .summary-text {
     font-family: var(--font-serif);
     font-size: 1.05rem;
@@ -430,6 +501,40 @@ a {
     bottom: 0;
     width: var(--timeline-line-width);
     background: var(--color-border);
+}
+
+.era-break {
+    position: relative;
+    padding: var(--space-xl) 0 var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.era-break:first-child {
+    padding-top: 0;
+}
+
+.era-range {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.era-label {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.era-description {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    max-width: 42em;
 }
 
 .timeline-year {
@@ -505,6 +610,7 @@ a {
     padding: var(--space-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--color-border-light);
+    border-left: 3px solid transparent;
     cursor: pointer;
     transition: all var(--transition-base);
 }
@@ -516,6 +622,93 @@ a {
 
 .event-card:active {
     transform: translateY(0);
+}
+
+.event-card[data-category="watchdog"] { border-left-color: var(--color-watchdog); }
+.event-card[data-category="court"] { border-left-color: var(--color-court); }
+.event-card[data-category="investigation"] { border-left-color: var(--color-investigation); }
+.event-card[data-category="incident"] { border-left-color: var(--color-incident); }
+.event-card[data-category="policy"] { border-left-color: var(--color-policy); }
+
+.event-card--notable {
+    border-left-width: 4px;
+    box-shadow: var(--shadow-md);
+}
+
+.event-card--notable .event-title {
+    font-size: 1.2rem;
+}
+
+/* When a card has an image, lay it out beside the text on desktop and
+   stacked above it on narrow viewports. Cards without media are unaffected
+   — .event-body alone fills the card exactly as before. */
+.event-card:has(.event-media) {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: stretch;
+}
+
+.event-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.event-media {
+    flex: 0 0 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-bg);
+}
+
+.event-media-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    object-fit: cover;
+}
+
+.event-media-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.event-media-badge svg {
+    width: 13px;
+    height: 13px;
+}
+
+.card-pullquote {
+    background: linear-gradient(to bottom, rgba(220, 38, 38, 0.12) 0%, rgba(220, 38, 38, 0.06) 100%);
+    border-left: 3px solid #dc2626;
+    padding: 0.5rem 0.75rem;
+    margin: var(--space-sm) 0 0;
+    border-radius: 0 4px 4px 0;
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+    .event-card:has(.event-media) {
+        flex-direction: column;
+    }
+    .event-media {
+        flex: none;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
 }
 
 .event-header {

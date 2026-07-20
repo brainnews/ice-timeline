@@ -1559,5 +1559,15 @@ const timelineData = {
             label: `Policy Changes`,
             color: "#166534"
         }
-    }
+    },
+
+    // Editorial section breaks for the linear Timeline view. Hand-authored
+    // year ranges, not derived from the data — adjust freely as coverage
+    // shifts; `to: null` means "through the present."
+    eras: [
+        { label: "Origins", description: "ICE's creation and the first watchdog warnings about training gaps.", from: 2002, to: 2009 },
+        { label: "Warnings Ignored", description: "Repeated oversight findings go unaddressed.", from: 2010, to: 2017 },
+        { label: "Escalation", description: "Enforcement expands faster than training or oversight keeps up.", from: 2018, to: 2024 },
+        { label: "The Surge", description: "A sharp rise in documented incidents and deaths in custody.", from: 2025, to: null }
+    ]
 };

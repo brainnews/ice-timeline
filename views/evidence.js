@@ -94,80 +94,158 @@
     }
 
     // -- layout ------------------------------------------------------------
+    // Years with more than SUBCLUSTER_THRESHOLD events are split into
+    // month-sized sub-blocks (buildYearBlocks) rather than one column that
+    // grows without bound — this is what keeps the board from collapsing
+    // into one enormous strip as the news-scan pipeline keeps adding events
+    // to the current year.
+    const MONTH_LABELS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const SUBCLUSTER_THRESHOLD = 7;
+    const MAX_BLOCK_SIZE = 8;
+    const MIN_BLOCK_SIZE = 3;
+
+    function parseMonthFromDate(dateStr) {
+        const s = String(dateStr || '').toLowerCase();
+        const names = ['january', 'february', 'march', 'april', 'may', 'june',
+            'july', 'august', 'september', 'october', 'november', 'december'];
+        for (let i = 0; i < names.length; i++) {
+            if (s.includes(names[i])) return i;
+        }
+        return null;
+    }
+
+    // Groups a year's events (already id-sorted) into blocks bounded to
+    // roughly MIN_BLOCK_SIZE..MAX_BLOCK_SIZE events each. Ordering is always
+    // driven by event.id (guaranteed chronological); the date string is only
+    // used to derive a cosmetic month label, so an unparseable date (e.g.
+    // "2002-2003") only degrades a label, never breaks the layout.
+    function buildYearBlocks(yearEvents) {
+        if (yearEvents.length <= SUBCLUSTER_THRESHOLD) {
+            return [{ events: yearEvents, label: null }];
+        }
+
+        const buckets = [];
+        const byMonth = new Map();
+        yearEvents.forEach(e => {
+            const m = parseMonthFromDate(e.date);
+            const key = m === null ? -1 : m;
+            if (!byMonth.has(key)) {
+                const bucket = { month: key, events: [] };
+                byMonth.set(key, bucket);
+                buckets.push(bucket);
+            }
+            byMonth.get(key).events.push(e);
+        });
+        buckets.sort((a, b) => (a.month === -1 ? 1 : b.month === -1 ? -1 : a.month - b.month));
+
+        const blocks = [];
+        let pending = null;
+        const flushPending = () => { if (pending) blocks.push(pending); pending = null; };
+        buckets.forEach(bucket => {
+            if (bucket.events.length > MAX_BLOCK_SIZE) {
+                flushPending();
+                const parts = Math.ceil(bucket.events.length / MAX_BLOCK_SIZE);
+                for (let i = 0; i < parts; i++) {
+                    blocks.push({
+                        events: bucket.events.slice(i * MAX_BLOCK_SIZE, (i + 1) * MAX_BLOCK_SIZE),
+                        months: [bucket.month],
+                        partLabel: parts > 1 ? `${i + 1}/${parts}` : null,
+                    });
+                }
+                return;
+            }
+            if (!pending) {
+                pending = { events: bucket.events.slice(), months: [bucket.month] };
+            } else if (pending.events.length < MIN_BLOCK_SIZE || pending.events.length + bucket.events.length <= MAX_BLOCK_SIZE) {
+                pending.events = pending.events.concat(bucket.events);
+                pending.months.push(bucket.month);
+            } else {
+                flushPending();
+                pending = { events: bucket.events.slice(), months: [bucket.month] };
+            }
+        });
+        flushPending();
+
+        blocks.forEach(b => {
+            const known = b.months.filter(m => m !== -1);
+            if (!known.length) b.label = 'UNDATED';
+            else if (known.length === 1) b.label = MONTH_LABELS[known[0]] + (b.partLabel ? ` (${b.partLabel})` : '');
+            else b.label = `${MONTH_LABELS[known[0]]}–${MONTH_LABELS[known[known.length - 1]]}`;
+        });
+        return blocks;
+    }
+
     function layoutAndRender(events) {
-        // Build year columns. Years with > 4 events split into two columns.
         const byYear = {};
         events.forEach(e => (byYear[e.year] = byYear[e.year] || []).push(e));
-        const years = Object.keys(byYear).map(Number).sort();
+        const years = Object.keys(byYear).map(Number).sort((a, b) => a - b);
 
         const COL_W = 300;
-        const ROW_H = 350;
+        const ROW_GAP = 26;
+        const BLOCK_GAP_X = 60;
+        const YEAR_GAP_X = 90;
+        const TIER_GAP_Y = 110;
+        const BLOCKS_PER_TIER = 4;
         const PADDING_X = 220;
         // Top/bottom padding clears the floating UI (search bar at top,
         // hint pill at bottom) so the year banners are immediately legible.
         const PADDING_Y = 240;
-        const yearMeta = {};
+
+        // -- Pass A: blocks/tiers and X geometry. This is independent of
+        // real card heights, so it can be finalized before anything is
+        // measured. Y is filled in during Pass B, after measurement.
+        const yearLayouts = {};
         let xCursor = PADDING_X;
         years.forEach(y => {
-            const list = byYear[y];
-            // wider years for years with more events so the board breathes
-            const cols = list.length > 8 ? 3 : (list.length > 3 ? 2 : 1);
-            yearMeta[y] = { x: xCursor, cols, rows: Math.ceil(list.length / cols) };
-            xCursor += COL_W * cols + 30;
-        });
-        const boardWidth = xCursor + PADDING_X;
-        const lastYear = years[years.length - 1];
-        const lastMeta = yearMeta[lastYear];
-        latestColWidth = COL_W * lastMeta.cols;
-        latestColCenterX = lastMeta.x + latestColWidth / 2;
-        const maxRows = Math.max(...years.map(y => yearMeta[y].rows));
-        const boardHeight = PADDING_Y + maxRows * ROW_H + PADDING_Y;
-        boardW = boardWidth;
-        boardH = boardHeight;
-        board.style.width = `${boardWidth}px`;
-        board.style.height = `${boardHeight}px`;
-        stringsEl.setAttribute('viewBox', `0 0 ${boardWidth} ${boardHeight}`);
-        stringsEl.setAttribute('width', boardWidth);
-        stringsEl.setAttribute('height', boardHeight);
+            const list = byYear[y].slice().sort((a, b) => a.id - b.id);
+            const blocks = buildYearBlocks(list).map(b => ({ ...b, cols: b.events.length > 5 ? 2 : 1 }));
 
-        // Build everything off-DOM in a fragment first, then append once —
-        // appending+measuring inside the loop forces a synchronous reflow
-        // per event (Safari chokes on this well before Chrome does).
+            const tiers = [];
+            for (let i = 0; i < blocks.length; i += BLOCKS_PER_TIER) {
+                tiers.push(blocks.slice(i, i + BLOCKS_PER_TIER));
+            }
+
+            let yearWidth = 0;
+            tiers.forEach(tier => {
+                let bx = 0;
+                tier.forEach(block => {
+                    block.xOffset = bx;
+                    bx += block.cols * COL_W + BLOCK_GAP_X;
+                });
+                yearWidth = Math.max(yearWidth, bx - BLOCK_GAP_X);
+            });
+
+            yearLayouts[y] = { blocks, tiers, x: xCursor, width: yearWidth };
+            xCursor += yearWidth + YEAR_GAP_X;
+        });
+        const boardWidth = xCursor - YEAR_GAP_X + PADDING_X;
+
+        // -- create DOM with final X, placeholder Y (top is rewritten in
+        // Pass B once real card heights are known — position:absolute
+        // elements measure their own content size regardless of `top`, so
+        // this placeholder causes no extra reflow work).
         const fragment = document.createDocumentFragment();
-
-        // Year banners floating above each year column
-        years.forEach(y => {
-            const meta = yearMeta[y];
-            const banner = document.createElement('div');
-            banner.className = 'year-banner';
-            banner.style.left = `${meta.x + (COL_W * meta.cols) / 2}px`;
-            banner.style.top = `${PADDING_Y - 90}px`;
-            banner.style.transform = `translateX(-50%) rotate(${(hash(y) - 0.5) * 4}deg)`;
-            banner.textContent = String(y);
-            fragment.appendChild(banner);
-        });
-
-        // Place artifacts
-        papers = [];
         papersEl.querySelectorAll('.paper').forEach(p => p.remove());
         const placed = [];
-        events.forEach((e, sortedIdx) => {
-            const list = byYear[e.year];
-            const idx = list.indexOf(e);
-            const meta = yearMeta[e.year];
-            const colIdx = idx % meta.cols;
-            const rowIdx = Math.floor(idx / meta.cols);
-            const x = meta.x + colIdx * COL_W + (hash(e.id * 7) - 0.5) * 16;
-            const y = PADDING_Y + rowIdx * ROW_H + (hash(e.id * 13) - 0.5) * 12;
-            const rot = (hash(e.id * 19) - 0.5) * 14; // -7..7 deg
+        let sortedIdx = 0;
+        years.forEach(y => {
+            const layout = yearLayouts[y];
+            layout.blocks.forEach(block => {
+                block.events.forEach((e, i) => {
+                    const rowIdx = Math.floor(i / block.cols);
+                    const colIdx = i % block.cols;
+                    const x = layout.x + block.xOffset + colIdx * COL_W + (hash(e.id * 7) - 0.5) * 16;
+                    const rot = (hash(e.id * 19) - 0.5) * 14; // -7..7 deg
 
-            const paperEl = makePaper(e, { x, y, rot });
-            // staggered drop-in: ~25ms between papers, with slight randomization
-            paperEl.style.animationDelay = `${sortedIdx * 28 + hash(e.id) * 50}ms`;
-            fragment.appendChild(paperEl);
-            placed.push({ event: e, el: paperEl, x, y, rot });
+                    const paperEl = makePaper(e, { x, y: 0, rot });
+                    // staggered drop-in: ~22ms between papers, with slight randomization
+                    paperEl.style.animationDelay = `${sortedIdx * 22 + hash(e.id) * 40}ms`;
+                    sortedIdx += 1;
+                    fragment.appendChild(paperEl);
+                    placed.push({ event: e, el: paperEl, x, y: 0, rot, block, rowIdx });
+                });
+            });
         });
-
         papersEl.appendChild(fragment);
 
         // Single measurement pass after everything is in the DOM — one
@@ -176,6 +254,74 @@
             p.w = p.el.offsetWidth;
             p.h = p.el.offsetHeight;
         });
+
+        // -- Pass B: real per-row heights within each block, stacked into
+        // tiers, stacked into years — this is what fixes cards bleeding into
+        // the next row (previously a fixed ROW_H guess), and what keeps
+        // every block's footprint bounded regardless of year size.
+        const bannerFragment = document.createDocumentFragment();
+        let boardHeight = 0;
+        years.forEach(y => {
+            const layout = yearLayouts[y];
+            let tierY = PADDING_Y;
+            layout.tiers.forEach(tier => {
+                let tierHeight = 0;
+                tier.forEach(block => {
+                    const cards = placed.filter(p => p.block === block);
+                    const rowHeights = [];
+                    cards.forEach(c => { rowHeights[c.rowIdx] = Math.max(rowHeights[c.rowIdx] || 0, c.h); });
+                    const rowY = [];
+                    let cum = 0;
+                    rowHeights.forEach((h, r) => { rowY[r] = cum; cum += h + ROW_GAP; });
+                    const blockHeight = Math.max(0, cum - ROW_GAP);
+                    cards.forEach(c => {
+                        c.y = tierY + rowY[c.rowIdx] + (hash(c.event.id * 13) - 0.5) * 10;
+                        c.el.style.top = `${c.y}px`;
+                    });
+                    tierHeight = Math.max(tierHeight, blockHeight);
+
+                    // Sub-block label, only shown when the year was actually split.
+                    if (layout.blocks.length > 1 && block.label) {
+                        const mb = document.createElement('div');
+                        mb.className = 'month-banner';
+                        mb.style.left = `${layout.x + block.xOffset + (block.cols * COL_W) / 2}px`;
+                        mb.style.top = `${tierY - 46}px`;
+                        mb.textContent = block.label;
+                        bannerFragment.appendChild(mb);
+                    }
+                });
+                tierY += tierHeight + TIER_GAP_Y;
+            });
+            boardHeight = Math.max(boardHeight, tierY - TIER_GAP_Y);
+
+            const banner = document.createElement('div');
+            banner.className = 'year-banner';
+            banner.style.left = `${layout.x + layout.width / 2}px`;
+            banner.style.top = `${PADDING_Y - 90}px`;
+            banner.style.transform = `translateX(-50%) rotate(${(hash(y) - 0.5) * 4}deg)`;
+            banner.textContent = String(y);
+            bannerFragment.appendChild(banner);
+
+            // Mobile fitInitialView zooms to "the most recent chunk of the
+            // board" — target the freshest block, not the whole year, so
+            // this stays a sensible target as the current year keeps growing.
+            if (y === years[years.length - 1]) {
+                const lastBlock = layout.blocks[layout.blocks.length - 1];
+                latestColWidth = lastBlock.cols * COL_W;
+                latestColCenterX = layout.x + lastBlock.xOffset + latestColWidth / 2;
+            }
+        });
+        boardHeight += PADDING_Y;
+        papersEl.appendChild(bannerFragment);
+
+        boardW = boardWidth;
+        boardH = boardHeight;
+        board.style.width = `${boardWidth}px`;
+        board.style.height = `${boardHeight}px`;
+        stringsEl.setAttribute('viewBox', `0 0 ${boardWidth} ${boardHeight}`);
+        stringsEl.setAttribute('width', boardWidth);
+        stringsEl.setAttribute('height', boardHeight);
+
         papers = placed;
         papersById = new Map(papers.map(p => [p.event.id, p]));
     }
