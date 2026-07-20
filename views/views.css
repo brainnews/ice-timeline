@@ -132,7 +132,22 @@
     transform: translate3d(0, 0, 0);
     transform-origin: 0 0;
     will-change: transform;
-    /* Cork texture: layered noise-y radial gradients */
+}
+
+/* Cork texture lives on its own element/compositor layer, decoupled from
+   .evidence-papers. Hovering a .paper promotes it to its own layer (see
+   .paper:hover's filter/will-change) — when the cork texture shared a layer
+   with the papers, that promotion forced the browser to repaint a
+   rectangular "hole" in the cork's tiled gradient background where the
+   paper used to be painted, which is expensive and prone to visible
+   artifacts (missing/incomplete chunks of texture) especially in Safari.
+   An isolated, permanently-composited layer here means paper hover never
+   touches this layer at all — just re-stacking, no repaint. */
+.evidence-cork {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(0);
+    will-change: transform;
     background-color: #a8814e;
     background-image:
         radial-gradient(circle at 20% 30%, rgba(60, 30, 0, 0.35) 1px, transparent 2px),
