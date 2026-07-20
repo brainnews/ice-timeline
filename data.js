@@ -1145,6 +1145,23 @@ const timelineData = {
             sourceUrl: "https://www.npr.org/2026/07/16/nx-s1-5891834/ice-use-of-force-aclu-report",
             mediaType: "document",
             mediaPlaceholder: `ACLU report cover page and charts showing frequency and type of force used across 1,200+ ICE enforcement operations`
+        },
+        {
+            id: 67,
+            date: `July 13, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `ICE Agent Fatally Shoots Johan Sebastián Durán Guerrero in Biddeford, Maine; No Body Cameras Present`,
+            excerpt: `An ICE agent shot and killed Johan Sebastián Durán Guerrero, a 25-year-old Colombian father, during an enforcement operation in Biddeford, Maine. Guerrero was not the intended target of the warrant. Agents involved were not wearing body cameras, and DHS waited nearly 12 hours before issuing a vague public statement.`,
+            content: `<p>On July 13, 2026, around 7:00 a.m., ICE agents conducting surveillance at the last known address of a deportation target in Biddeford, Maine, encountered Johan Sebastián Durán Guerrero, 25, a Colombian father of a 3-year-old child who was authorized to work in the United States and held a Social Security number.</p><p class="warning-highlight">Sen. Angus King's office confirmed that Guerrero was <strong>NOT the target of the arrest warrant</strong>. DHS broke nearly 12 hours of silence with a statement saying an officer fired "fearing for public safety" — a rationale legal experts called insufficient to justify deadly force. No agents were wearing body cameras, leaving no video record of the shooting from officers' perspective. A witness told ABC News he heard Guerrero say, "I tried to stop."</p><ul><li>Maine's Attorney General launched a state investigation; the FBI and DHS OIG also opened investigations.</li><li>Maine Sens. Collins and King wrote to DHS Inspector General Joseph Cuffari requesting investigation of whether use-of-force policies were followed and what evidence exists.</li><li>Biddeford Mayor Liam LaFountain stated: "The fact that ICE is swimming in billions of taxpayer dollars and can't perform a basic function like properly equipping its people is a severe indictment."</li><li>Sen. Collins called on DHS to "cease all non-urgent vehicle stops" pending investigation.</li><li>Advocacy groups noted Guerrero left behind a wife and 3-year-old daughter, who witnessed the aftermath of the shooting.</li></ul>`,
+            source: `NBC News / ABC News / CNN`,
+            sourceUrl: "https://www.nbcnews.com/news/us-news/biddeford-maine-ice-investigation-fatal-shooting-rcna587279",
+            media: {
+                type: "image",
+                src: "images/2026-07-20-ice-agent-fatally-shoots-johan-sebastin-durn-guerr.jpg",
+                alt: `ICE Agent Fatally Shoots Johan Sebastián Durán Guerrero in Biddeford, Maine; No Body Cameras Present`,
+                caption: `NBC News / ABC News / CNN — July 13, 2026`
+            }
         }
     ],
 
@@ -1473,6 +1490,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `NPR / ACLU: ACLU Report: ICE Used Force in Nearly One-Third of 1,200+ Do`,
             url: "https://www.npr.org/2026/07/16/nx-s1-5891834/ice-use-of-force-aclu-report"
+        },
+        {
+            type: `News Report`,
+            name: `NBC News / ABC News / CNN: ICE Agent Fatally Shoots Johan Sebastián Durán Guerrero in B`,
+            url: "https://www.nbcnews.com/news/us-news/biddeford-maine-ice-investigation-fatal-shooting-rcna587279"
         }
     ],
 
