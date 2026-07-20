@@ -1162,6 +1162,19 @@ const timelineData = {
                 alt: `ICE Agent Fatally Shoots Johan Sebastián Durán Guerrero in Biddeford, Maine; No Body Cameras Present`,
                 caption: `NBC News / ABC News / CNN — July 13, 2026`
             }
+        },
+        {
+            id: 68,
+            date: `July 14–15, 2026`,
+            year: 2026,
+            category: "policy",
+            title: `ICE Vehicle Stop Pause Issued, Then Reversed Within 24 Hours by Trump`,
+            excerpt: `Following two fatal ICE vehicle-stop shootings in one week, DHS Secretary Mullin issued a nationwide directive pausing most ICE vehicle stops pending new training. President Trump reversed the pause within 24 hours, calling traffic stops one of ICE's most important enforcement tools.`,
+            content: `<p>On July 14, 2026, Homeland Security Secretary Markwayne Mullin directed ICE agents nationwide to immediately suspend most vehicle stops following the fatal shootings of Lorenzo Salgado Araujo in Houston (July 7) and Johan Sebastián Durán Guerrero in Biddeford, Maine (July 13) — both men having been killed in traffic stops and neither the intended target of enforcement operations.</p><p class="warning-highlight">An internal ICE email reviewed by ABC News directed: "All personnel are instructed to prioritize other existing operational methods, outside of vehicle stops, to conduct immigration enforcement activities." Multiple sources confirmed the pause was intended to be temporary while ICE officers received new training on vehicle-stop tactics. However, neither Mullin nor border czar Tom Homan alerted President Trump before imposing the pause. Trump became furious upon seeing news coverage and ordered the pause reversed early on July 15, posting on Truth Social that the stop was "one of ICE's most important and effective Crime Fighting tools."</p><ul><li>Border Czar Homan characterized the halt as a "short pause" to review whether training could be improved.</li><li>Former acting ICE Director Sarah Saldaña called the pause "a very practical thing to do until the agency can get its officers more properly trained."</li><li>CNN reported that within DHS, officials privately shared concerns that ten firearm-discharge incidents in 2026 could derail public confidence.</li><li>DHS announced ICE would institute additional training on crowd control, high-risk vehicle stops, medical care, and a live-fire cover course.</li></ul>`,
+            source: `NPR / ABC News / CNN`,
+            sourceUrl: "https://www.npr.org/2026/07/14/nx-s1-5893456/ice-vehicle-biddeford-houston",
+            mediaType: "document",
+            mediaPlaceholder: `Internal ICE email to deportation officers announcing the immediate pause on vehicle stops, reviewed by ABC News`
         }
     ],
 
@@ -1495,6 +1508,11 @@ const timelineData = {
             type: `News Report`,
             name: `NBC News / ABC News / CNN: ICE Agent Fatally Shoots Johan Sebastián Durán Guerrero in B`,
             url: "https://www.nbcnews.com/news/us-news/biddeford-maine-ice-investigation-fatal-shooting-rcna587279"
+        },
+        {
+            type: `News Report`,
+            name: `NPR / ABC News / CNN: ICE Vehicle Stop Pause Issued, Then Reversed Within 24 Hours`,
+            url: "https://www.npr.org/2026/07/14/nx-s1-5893456/ice-vehicle-biddeford-houston"
         }
     ],
 
