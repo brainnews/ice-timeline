@@ -1175,6 +1175,23 @@ const timelineData = {
             sourceUrl: "https://www.npr.org/2026/07/14/nx-s1-5893456/ice-vehicle-biddeford-houston",
             mediaType: "document",
             mediaPlaceholder: `Internal ICE email to deportation officers announcing the immediate pause on vehicle stops, reviewed by ABC News`
+        },
+        {
+            id: 69,
+            date: `July 12, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `ME Rules Haitian Immigrant Daphy Michel's Death a Homicide After ICE Release in Pittsburgh`,
+            excerpt: `The Allegheny County Medical Examiner ruled the March 2 hypothermia death of Daphy Michel, a 31-year-old Haitian asylum seeker, a homicide. Michel was found in a Pittsburgh bus shelter three days after ICE released her despite severe untreated mental health issues and a significant language barrier.`,
+            content: `<p>The Allegheny County Medical Examiner's Office ruled on June 12, 2026, that the death of Daphy Michel, 31, a Haitian asylum seeker, was a homicide following her release from ICE custody on February 27, 2026. Michel died of hypothermia on March 2 after being found at a South Shore bus shelter in Pittsburgh where she had spent at least 24 hours in sub-freezing temperatures.</p><p class="warning-highlight">The medical examiner's statement found that "Ms. Michel was a vulnerable adult, suffering from untreated severe mental health issues and a significant language barrier when she was released from federal custody." The pathologist concluded her death was caused by "the actions of another individual." An attorney for her family indicated a civil suit against ICE was expected.</p><ul><li>Michel had spent six months in the Washington County Correctional Facility on misdemeanor charges. When charges were withdrawn, she was transferred to ICE, fitted with an ankle monitor, and released in Pittsburgh's South Side.</li><li>DHS denied responsibility, stating she had been released "with all of her belongings, including a fully charged phone, in sunny weather."</li><li>Advocates noted the release of a person with severe mental illness and a language barrier without support constituted a failure of detainee release protocols.</li><li>The family's attorney expects a civil suit against ICE. The ruling also highlighted the significance of ICE's subsequent rule eliminating reporting requirements for detainee deaths occurring within 30 days of release.</li></ul>`,
+            source: `Pittsburgh Post-Gazette / Pittsburgh's Public Source`,
+            sourceUrl: "https://www.publicsource.org/haitian-immigrant-death-ruled-homicide/",
+            media: {
+                type: "image",
+                src: "images/2026-07-20-me-rules-haitian-immigrant-daphy-michels-death-a-h.jpg",
+                alt: `ME Rules Haitian Immigrant Daphy Michel's Death a Homicide After ICE Release in Pittsburgh`,
+                caption: `Pittsburgh Post-Gazette / Pittsburgh's Public Source — July 12, 2026`
+            }
         }
     ],
 
@@ -1513,6 +1530,11 @@ const timelineData = {
             type: `News Report`,
             name: `NPR / ABC News / CNN: ICE Vehicle Stop Pause Issued, Then Reversed Within 24 Hours`,
             url: "https://www.npr.org/2026/07/14/nx-s1-5893456/ice-vehicle-biddeford-houston"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `Pittsburgh Post-Gazette / Pittsburgh's Public Source: ME Rules Haitian Immigrant Daphy Michel's Death a Homicide A`,
+            url: "https://www.publicsource.org/haitian-immigrant-death-ruled-homicide/"
         }
     ],
 
