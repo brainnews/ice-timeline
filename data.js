@@ -1239,6 +1239,19 @@ const timelineData = {
                 alt: `Man Fleeing ICE in St. Augustine, Florida Fatally Struck by Semi-Truck`,
                 caption: `ABC News / CNN / Forbes — July 14, 2026`
             }
+        },
+        {
+            id: 73,
+            date: `July 9, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `Mexico Requests Criminal Charges Over 17 Deaths Linked to ICE Operations`,
+            excerpt: `Mexico's Foreign Minister announced the government would request criminal charges over 17 Mexican nationals who died in ICE custody or during immigration enforcement under the Trump administration, and would file civil suits against private detention operators.`,
+            content: `<p>On July 9, 2026, Mexican Foreign Minister Roberto Velasco announced that Mexico would formally request criminal charges in U.S. state and federal jurisdictions over the deaths of 17 Mexican nationals in ICE custody or during immigration enforcement operations under the Trump administration.</p><p class="warning-highlight">The announcement came days after the fatal shooting of Lorenzo Salgado Araujo in Houston — who was not the intended target of the ICE operation. According to the Mexican government, 14 Mexicans died while in ICE detention and 3 were killed during enforcement operations.</p><ul><li>The request, which carries no legal weight in U.S. courts, was submitted to state prosecutors' offices and the U.S. Department of Justice.</li><li>Mexico's Foreign Minister also announced civil lawsuits against private detention companies, including the GEO Group and CoreCivic, that operate ICE detention centers.</li><li>Mexico had previously filed diplomatic notes, raised the issue with the Inter-American Commission on Human Rights, and lodged a complaint with the U.N. High Commissioner for Human Rights.</li></ul>`,
+            source: `The Washington Post / Associated Press`,
+            sourceUrl: "https://www.washingtonpost.com/world/2026/07/09/mexico-ice-houston-shooting-immigration/985f2bd8-7bb8-11f1-b194-f872dd4ec5aa_story.html",
+            mediaType: "document",
+            mediaPlaceholder: `Mexican Foreign Ministry press briefing; family photograph of Lorenzo Salgado Araujo held by sons at Houston press conference`
         }
     ],
 
@@ -1597,6 +1610,11 @@ const timelineData = {
             type: `News Report`,
             name: `ABC News / CNN / Forbes: Man Fleeing ICE in St. Augustine, Florida Fatally Struck by `,
             url: "https://abcnews.com/US/person-struck-killed-truck-allegedly-fleeing-ice-agents/story?id=134763275"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `The Washington Post / Associated Press: Mexico Requests Criminal Charges Over 17 Deaths Linked to IC`,
+            url: "https://www.washingtonpost.com/world/2026/07/09/mexico-ice-houston-shooting-immigration/985f2bd8-7bb8-11f1-b194-f872dd4ec5aa_story.html"
         }
     ],
 
