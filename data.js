@@ -1222,6 +1222,23 @@ const timelineData = {
                 alt: `ICE Issues New Dress Code Banning Plainclothes Operations After Killings and Botched Las Vegas Arrest`,
                 caption: `The Intercept — July 21, 2026`
             }
+        },
+        {
+            id: 72,
+            date: `July 14, 2026`,
+            year: 2026,
+            category: "incident",
+            title: `Man Fleeing ICE in St. Augustine, Florida Fatally Struck by Semi-Truck`,
+            excerpt: `A 28-year-old man was killed after fleeing an encounter with ICE and HSI agents at a St. Augustine gas station, becoming the third death linked to ICE enforcement operations in a single week. The incident occurred the same day ICE ordered a temporary pause on vehicle stops.`,
+            content: `<p>On July 14, 2026, a 28-year-old man was fatally struck by a tractor-trailer on State Road 16 in St. Augustine, Florida, after fleeing from an encounter with ICE and Homeland Security Investigations (HSI) agents at a gas station parking lot. Four occupants of a vehicle fled on foot; one ran across the highway and was hit by the truck.</p><p class="warning-highlight">The fatality was the third death linked to ICE enforcement operations in a single week, following the Houston shooting of Lorenzo Salgado Araujo on July 7 and the Biddeford, Maine shooting on July 13. The Florida incident occurred on the same day ICE issued an internal order pausing vehicle stops in response to public outcry over the two preceding shootings.</p><ul><li>DHS confirmed the death of a Mexican national and said HSI was investigating alongside Florida Highway Patrol.</li><li>Florida state Rep. Angie Nixon called the death a result of "an out-of-control agency terrorizing our communities."</li><li>The Florida Immigrant Coalition stated that when federal agents descend on communities and spark panic, people run — calling the outcomes foreseeable.</li></ul>`,
+            source: `ABC News / CNN / Forbes`,
+            sourceUrl: "https://abcnews.com/US/person-struck-killed-truck-allegedly-fleeing-ice-agents/story?id=134763275",
+            media: {
+                type: "image",
+                src: "images/2026-07-27-man-fleeing-ice-in-st-augustine-florida-fatally-st.jpg",
+                alt: `Man Fleeing ICE in St. Augustine, Florida Fatally Struck by Semi-Truck`,
+                caption: `ABC News / CNN / Forbes — July 14, 2026`
+            }
         }
     ],
 
@@ -1575,6 +1592,11 @@ const timelineData = {
             type: `News Report`,
             name: `The Intercept: ICE Issues New Dress Code Banning Plainclothes Operations Af`,
             url: "https://theintercept.com/2026/07/21/ice-undercover-plainclothes-uniform/"
+        },
+        {
+            type: `News Report`,
+            name: `ABC News / CNN / Forbes: Man Fleeing ICE in St. Augustine, Florida Fatally Struck by `,
+            url: "https://abcnews.com/US/person-struck-killed-truck-allegedly-fleeing-ice-agents/story?id=134763275"
         }
     ],
 
