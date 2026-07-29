@@ -1192,6 +1192,19 @@ const timelineData = {
                 alt: `ME Rules Haitian Immigrant Daphy Michel's Death a Homicide After ICE Release in Pittsburgh`,
                 caption: `Pittsburgh Post-Gazette / Pittsburgh's Public Source — July 12, 2026`
             }
+        },
+        {
+            id: 70,
+            date: `July 22, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `House Briefing Reveals Only 1 ICE Officer Referred for Discipline Among 56 Excessive Force Complaints`,
+            excerpt: `Democratic members of the House Homeland Security Committee disclosed after a closed-door briefing with ICE that of 56 excessive force complaints filed since the Trump administration began, 32 were cleared, only one officer was referred for disciplinary action, and no discipline had been handed out.`,
+            content: `<p>On July 22, 2026, Democratic members of the House Homeland Security Committee revealed the findings of a closed-door briefing with ICE officials about body cameras, vehicle stops, and training — the first such briefing following the July 7 and July 13 fatal shootings.</p><p class="warning-highlight">Rep. Seth Magaziner (D-RI) disclosed that ICE officials reported 56 complaints of excessive force against officers since the Trump administration began. Of those, 32 were cleared, one was referred for disciplinary action, and no discipline had yet been handed out. The remainder were still under investigation. At least 10 people had died in encounters with ICE agents since Trump launched the crackdown.</p><ul><li>Rep. Magaziner called the accountability picture "defiant of belief" given the documented surge in use-of-force incidents, civilian deaths, and public videos of ICE conduct.</li><li>House Homeland Security Ranking Member Bennie Thompson said he pressed ICE officials on retraining officers who went through the shorter curriculum but "couldn't get any clarity."</li><li>Thompson also noted confusion about who investigates use-of-force incidents: "Sometimes they said the FBI, sometimes they said HSI. Sometimes they said another entity."</li><li>ICE and DHS did not respond to requests for comment following the briefing.</li></ul>`,
+            source: `Associated Press / The Washington Post`,
+            sourceUrl: "https://www.washingtonpost.com/politics/2026/07/22/border-immigration-ice-policy-force-trump-deportations/d30e41b6-861b-11f1-9cec-0fb26676f07e_story.html",
+            mediaType: "document",
+            mediaPlaceholder: `House Homeland Security Committee briefing room; DHS Secretary Mullin at White House press briefing, July 17`
         }
     ],
 
@@ -1535,6 +1548,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `Pittsburgh Post-Gazette / Pittsburgh's Public Source: ME Rules Haitian Immigrant Daphy Michel's Death a Homicide A`,
             url: "https://www.publicsource.org/haitian-immigrant-death-ruled-homicide/"
+        },
+        {
+            type: `Government Report`,
+            name: `Associated Press / The Washington Post: House Briefing Reveals Only 1 ICE Officer Referred for Disci`,
+            url: "https://www.washingtonpost.com/politics/2026/07/22/border-immigration-ice-policy-force-trump-deportations/d30e41b6-861b-11f1-9cec-0fb26676f07e_story.html"
         }
     ],
 
@@ -1559,15 +1577,5 @@ const timelineData = {
             label: `Policy Changes`,
             color: "#166534"
         }
-    },
-
-    // Editorial section breaks for the linear Timeline view. Hand-authored
-    // year ranges, not derived from the data — adjust freely as coverage
-    // shifts; `to: null` means "through the present."
-    eras: [
-        { label: "Origins", description: "ICE's creation and the first watchdog warnings about training gaps.", from: 2002, to: 2009 },
-        { label: "Warnings Ignored", description: "Repeated oversight findings go unaddressed.", from: 2010, to: 2017 },
-        { label: "Escalation", description: "Enforcement expands faster than training or oversight keeps up.", from: 2018, to: 2024 },
-        { label: "The Surge", description: "A sharp rise in documented incidents and deaths in custody.", from: 2025, to: null }
-    ]
+    }
 };
