@@ -1252,6 +1252,23 @@ const timelineData = {
             sourceUrl: "https://www.washingtonpost.com/world/2026/07/09/mexico-ice-houston-shooting-immigration/985f2bd8-7bb8-11f1-b194-f872dd4ec5aa_story.html",
             mediaType: "document",
             mediaPlaceholder: `Mexican Foreign Ministry press briefing; family photograph of Lorenzo Salgado Araujo held by sons at Houston press conference`
+        },
+        {
+            id: 74,
+            date: `July 25, 2026`,
+            year: 2026,
+            category: "policy",
+            title: `The Intercept: ICE Leaked Memo Reinstates Vehicle Stops with New Mandatory Training Requirement`,
+            excerpt: `The Intercept obtained a leaked ICE agencywide memo reinstating vehicle stops but imposing new restrictions, including a requirement that officers complete ICE-administered vehicle-stop training — exposing that the 12,000 new recruits hired under the accelerated program had never received it.`,
+            content: `<p>On July 25, 2026, The Intercept published the contents of a leaked ICE agencywide memo distributing new vehicle-stop policy guidelines after the Trump administration reversed a brief pause that followed two fatal shootings in July. The new policy listed specific training as a mandatory precondition for conducting any vehicle stop.</p><p class="warning-highlight">The leaked guidance stated that officers conducting vehicle stops "must have successfully completed an ICE-administered vehicle stop training" — implicitly acknowledging that many officers deployed to the field had not received this training. The Intercept reported that during the accelerated hiring spree from summer 2025 through June 30, 2026, ICE hired more than 12,000 new recruits and cut more than 40 percent of its basic training curriculum. At least one ICE official who spoke with The Intercept said field offices were uncertain whether they would resume stops given how many officers lacked both training and body cameras.</p><ul><li>The Maine shooting involved an ICE officer who, according to The Atlantic, was among the new recruits hired under the accelerated program.</li><li>The new policy also restricted vehicle stops to situations involving criminal arrests or search warrants, unless a certified member of a Special Response Team was present.</li><li>ICE officials told The Intercept: "The president says one thing but in reality we all follow established policy."</li></ul>`,
+            source: `The Intercept`,
+            sourceUrl: "https://theintercept.com/2026/07/25/trump-ice-vehicle-stops-policy/",
+            media: {
+                type: "image",
+                src: "images/2026-07-27-the-intercept-ice-leaked-memo-reinstates-vehicle-s.jpg",
+                alt: `The Intercept: ICE Leaked Memo Reinstates Vehicle Stops with New Mandatory Training Requirement`,
+                caption: `The Intercept — July 25, 2026`
+            }
         }
     ],
 
@@ -1615,6 +1632,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `The Washington Post / Associated Press: Mexico Requests Criminal Charges Over 17 Deaths Linked to IC`,
             url: "https://www.washingtonpost.com/world/2026/07/09/mexico-ice-houston-shooting-immigration/985f2bd8-7bb8-11f1-b194-f872dd4ec5aa_story.html"
+        },
+        {
+            type: `News Report`,
+            name: `The Intercept: The Intercept: ICE Leaked Memo Reinstates Vehicle Stops with`,
+            url: "https://theintercept.com/2026/07/25/trump-ice-vehicle-stops-policy/"
         }
     ],
 
