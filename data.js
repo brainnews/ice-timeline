@@ -1269,6 +1269,23 @@ const timelineData = {
                 alt: `The Intercept: ICE Leaked Memo Reinstates Vehicle Stops with New Mandatory Training Requirement`,
                 caption: `The Intercept — July 25, 2026`
             }
+        },
+        {
+            id: 75,
+            date: `July 16, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `The Intercept: ICE Officers at Maine Shooting Had Body Cameras They Could Not Activate`,
+            excerpt: `The Intercept reported that ICE officers at the scene of the July 13 Biddeford, Maine fatal shooting were wearing Motorola SVX devices equipped with cameras — but the camera function had never been activated because ICE had not purchased the required software subscription.`,
+            content: `<p>On July 16, 2026, The Intercept published a report based on four ICE officials who reviewed images from the Biddeford, Maine shooting scene, finding that officers present were wearing Motorola SVX Video Remote Speaker Microphones — devices that double as body cameras — but the camera function was entirely disabled.</p><p class="warning-highlight">The camera recording feature required a software subscription that ICE had not purchased, leaving officers in the field wearing camera-equipped hardware that could not record. A second officer described a physical lens cover that officers kept in place because the cameras were not activated. The SVX devices are capable of storing over 100 hours of video internally, but the recording feature was never enabled.</p><ul><li>DHS Secretary Mullin had reportedly told Sen. Angus King that officers at the scene were not wearing body cameras — a claim that required "significant qualification," per The Intercept.</li><li>The Maine Attorney General's Office confirmed no body or dash camera footage existed from the shooting.</li><li>A separate Axon contract provides DHS's dedicated body cameras, but that rollout was incomplete at the time of the shooting.</li><li>The revelations amplified congressional and public demands for a mandatory, fully operational body camera program.</li></ul>`,
+            source: `The Intercept`,
+            sourceUrl: "https://theintercept.com/2026/07/16/ice-maine-shooting-body-cameras/",
+            media: {
+                type: "image",
+                src: "images/2026-07-27-the-intercept-ice-officers-at-maine-shooting-had-b.jpg",
+                alt: `The Intercept: ICE Officers at Maine Shooting Had Body Cameras They Could Not Activate`,
+                caption: `The Intercept — July 16, 2026`
+            }
         }
     ],
 
@@ -1637,6 +1654,11 @@ const timelineData = {
             type: `News Report`,
             name: `The Intercept: The Intercept: ICE Leaked Memo Reinstates Vehicle Stops with`,
             url: "https://theintercept.com/2026/07/25/trump-ice-vehicle-stops-policy/"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `The Intercept: The Intercept: ICE Officers at Maine Shooting Had Body Camer`,
+            url: "https://theintercept.com/2026/07/16/ice-maine-shooting-body-cameras/"
         }
     ],
 
