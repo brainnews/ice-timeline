@@ -724,6 +724,19 @@ const timelineData = {
         },
         {
             id: 39,
+            date: `March 3, 2026`,
+            year: 2026,
+            category: "investigation",
+            title: `Washington Post: Internal Records Confirm ICE Cut 240 Training Hours, Contradicting DHS Claims`,
+            excerpt: `The Washington Post obtained four previously undisclosed ICE training outlines showing the agency eliminated approximately 240 hours — more than 40 percent — of its basic training program between July 2025 and January 2026, directly contradicting DHS's public denials.`,
+            content: `<p>On March 3, 2026, The Washington Post published an investigation based on four internal ICE training program outlines dated between July 2025 and January 2026, providing the most detailed documentary record to date of how the agency slashed its basic training curriculum during the Trump hiring surge.</p><p class="warning-highlight">The records showed that total instructional time plummeted from 584 hours to approximately 340 hours — a reduction of roughly 240 hours, or more than 40 percent of the program. The cuts included: firearms training cut in half (from 56 hours to 28); all driving tests eliminated; 26 hours of immigration enforcement operations training cut entirely; three-quarters of practical skills evaluation hours removed; and fitness training nearly eliminated entirely. The documents directly contradicted public statements by DHS and Acting ICE Director Todd Lyons denying that training had been cut.</p><ul><li>The majority of cuts occurred in August 2025, when the Trump administration pushed ICE to double its field officer count by year's end.</li><li>By January 2026, more than 900 agents had completed the shortened program — more than three times the number who graduated in the prior 12 months.</li><li>The findings corroborated testimony given just days earlier by ICE whistleblower Ryan Schwank, who told a congressional forum that the agency had 'deficient, defective, and broken' training.</li><li>DHS denied the findings, claiming training hours had not been reduced — a position the documents contradict in hour-by-hour detail.</li></ul>`,
+            source: `The Washington Post (via DNYUZ)`,
+            sourceUrl: "https://dnyuz.com/2026/03/03/ice-training-was-slashed-records-show-corroborating-whistleblower-claims/",
+            mediaType: "document",
+            mediaPlaceholder: `Side-by-side comparison of ICE training outlines from 2021 and 2026 showing eliminated curriculum hours`
+        },
+        {
+            id: 40,
             date: `April 6, 2026`,
             year: 2026,
             category: "investigation",
@@ -736,7 +749,7 @@ const timelineData = {
             mediaPlaceholder: `Minneapolis traffic camera footage showing the 12-second struggle and shovel on the ground before shooting`
         },
         {
-            id: 40,
+            id: 41,
             date: `April 14, 2026`,
             year: 2026,
             category: "investigation",
@@ -749,7 +762,7 @@ const timelineData = {
             mediaPlaceholder: `FRONTLINE documentary 'Caught in the Crackdown' examining protest arrests and agent conduct from LA to Minneapolis`
         },
         {
-            id: 41,
+            id: 42,
             date: `April 2, 2026`,
             year: 2026,
             category: "court",
@@ -766,7 +779,7 @@ const timelineData = {
             }
         },
         {
-            id: 42,
+            id: 43,
             date: `April 21, 2026`,
             year: 2026,
             category: "incident",
@@ -783,7 +796,7 @@ const timelineData = {
             }
         },
         {
-            id: 43,
+            id: 44,
             date: `April 22, 2026`,
             year: 2026,
             category: "incident",
@@ -800,7 +813,7 @@ const timelineData = {
             }
         },
         {
-            id: 44,
+            id: 45,
             date: `April 16, 2026`,
             year: 2026,
             category: "incident",
@@ -813,7 +826,7 @@ const timelineData = {
             mediaPlaceholder: `Hennepin County criminal complaint and arrest warrant for Gregory Donnell Morgan Jr.`
         },
         {
-            id: 45,
+            id: 46,
             date: `April 30, 2026`,
             year: 2026,
             category: "watchdog",
@@ -830,7 +843,7 @@ const timelineData = {
             }
         },
         {
-            id: 46,
+            id: 47,
             date: `May 7, 2026`,
             year: 2026,
             category: "court",
@@ -847,7 +860,7 @@ const timelineData = {
             }
         },
         {
-            id: 47,
+            id: 48,
             date: `May 5, 2026`,
             year: 2026,
             category: "court",
@@ -864,7 +877,7 @@ const timelineData = {
             }
         },
         {
-            id: 48,
+            id: 49,
             date: `May 1, 2026`,
             year: 2026,
             category: "court",
@@ -881,7 +894,7 @@ const timelineData = {
             }
         },
         {
-            id: 49,
+            id: 50,
             date: `May 2, 2026`,
             year: 2026,
             category: "incident",
@@ -898,7 +911,7 @@ const timelineData = {
             }
         },
         {
-            id: 50,
+            id: 51,
             date: `May 15, 2026`,
             year: 2026,
             category: "investigation",
@@ -911,7 +924,7 @@ const timelineData = {
             mediaPlaceholder: `CNN video report following family of Jose Ramos, who died at Adelanto ICE Processing Facility`
         },
         {
-            id: 51,
+            id: 52,
             date: `May 12, 2026`,
             year: 2026,
             category: "court",
@@ -924,7 +937,7 @@ const timelineData = {
             mediaPlaceholder: `60-page court order and footage of federal courthouse in Denver`
         },
         {
-            id: 52,
+            id: 53,
             date: `May 18, 2026`,
             year: 2026,
             category: "incident",
@@ -937,7 +950,7 @@ const timelineData = {
             mediaPlaceholder: `Press conference footage and charging documents showing criminal complaint against ICE agent Christian Castro`
         },
         {
-            id: 53,
+            id: 54,
             date: `May 12, 2026`,
             year: 2026,
             category: "court",
@@ -950,7 +963,7 @@ const timelineData = {
             mediaPlaceholder: `60-page court ruling ordering ICE retraining of Colorado arresting officers`
         },
         {
-            id: 54,
+            id: 55,
             date: `May 18, 2026`,
             year: 2026,
             category: "incident",
@@ -963,7 +976,7 @@ const timelineData = {
             mediaPlaceholder: `Booking photo of ICE agent Christian Castro and Hennepin County press conference announcing charges`
         },
         {
-            id: 55,
+            id: 56,
             date: `May 2026`,
             year: 2026,
             category: "watchdog",
@@ -976,7 +989,7 @@ const timelineData = {
             mediaPlaceholder: `OIG-26-07 report cover page showing inspection findings for Chantilly holding facility`
         },
         {
-            id: 56,
+            id: 57,
             date: `June 3, 2026`,
             year: 2026,
             category: "policy",
@@ -993,7 +1006,7 @@ const timelineData = {
             }
         },
         {
-            id: 57,
+            id: 58,
             date: `June 2, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1006,7 +1019,7 @@ const timelineData = {
             mediaPlaceholder: `DHS OIG inspection report OIG-26-08 cover page and aerial photo of Winn Correctional Center`
         },
         {
-            id: 58,
+            id: 59,
             date: `June 5, 2026`,
             year: 2026,
             category: "policy",
@@ -1023,7 +1036,7 @@ const timelineData = {
             }
         },
         {
-            id: 59,
+            id: 60,
             date: `June 25, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1040,7 +1053,7 @@ const timelineData = {
             }
         },
         {
-            id: 60,
+            id: 61,
             date: `June 25, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1057,7 +1070,7 @@ const timelineData = {
             }
         },
         {
-            id: 61,
+            id: 62,
             date: `June 10, 2026`,
             year: 2026,
             category: "policy",
@@ -1074,7 +1087,7 @@ const timelineData = {
             }
         },
         {
-            id: 62,
+            id: 63,
             date: `June 25, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1087,7 +1100,7 @@ const timelineData = {
             mediaPlaceholder: `DHS OIG report cover page for the Winn Correctional Center inspection findings (OIG-26-08)`
         },
         {
-            id: 63,
+            id: 64,
             date: `June 18, 2026`,
             year: 2026,
             category: "investigation",
@@ -1104,7 +1117,7 @@ const timelineData = {
             }
         },
         {
-            id: 64,
+            id: 65,
             date: `July 9, 2026`,
             year: 2026,
             category: "incident",
@@ -1121,7 +1134,7 @@ const timelineData = {
             }
         },
         {
-            id: 65,
+            id: 66,
             date: `July 6, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1134,7 +1147,7 @@ const timelineData = {
             mediaPlaceholder: `NIPNLG tracking list of 2026 ICE custody deaths with facility locations, ages, and countries of origin; bar chart comparing annual death totals since 2004`
         },
         {
-            id: 66,
+            id: 67,
             date: `July 16, 2026`,
             year: 2026,
             category: "investigation",
@@ -1147,7 +1160,7 @@ const timelineData = {
             mediaPlaceholder: `ACLU report cover page and charts showing frequency and type of force used across 1,200+ ICE enforcement operations`
         },
         {
-            id: 67,
+            id: 68,
             date: `July 13, 2026`,
             year: 2026,
             category: "incident",
@@ -1164,7 +1177,7 @@ const timelineData = {
             }
         },
         {
-            id: 68,
+            id: 69,
             date: `July 14–15, 2026`,
             year: 2026,
             category: "policy",
@@ -1177,7 +1190,7 @@ const timelineData = {
             mediaPlaceholder: `Internal ICE email to deportation officers announcing the immediate pause on vehicle stops, reviewed by ABC News`
         },
         {
-            id: 69,
+            id: 70,
             date: `July 12, 2026`,
             year: 2026,
             category: "investigation",
@@ -1194,7 +1207,7 @@ const timelineData = {
             }
         },
         {
-            id: 70,
+            id: 71,
             date: `July 22, 2026`,
             year: 2026,
             category: "watchdog",
@@ -1207,7 +1220,7 @@ const timelineData = {
             mediaPlaceholder: `House Homeland Security Committee briefing room; DHS Secretary Mullin at White House press briefing, July 17`
         },
         {
-            id: 71,
+            id: 72,
             date: `July 21, 2026`,
             year: 2026,
             category: "policy",
@@ -1224,7 +1237,7 @@ const timelineData = {
             }
         },
         {
-            id: 72,
+            id: 73,
             date: `July 14, 2026`,
             year: 2026,
             category: "incident",
@@ -1241,7 +1254,7 @@ const timelineData = {
             }
         },
         {
-            id: 73,
+            id: 74,
             date: `July 9, 2026`,
             year: 2026,
             category: "investigation",
@@ -1254,7 +1267,7 @@ const timelineData = {
             mediaPlaceholder: `Mexican Foreign Ministry press briefing; family photograph of Lorenzo Salgado Araujo held by sons at Houston press conference`
         },
         {
-            id: 74,
+            id: 75,
             date: `July 25, 2026`,
             year: 2026,
             category: "policy",
@@ -1271,7 +1284,7 @@ const timelineData = {
             }
         },
         {
-            id: 75,
+            id: 76,
             date: `July 16, 2026`,
             year: 2026,
             category: "investigation",
@@ -1659,6 +1672,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `The Intercept: The Intercept: ICE Officers at Maine Shooting Had Body Camer`,
             url: "https://theintercept.com/2026/07/16/ice-maine-shooting-body-cameras/"
+        },
+        {
+            type: `Investigative Journalism`,
+            name: `The Washington Post (via DNYUZ): Washington Post: Internal Records Confirm ICE Cut 240 Traini`,
+            url: "https://dnyuz.com/2026/03/03/ice-training-was-slashed-records-show-corroborating-whistleblower-claims/"
         }
     ],
 
