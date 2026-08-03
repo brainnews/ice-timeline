@@ -1299,6 +1299,23 @@ const timelineData = {
                 alt: `The Intercept: ICE Officers at Maine Shooting Had Body Cameras They Could Not Activate`,
                 caption: `The Intercept — July 16, 2026`
             }
+        },
+        {
+            id: 77,
+            date: `July 24, 2026`,
+            year: 2026,
+            category: "watchdog",
+            title: `Congressional Field Hearing in Houston: ICE Refuses to Attend; Training Cited as Root Cause`,
+            excerpt: `The Congressional Hispanic Caucus and House Homeland Security Committee held a field hearing in Houston on the ICE shooting of Lorenzo Salgado Araujo. ICE, DHS, and the FBI declined to attend. Lawmakers cited inadequate training as a principal reason people were being killed.`,
+            content: `<p>On July 24, 2026, members of the Congressional Hispanic Caucus and U.S. House Homeland Security Committee held a field hearing in Houston to address concerns about ICE enforcement actions resulting in fatalities. The hearing was held in response to the July 7 fatal shooting of Lorenzo Salgado Araujo.</p><p class="warning-highlight">ICE, DHS, and the FBI all declined invitations to attend the hearing. Caucus chair Rep. Adriano Espaillat stated that 'one of the main reasons people are being killed is because ICE officers aren't receiving proper training,' and raised concerns that ICE agents were not wearing body cameras consistent with other law enforcement. Democrats on several congressional committees said they had sent six letters totaling 180 signatures to DHS and ICE requesting information about ICE shootings and had received no response.</p><ul><li>Espaillat stated that eight people, including two U.S. citizens, had been killed by ICE agents during the second Trump administration.</li><li>Witnesses at the hearing included Salgado Araujo's family, Harris County DA Sean Teare, faith leaders, and community advocates.</li><li>Rep. Sylvia Garcia of Houston characterized the hearing as being about 'accountability, transparency and to uphold the Constitution.'</li><li>The hearing record was entered alongside the congressional oversight record as documentation of DHS's refusal to cooperate with legislative oversight.</li></ul>`,
+            source: `The Center Square`,
+            sourceUrl: "https://www.thecentersquare.com/texas/article_2dd5d827-573c-48cd-ae18-4ff9b030ded2.html",
+            media: {
+                type: "image",
+                src: "images/2026-08-03-congressional-field-hearing-in-houston-ice-refuses.jpg",
+                alt: `ICE Agent Escorts Handcuffed Suspect During Arrest in Residential Area`,
+                caption: `The Center Square — July 24, 2026`
+            }
         }
     ],
 
@@ -1677,6 +1694,11 @@ const timelineData = {
             type: `Investigative Journalism`,
             name: `The Washington Post (via DNYUZ): Washington Post: Internal Records Confirm ICE Cut 240 Traini`,
             url: "https://dnyuz.com/2026/03/03/ice-training-was-slashed-records-show-corroborating-whistleblower-claims/"
+        },
+        {
+            type: `Government Report`,
+            name: `The Center Square: Congressional Field Hearing in Houston: ICE Refuses to Atten`,
+            url: "https://www.thecentersquare.com/texas/article_2dd5d827-573c-48cd-ae18-4ff9b030ded2.html"
         }
     ],
 
