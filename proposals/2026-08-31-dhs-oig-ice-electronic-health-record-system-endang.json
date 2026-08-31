@@ -1,0 +1,12 @@
+{
+  "date": "July 23, 2026",
+  "year": 2026,
+  "category": "watchdog",
+  "title": "DHS OIG: ICE Electronic Health Record System Endangers Detainee Lives",
+  "excerpt": "A DHS Office of Inspector General report (OIG-26-18) found that ICE's electronic health record system cannot properly transfer or access medical records, increasing the risk of untimely and inaccurate healthcare decisions that could result in patient harm.",
+  "content": "<p>The DHS Office of Inspector General released report OIG-26-18 on July 23, 2026, finding that U.S. Immigration and Customs Enforcement's electronic health record (eHR) system does not fully address its capability needs for transferring and accessing medical records.</p><p class=\"warning-highlight\">The OIG found that these deficiencies increase the risk that the ICE Health Services Corps may make untimely and inaccurate healthcare decisions resulting in patient harm and potentially wasted taxpayer funds.</p><ul><li>The eHR system was found not to interface with external data sources or access external medical information.</li><li>The system lacked a patient portal allowing detained individuals to access their own medical records after leaving custody.</li><li>The report issued four recommendations, all of which ICE concurred with; however, they remain open and unresolved.</li></ul><p>The report comes amid record-high detainee deaths in 2026, and concerns about delayed and inadequate medical care cited in multiple simultaneous OIG and advocacy investigations. Three government shutdowns in FY 2026 significantly delayed publication of the audit.</p>",
+  "source": "DHS Office of Inspector General",
+  "sourceUrl": "https://www.oig.dhs.gov/sites/default/files/assets/2026-07/OIG-26-18-Jul26.pdf",
+  "mediaType": "document",
+  "mediaPlaceholder": "OIG-26-18 report cover page and highlights summary"
+}
