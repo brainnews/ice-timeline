@@ -1,0 +1,12 @@
+{
+  "date": "July 23, 2026",
+  "year": 2026,
+  "category": "watchdog",
+  "title": "OIG Report: ICE Electronic Health Record System Fails Detainees, Increases Risk of Patient Harm",
+  "excerpt": "A DHS OIG final report (OIG-26-18) found that ICE's electronic health record system cannot interface with key data sources, lacks a patient portal, and increases risk of untimely and inaccurate healthcare decisions that could result in detainee harm.",
+  "content": "<p>On July 23, 2026, the DHS Office of Inspector General published OIG-26-18, a final audit of ICE's Electronic Health Record (eHR) system used to manage medical care for detained immigrants across the country.</p><ul><li class=\"warning-highlight\">The OIG found that ICE's eHR system does not fully address its capability needs for transferring and accessing medical records, increasing risk that ICE Health Services Corps (IHSC) may make \"untimely and inaccurate healthcare decisions resulting in patient harm.\"</li><li class=\"warning-highlight\">Specifically, the system failed to interface with external data sources and access comprehensive medical information, and did not include a patient portal allowing detainees to access their records after leaving custody.</li><li>Detainees leaving ICE custody must submit written requests to facilities, which review and manually scan records into the system — a cumbersome process the OIG identified as a compliance failure under Performance-Based National Detention Standards.</li><li>The report was issued amid a record rate of detainee deaths and growing congressional scrutiny of ICE medical care standards.</li></ul><p class=\"warning-highlight\">The audit comes as part of a broader OIG oversight initiative into ICE detention conditions, announced in February 2026, at a time when ICE was reporting more than one detainee death per week.</p>",
+  "source": "DHS Office of Inspector General",
+  "sourceUrl": "https://www.oig.dhs.gov/sites/default/files/assets/2026-07/OIG-26-18-Jul26.pdf",
+  "mediaType": "document",
+  "mediaPlaceholder": "Cover page of OIG-26-18 report on ICE Electronic Health Record system deficiencies"
+}
