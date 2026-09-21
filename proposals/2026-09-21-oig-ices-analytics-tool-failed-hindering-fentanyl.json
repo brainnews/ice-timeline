@@ -1,0 +1,12 @@
+{
+  "date": "August 20, 2026",
+  "year": 2026,
+  "category": "watchdog",
+  "title": "OIG: ICE's Analytics Tool Failed, Hindering Fentanyl Investigations and Field Operations",
+  "excerpt": "A DHS OIG audit (OIG-26-23) found that ICE Homeland Security Investigations was hindered in countering fentanyl trafficking because its flagship intelligence analytics platform, RAVEn, failed to deliver promised capabilities and was decommissioned after only three years, leaving agents without critical analytical tools.",
+  "content": "<p>On August 20, 2026, the DHS Office of Inspector General released audit report <strong>OIG-26-23</strong>, finding that ICE Homeland Security Investigations (HSI) was significantly hampered in its counter-fentanyl mission due to a failed analytics platform.</p><p class=\"warning-highlight\">The OIG found that HSI's RAVEn analytics system — deployed to field offices — failed to deliver promised investigative tools on schedule, with competing operational priorities during the immigration enforcement surge cited as a contributing factor. In 2025, HSI began decommissioning RAVEn just three years after launch, before a replacement system was ready, leaving agents without effective analytical capabilities.</p><ul><li>HSI estimates ongoing operating costs for RAVEn's data repository exceeded $31 million, with an additional $39 million required for transition.</li><li>HSI's new acquisition strategy focuses on commercially available products due to the lengthy timelines associated with government-developed technology.</li><li>The OIG noted that three government shutdowns in FY2026 significantly delayed the audit's publication.</li><li>ICE concurred with all four OIG recommendations, which were left open and resolved pending implementation.</li></ul>",
+  "source": "DHS Office of Inspector General",
+  "sourceUrl": "https://www.oig.dhs.gov/sites/default/files/assets/2026-08/OIG-26-23-Aug26.pdf",
+  "mediaType": "document",
+  "mediaPlaceholder": "Cover page of OIG-26-23 report on ICE HSI analytics system failures and counter-fentanyl operational impacts"
+}

@@ -1,0 +1,12 @@
+{
+  "date": "July 23, 2026",
+  "year": 2026,
+  "category": "watchdog",
+  "title": "OIG Report: ICE Electronic Health Record System Fails to Transfer Medical Records, Risking Patient Harm",
+  "excerpt": "A DHS Office of Inspector General audit (OIG-26-18) found that ICE's electronic health record system cannot interface with external data sources, lacks a patient portal for detainees, and creates risk of \"untimely and inaccurate\" medical decisions that could result in patient harm and wasted taxpayer funds.",
+  "content": "<p>On July 23, 2026, the DHS Office of Inspector General released audit report <strong>OIG-26-18</strong>, finding that ICE's electronic health record (eHR) system does not meet basic capability needs for the ICE Health Services Corps (IHSC), which provides medical care to detained immigrants.</p><p class=\"warning-highlight\">The OIG found the eHR system failed to interface with external data sources and access outside medical information, did not include a patient portal allowing detained individuals to access their records after leaving custody, and lacked key functionality needed for continuity of care — all increasing the risk of untimely and inaccurate healthcare decisions that could result in patient harm.</p><ul><li>The report warned of potential waste of taxpayer funds due to system deficiencies.</li><li>The audit was conducted against a backdrop of record ICE detainee deaths in 2026, with 26 reported deaths by September 1, 2026 — on pace to exceed the 2025 record of 33.</li><li>ICE concurred with the OIG's recommendations, which were left open and resolved pending implementation.</li><li>The OIG noted that three government shutdowns in FY2026 significantly delayed the audit's publication.</li></ul>",
+  "source": "DHS Office of Inspector General",
+  "sourceUrl": "https://www.oig.dhs.gov/sites/default/files/assets/2026-07/OIG-26-18-Jul26.pdf",
+  "mediaType": "document",
+  "mediaPlaceholder": "Cover page of OIG-26-18 report showing DHS OIG seal and findings summary on ICE electronic health record deficiencies"
+}
