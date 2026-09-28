@@ -1,0 +1,12 @@
+{
+  "date": "July 23, 2026",
+  "year": 2026,
+  "category": "watchdog",
+  "title": "OIG: ICE Electronic Health Record System Fails Detainee Medical Access Standards",
+  "excerpt": "A DHS OIG audit found that ICE's electronic health record system does not meet contractual requirements for a patient portal, preventing detainees from accessing their own medical records as required by national detention standards.",
+  "content": "<p>DHS OIG Report OIG-26-18, published July 23, 2026, audited ICE's electronic health record (eHR) system to determine how well it addressed capability needs for transferring and accessing detainee medical records.</p><ul><li class=\"warning-highlight\">The eHR system did not meet the contractual requirement for a patient portal, which ICE's own Performance-Based National Detention Standards require to give detainees access to their medical records upon request.</li><li class=\"warning-highlight\">Without the patient portal, detainees leaving ICE custody must submit a paper written request through facility personnel — a multi-step process that can delay or obstruct timely access to medical history.</li><li>The audit identified systemic failures in the interoperability of medical records across 18 IHSC-staffed facilities serving as many as 186,900 individuals held across 129 detention sites.</li></ul><p>The OIG report was published against a backdrop of sharply rising detainee deaths and multiple lawsuits alleging inadequate medical care. Congress mandated the patient portal as part of national detention standards to ensure continuity of care.</p>",
+  "source": "DHS Office of Inspector General",
+  "sourceUrl": "https://www.oig.dhs.gov/sites/default/files/assets/2026-07/OIG-26-18-Jul26.pdf",
+  "mediaType": "document",
+  "mediaPlaceholder": "Cover page of DHS OIG Report OIG-26-18 on ICE's electronic health record system deficiencies"
+}
