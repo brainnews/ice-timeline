@@ -27,8 +27,21 @@
     let searchQuery = '';
     let visibleEvents = new Set();
     let currentModalEventId = null;
+    let modalOpener = null; // element focused before the modal opened, restored on close
     const filterListeners = new Set();
     const navigableProviders = []; // alternate views can supply navigable event lists
+    const eventsById = new Map(timelineData.events.map(e => [e.id, e]));
+
+    // Searchable plain text per event, built once. event.content is HTML, so
+    // matching against it raw would hit tag/class names ("highlight",
+    // "warning", "strong", "blockquote") and return nearly every event.
+    const searchTextById = new Map(timelineData.events.map(e => {
+        let contentText = '';
+        if (e.content) {
+            contentText = new DOMParser().parseFromString(e.content, 'text/html').body.textContent;
+        }
+        return [e.id, [e.title, e.excerpt, contentText, e.source, e.date].join(' ').toLowerCase()];
+    }));
 
     // Initialize
     function init() {
@@ -38,6 +51,19 @@
         setupEventListeners();
         setupIntersectionObserver();
         updateScrollProgress();
+        openModalFromHash();
+    }
+
+    // Deep links: #event-42 opens that event's modal, so individual events
+    // can be shared. openModal/closeModal keep the hash in sync.
+    function openModalFromHash() {
+        const match = /^#event-(\d+)$/.exec(window.location.hash);
+        if (match && eventsById.has(Number(match[1]))) openModal(Number(match[1]));
+    }
+
+    function setEventHash(eventId) {
+        const base = window.location.pathname + window.location.search;
+        history.replaceState(null, '', eventId === null ? base : `${base}#event-${eventId}`);
     }
 
     // Render the at-a-glance stats strip: totals, category breakdown, and a
@@ -62,22 +88,28 @@
         events.forEach(e => { byCategory[e.category] = (byCategory[e.category] || 0) + 1; });
         const maxCatCount = Math.max(...categoryOrder.map(c => byCategory[c] || 0));
 
+        // Events are id-ordered chronologically, so the last one is the newest.
+        // Shown as "Mon YYYY" so the tile doesn't wrap.
+        const latest = events[events.length - 1];
+        const latestMonth = /^([A-Za-z]{3})[a-z]*\b/.exec(latest.date);
+        const latestLabel = latestMonth ? `${latestMonth[1]} ${latest.year}` : String(latest.year);
+
         const tilesHTML = `
             <div class="stat">
                 <span class="stat-value">${events.length}</span>
                 <span class="stat-label">Documented events</span>
             </div>
             <div class="stat">
-                <span class="stat-value">${yearMin}–${yearMax}</span>
-                <span class="stat-label">Years covered</span>
+                <span class="stat-value">${yearMax - yearMin + 1}</span>
+                <span class="stat-label">Years covered, <span class="nowrap">${yearMin}–${yearMax}</span></span>
             </div>
             <div class="stat">
                 <span class="stat-value">${surgeCount}</span>
                 <span class="stat-label">In ${surgeYear} alone — ${surgePct}% of all events</span>
             </div>
             <div class="stat">
-                <span class="stat-value">${categoryOrder.length}</span>
-                <span class="stat-label">Categories tracked</span>
+                <span class="stat-value">${latestLabel}</span>
+                <span class="stat-label">Most recent event</span>
             </div>
         `;
 
@@ -109,7 +141,14 @@
         elements.summaryStats.innerHTML = `
             <div class="summary-stats">${tilesHTML}</div>
             <div class="stats-category-breakdown">${breakdownHTML}</div>
-            <div class="stats-sparkline" role="img" aria-label="Events per year from ${yearMin} to ${yearMax}: mostly sparse, with a sharp rise to ${surgeCount} events in ${surgeYear}.">${sparklineHTML}</div>
+            <figure class="stats-sparkline-figure">
+                <figcaption class="stats-sparkline-caption">Events per year</figcaption>
+                <div class="stats-sparkline" role="img" aria-label="Events per year from ${yearMin} to ${yearMax}: mostly sparse, with a sharp rise to ${surgeCount} events in ${surgeYear}.">${sparklineHTML}</div>
+                <div class="stats-sparkline-axis" aria-hidden="true">
+                    <span>${yearMin}</span>
+                    <span>${yearMax}</span>
+                </div>
+            </figure>
         `;
     }
 
@@ -142,9 +181,13 @@
 
         // Add click handlers to event cards
         document.querySelectorAll('.event-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const eventId = parseInt(card.dataset.eventId);
-                openModal(eventId);
+            const eventId = parseInt(card.dataset.eventId);
+            card.addEventListener('click', () => openModal(eventId));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(eventId);
+                }
             });
         });
     }
@@ -184,7 +227,7 @@
 
         return `
             <article class="timeline-event" data-event-id="${event.id}" data-category="${event.category}">
-                <div class="event-card${notableClass}" data-event-id="${event.id}" data-category="${event.category}">
+                <div class="event-card${notableClass}" data-event-id="${event.id}" data-category="${event.category}" role="button" tabindex="0">
                     ${getCardImageHTML(event)}
                     <div class="event-body">
                         <div class="event-header">
@@ -243,9 +286,22 @@
     function getCardImageHTML(event) {
         const media = event.media;
         if (media && media.type === 'image' && media.src) {
-            return `<div class="event-media"><img src="${media.src}" alt="${media.alt || ''}" class="event-media-img" loading="lazy"></div>`;
+            return `<div class="event-media">${cardImgTag(media, 'event-media-img')}</div>`;
         }
         return '';
+    }
+
+    // Cards use the small WebP from images/thumbs/ (generated by
+    // scripts/make-thumbs.js and add-event.js); the modal keeps the
+    // original. If a thumbnail is missing, onerror swaps in the original.
+    function thumbSrc(src) {
+        const m = /^(.*\/)?([^/]+)\.[a-z0-9]+$/i.exec(src);
+        return m ? `${m[1] || ''}thumbs/${m[2]}.webp` : src;
+    }
+
+    function cardImgTag(media, className, alt = media.alt || '') {
+        const attr = (v) => String(v).replace(/"/g, '&quot;');
+        return `<img src="${attr(thumbSrc(media.src))}" alt="${attr(alt)}" class="${className}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${attr(media.src)}'">`;
     }
 
     function getCardMediaBadgeHTML(event) {
@@ -340,6 +396,7 @@
 
         // Keyboard navigation
         document.addEventListener('keydown', handleKeyboard);
+        window.addEventListener('hashchange', openModalFromHash);
 
         // Scroll
         window.addEventListener('scroll', throttle(handleScroll, 100), { passive: true });
@@ -379,11 +436,7 @@
     // Determine which events match the current filter+search
     function eventMatchesFilter(event) {
         if (currentFilter !== 'all' && event.category !== currentFilter) return false;
-        if (searchQuery) {
-            const text = [event.title, event.excerpt, event.content, event.source, event.date]
-                .join(' ').toLowerCase();
-            if (!text.includes(searchQuery)) return false;
-        }
+        if (searchQuery && !searchTextById.get(event.id).includes(searchQuery)) return false;
         return true;
     }
 
@@ -394,7 +447,7 @@
 
         eventElements.forEach(el => {
             const eventId = parseInt(el.dataset.eventId);
-            const event = timelineData.events.find(e => e.id === eventId);
+            const event = eventsById.get(eventId);
             const isVisible = event ? eventMatchesFilter(event) : false;
             el.classList.toggle('filtered-out', !isVisible);
 
@@ -452,7 +505,7 @@
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="M21 21l-4.35-4.35"></path>
                 </svg>
-                <p>No events found matching your search.</p>
+                <p>No events match the current search and filter.</p>
             `;
             elements.timeline.appendChild(noResultsEl);
         } else if (!show && noResultsEl) {
@@ -462,8 +515,14 @@
 
     // Open modal
     function openModal(eventId) {
-        const event = timelineData.events.find(e => e.id === eventId);
+        const event = eventsById.get(eventId);
         if (!event) return;
+
+        // Remember what to return focus to — but not when stepping
+        // prev/next inside an already-open modal.
+        if (!elements.modalOverlay.classList.contains('active')) {
+            modalOpener = document.activeElement;
+        }
 
         const categoryData = timelineData.categories[event.category];
 
@@ -472,7 +531,7 @@
         elements.modalContent.innerHTML = `
             <div class="modal-header">
                 <p class="modal-date">${event.date}</p>
-                <h2 class="modal-title">${event.title}</h2>
+                <h2 class="modal-title" id="modal-title">${event.title}</h2>
                 <span class="modal-category event-category" data-category="${event.category}">${categoryData.label}</span>
             </div>
             <div class="modal-media">
@@ -495,6 +554,7 @@
         `;
 
         currentModalEventId = eventId;
+        setEventHash(eventId);
 
         const navigable = getNavigableEvents();
         const currentIndex = navigable.findIndex(e => e.id === eventId);
@@ -506,7 +566,6 @@
         elements.modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // Focus trap
         elements.modalClose.focus();
     }
 
@@ -636,6 +695,29 @@
         elements.modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
         currentModalEventId = null;
+        setEventHash(null);
+        if (modalOpener && document.contains(modalOpener)) modalOpener.focus();
+        modalOpener = null;
+    }
+
+    // Keep Tab / Shift+Tab cycling inside the open modal.
+    function trapModalFocus(e) {
+        const focusable = [...elements.modal.querySelectorAll(
+            'a[href], button:not([disabled]), iframe, video, audio, [tabindex]:not([tabindex="-1"])'
+        )];
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        } else if (!elements.modal.contains(document.activeElement)) {
+            e.preventDefault();
+            first.focus();
+        }
     }
 
     // Handle keyboard
@@ -644,6 +726,7 @@
 
         if (modalActive) {
             if (e.key === 'Escape') { closeModal(); return; }
+            if (e.key === 'Tab') { trapModalFocus(e); return; }
             if (e.key === 'ArrowRight') { e.preventDefault(); navigateModal(1); return; }
             if (e.key === 'ArrowLeft') { e.preventDefault(); navigateModal(-1); return; }
         }
@@ -665,7 +748,7 @@
     function updateScrollProgress() {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = (scrollTop / docHeight) * 100;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
         elements.progressBar.style.width = `${progress}%`;
     }
 
@@ -788,6 +871,7 @@
         openModal,
         closeModal,
         getEvents: () => timelineData.events,
+        cardImgTag,
         getCategories: () => timelineData.categories,
         getCategoryColor: (cat) => (timelineData.categories[cat] && timelineData.categories[cat].color) || '#888888',
         getCategoryLabel: (cat) => (timelineData.categories[cat] && timelineData.categories[cat].label) || cat,

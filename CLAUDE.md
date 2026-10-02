@@ -54,7 +54,7 @@ Open `index.html` in a browser to view. No build or compilation required.
 }
 ```
 
-**Media files:** Store in `images/` directory.
+**Media files:** Store in `images/` directory. Cards (timeline + Evidence Wall) load a 640px WebP thumbnail from `images/thumbs/<name>.webp`, derived from `media.src`; the modal uses the original. `add-event.js` generates it automatically; for hand-added images run `npm run thumbs` in `scripts/`. A missing thumbnail falls back to the original.
 
 **Content Conventions:**
 - Use `class="warning-highlight"` on `<p>`, `<ul>`, or `<blockquote>` elements to highlight sentences describing unlawful incidents, watchdog warnings, or policy violations

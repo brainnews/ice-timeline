@@ -49,7 +49,7 @@
             initial = url.searchParams.get('view');
         } catch (_) { /* ignore */ }
         if (!initial || !viewRoots[initial]) {
-            initial = localStorage.getItem(STORAGE_KEY);
+            try { initial = localStorage.getItem(STORAGE_KEY); } catch (_) { /* storage blocked */ }
         }
         if (!initial || !viewRoots[initial]) initial = 'evidence';
         setView(initial, { skipScroll: true });
@@ -79,7 +79,7 @@
         // Update body attribute (used by CSS for background, layout)
         document.documentElement.setAttribute('data-view', viewId);
         document.body.setAttribute('data-view', viewId);
-        localStorage.setItem(STORAGE_KEY, viewId);
+        try { localStorage.setItem(STORAGE_KEY, viewId); } catch (_) { /* storage blocked */ }
 
         // Deactivate previous
         if (currentView) {

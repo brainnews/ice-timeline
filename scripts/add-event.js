@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { loadData, saveData } = require('./lib/data');
+const { makeThumb } = require('./lib/thumbs');
 
 const ROOT = path.join(__dirname, '..');
 const PROPOSALS_MEDIA_DIR = path.join(ROOT, 'proposals-media');
@@ -69,7 +70,7 @@ function addSourceIfNew(sources, proposal) {
   ];
 }
 
-function main() {
+async function main() {
   const proposalArg = process.argv[2];
   if (!proposalArg) {
     console.error('Usage: node add-event.js <path-to-proposal.json>');
@@ -124,6 +125,12 @@ function main() {
       fs.mkdirSync(IMAGES_DIR, { recursive: true });
       const finalPath = path.join(IMAGES_DIR, imageFile);
       fs.renameSync(stagedPath, finalPath);
+      try {
+        await makeThumb(finalPath);
+      } catch (err) {
+        // Non-fatal: the front end falls back to the original image.
+        console.warn(`  Warning: thumbnail failed for ${imageFile}: ${err.message}`);
+      }
       eventToInsert.media = {
         type: 'image',
         src: `images/${imageFile}`,
@@ -160,4 +167,7 @@ function main() {
   console.log(`  Proposal deleted: ${path.basename(proposalPath)}`);
 }
 
-main();
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
